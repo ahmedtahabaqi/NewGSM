@@ -31,6 +31,7 @@ class SlideBar extends React.Component {
             category: [],
             file: [],
             description: '',
+            sub_Titel:'',
             course: [],
             selectCourse: [],
             fileEdit: [],
@@ -66,6 +67,7 @@ class SlideBar extends React.Component {
         formData.append("price", this.state.price);
         formData.append("body", this.state.description);
         formData.append("category", this.state.cateSelect);
+        formData.append("sub_title", this.state.sub_Titel);
         formData.append("type", type);
         formData.append("file", this.state.file[0]);
 
@@ -84,11 +86,13 @@ class SlideBar extends React.Component {
     }
 
     EditCourse(id) {
+        console.log(this.state.sub_Titel);
         let formData = new FormData();
         var headers = { "Content-Type": "application/json", token: cookies.get("token") };
         formData.append("title", this.state.title);
         formData.append("price", this.state.price);
         formData.append("body", this.state.description);
+        formData.append("sub_title", this.state.sub_Titel);
         formData.append("category", this.state.cateSelect);
         if (type !== "") {
             formData.append("type", type);
@@ -98,7 +102,9 @@ class SlideBar extends React.Component {
 
 
         axios({ url: host + "api/course/editcourse/" + id, method: "POST", data: formData, headers: headers })
-            .then(response => { if (response.status === 200) { window.location.reload(); this.componentDidMount(); } })
+            .then(response => { if (response.status === 200) { 
+                window.location.reload(); 
+                this.componentDidMount(); } })
             .catch(function (error) { if (error.request.response) { toaster.danger(error.request.response); } });
     }
 
@@ -256,6 +262,13 @@ class SlideBar extends React.Component {
                                                                 onChange={files => { this.setState({ file: files }) }}
 
                                                             />
+                                                            <p>Sub Title</p>
+                                                            <Textarea
+                                                                id="textarea-1"
+                                                                placeholder="Sub Title..."
+                                                                onChange={(event) => this.setState({ sub_Titel: event.target.value })}
+                                                            // value={this.state.description}
+                                                            />
                                                             <p>Course Description</p>
                                                             <Textarea
                                                                 id="textarea-2"
@@ -354,9 +367,9 @@ class SlideBar extends React.Component {
 
                                                                                     <Dialog
                                                                                         isShown={state.isShown}
-                                                                                        title="Dialog title"
+                                                                                        title="Edit Courses"
                                                                                         onCloseComplete={() => setState({ isShown: false })}
-                                                                                        confirmLabel="Custom Label"
+                                                                                        confirmLabel="Edit"
                                                                                         onConfirm={() => {
                                                                                             this.EditCourse(corse._id)
                                                                                             setState({ isShown: false })
@@ -446,7 +459,7 @@ class SlideBar extends React.Component {
                                                                                                         <Col sm={10}>
                                                                                                             <Form.Check
                                                                                                                 type="radio"
-                                                                                                                label="Recently Added"
+                                                                                                                label="Step 1"
                                                                                                                 onChange={(e) => {
                                                                                                                     type = 'under Step1';
 
@@ -459,7 +472,7 @@ class SlideBar extends React.Component {
                                                                                                             />
                                                                                                             <Form.Check
                                                                                                                 type="radio"
-                                                                                                                label="Lower Price"
+                                                                                                                label="Step 2"
                                                                                                                 custom
                                                                                                                 onChange={(e) => {
                                                                                                                     type = 'under Step2';
@@ -483,6 +496,13 @@ class SlideBar extends React.Component {
                                                                                             marginBottom={32}
                                                                                             onChange={files => { this.setState({ file: files }) }}
 
+                                                                                        />
+                                                                                        <p>Sub Title</p>
+                                                                                        <Textarea
+                                                                                            id="textarea-2"
+                                                                                            placeholder="Sub Title                                                                                            ..."
+                                                                                            onChange={(event) => this.setState({ sub_Titel: event.target.value })}
+                                                                                        // value={this.state.description}
                                                                                         />
                                                                                         <p>Course Description</p>
                                                                                         <Textarea

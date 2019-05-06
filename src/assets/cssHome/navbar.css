@@ -5,12 +5,13 @@
   display: inline-block;
 }
   #homeImage{
-    width: 98.75vw;
+    width: 100vw;
 
   }
+  
  #searchHome{
   position: absolute;
-  top: 3.5vw;
+  top: 3.8vw;
   left:59vw ;
   width: 30%;
   height: 100%;
@@ -30,6 +31,13 @@ height: 80px;
 width: 100%;
 
  }
+ @media screen and (max-width: 1200px) {
+  #searchHome{
+    left:60vw ;
+    top:2.5vw;
+  }
+ 
+ }
  @media screen and (max-width: 868px) {
   #searchHome{
     left:60vw ;
@@ -43,5 +51,8 @@ width: 100%;
     left:35vw ;
     width: 150px;
   }
+  #gifHomePageCOntiner {
+    height: 20px;
+}
  
 }

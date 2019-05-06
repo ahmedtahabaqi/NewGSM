@@ -1,13 +1,304 @@
-#aboutusContiner{
-    text-align: center;
-    margin:  120px;
+#aboutUsContiner {
+    width: 100%;
+    background: linear-gradient(-45deg, #b7fbff 0, #c6cfff 100%);
+    font-size: 19px;
+    color: #3f3f3f;
 }
-#aboutusContiner h2{
-    color: #025cab;
+
+#headerAboutUs,#FooterAboutUs {
+    width: 100%;
+    height: 180px;
+    background: linear-gradient(-45deg, #00b9d4 0, #2affcc 100%);
+    color: white;
+    font-size: 3.2rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+#partOneContiner {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    font-size: 31px;
     font-weight: bold;
 }
-#aboutusContiner p{
+
+#partOneContent {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    text-align: center;
+    font-size: 16px;
+}
+
+#partTowContiner {
+    display: flex;
+}
+
+#notebookContiner {
+    height: 433px;
+    width: 433px;
+    margin-left: 30px;
+}
+
+#notebookimg {
+    height: 433px;
+}
+
+#partTowContent1 {
+    margin-top: 40px;
+    margin-left: 40px;
+}
+
+#partTowContent2 {
+    margin-left: 40px;
+}
+
+#partTowContent2Extend {
+    display: flex;
+}
+
+#partthreeContiner {
+    margin-left: 40px;
+    margin-right: 40px;
+}
+
+#bigImageAbuoutUs {
+    height: 160px;
+    width: 200px;
+    padding-top: 20px;
+    padding-right: 50px;
+    padding-left: 10px;
+}
+
+#partthreetitle {
+    font-size: 31px;
+}
+
+#partthreeContent1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#partthreeContent1Extend {
+    width: 120px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#Dr-Harith-img {
+    height: 100px;
+    border-radius: 50%;
+}
+
+#partthreeContent2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-top: 20px;
+}
+
+#partFourContiner {
+    display: flex;
+    margin-left: 100px;
+    margin-right: 100px;
+    margin-top: 50px;
+}
+
+#partFourContient {
+    margin-left: 100px;
+    margin-right: 100px;
+    margin-top: 50px;
+}
+
+#partfiveContiner {
+    margin-top: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#partfiveContient {
+    margin-left: 100px;
+    margin-right: 100px;
+    margin-top: 50px;
+}
+
+#imgCenterPageContiner {
+    margin-top: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#partSixContiner {
+    margin-top: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#partSixContinerTitle {
+    margin-left: 180px;
+    margin-right: 20px;
+    font-size: 31px;
+    font-weight: bold;
+}
+
+#partSixContent {
+    margin-left: 120px;
+    margin-right: 120px;
+    margin-top: 50px;
+    font-size: 25px;
+}
+
+#imagPartSix {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#partSavnContiner {
+    display: flex;
+    margin-left: 120px;
+    margin-right: 120px;
+    margin-top: 50px;
+    font-size: 25px;
+}
+
+#partSavnContinerimg {
+    padding-left: 50px;
+}
+
+#partEightContiner {
+    display: flex;
+    margin-left: 120px;
+    margin-right: 120px;
+    margin-top: 80px;
+    font-size: 25px;
+}
+
+#partEightContinerimg {
+    padding-right: 50px;
+}
+#partNineContiner{
+    display: flex;
+    margin-left: 120px;
+    margin-right: 120px;
+    margin-top: 50px;
+    font-size: 25px; 
+}
+#partNineContinerimg{
+    padding-right: 20px;
+}
+@media screen and (max-width: 868px) {
     
-    font-size: 1.3rem;
-    letter-spacing: normal;
+#headerAboutUs,#FooterAboutUs {
+    font-size: 31px;
+}
+    #partOneContiner {
+        font-size: 16px;
+    }
+    #partTowContent2Extend {
+        flex-direction: column;
+        text-align: center;
+        margin-right: 40px;
+        justify-content: center;
+        align-items: center;
+    }
+    #partTowContiner {
+        flex-direction: column;
+        align-items: center;
+        margin-top: 50px;
+    }
+    #bigImageAbuoutUs {
+        padding: 0px;
+    }
+    #partthreetitle {
+        text-align: center;
+    }
+    #notebookContiner {
+        height: 233px;
+        width: 233px;
+    }
+    #notebookimg {
+        height: 233px;
+    }
+    #partthreeContent1 {
+        flex-direction: column;
+    }
+    #lastes {
+        text-align: center;
+    }
+    #partFourContiner {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        margin-left: 40px;
+        margin-right: 40px;
+    }
+    #partFourContient {
+        text-align: center;
+        margin-left: 40px;
+        margin-right: 40px;
+    }
+    #partfiveContient {
+        text-align: center;
+        margin-left: 40px;
+        margin-right: 40px;
+    }
+    #partSixContinerTitle {
+        margin-left: 0px;
+        margin-right: 20px;
+        font-size: 31px;
+        font-weight: bold;
+    }
+    #partSixContent {
+        margin-left: 40px;
+        margin-right: 40px;
+        margin-top: 50px;
+        font-size: 19px;
+        align-items: center;
+    }
+    #partSavnContiner {
+        flex-direction: column;
+        align-items: center;
+        margin-left: 40px;
+        margin-right: 40px;
+        margin-top: 50px;
+        font-size: 19px;
+    }
+    #partSavnContinerimg {
+        padding-left: 0px;
+    }
+    #partEightContiner {
+        flex-direction: column;
+        align-items: center;
+        margin-left: 40px;
+        margin-right: 40px;
+        margin-top: 50px;
+        font-size: 19px;
+    }
+    #partEightContinerimg {
+        padding-right: 0px;
+    }
+    #partNineContiner{
+        flex-direction: column;
+        align-items: center;
+        margin-left: 40px;
+        margin-right: 40px;
+        margin-top: 50px;
+        font-size: 19px;
+    }
+    #partNineContinerimg{
+        padding-right: 0px;
+    }
 }

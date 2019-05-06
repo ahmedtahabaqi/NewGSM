@@ -42,7 +42,7 @@
 #continerNewCard2 {
     width: 250px;
     height: 360px;
-    background-image: linear-gradient(to right, rgb(43, 216, 52), yellow);
+    /* background-image: linear-gradient(to right, rgb(43, 216, 52), yellow); */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -61,7 +61,7 @@
 #divReduisCard {
     width: 290px;
     height: 20px;
-    background-image: linear-gradient(to right, rgb(43, 216, 52), yellow);
+    /* background-image: linear-gradient(to right, rgb(43, 216, 52), yellow); */
     border-radius: 10px;
     position: absolute;
     margin-top: 90px;
@@ -72,7 +72,7 @@
 #TitleNewCard {
     width: 230px;
     height: 50px;
-    background-image: linear-gradient(to right, rgb(43, 216, 52), yellow);
+    /* background-image: linear-gradient(to right, rgb(43, 216, 52), yellow); */
     position: absolute;
     z-index: 10;
     margin-top: 80px;
@@ -142,10 +142,19 @@
     margin-top: 110px;
     position: absolute;
 }
-
+#CorsSubT{
+    display: block;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+    overflow: hidden;
+    max-height: 3.3rem;
+    padding: 5px;
+    line-height: 1.0em;
+    margin-top: 10px;
+}
 #btnBuyNewCardPrice {
     z-index: 11;
-    width: 50px;
+    width: 65px;
     margin-left: 190px;
     margin-top: -15px;
     text-align: center;
@@ -160,21 +169,27 @@
     background-image: url('../bgcCourse.png');
     background-repeat: no-repeat;
     background-size: 100% 700px;
-    width: 100%;
+    width: 100.2%;
+    margin-left: -3px;
 }
 
 #bgcCourses h1 {
-    color: #ebcdcd;
-    font-size: 4rem;
-    font-weight: 1000;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: #f7e6e6;
+    font-size: 60pt;
+    
     text-align: center;
     padding-top: 80px;
+    /* margin-top: 50px */
 }
 
 #bgcCourses h3 {
-    font-weight: 800;
+    font-family:Arial, Helvetica, sans-serif;
+   
     text-align: center;
-    margin-top: 60px;
+    margin-top: 43pt;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 #bgcCourses h6 {
@@ -198,9 +213,9 @@
 #videoHometitle {
     display: flex;
     justify-content: center;
-    font-size: 3rem;
+    font-size: 60pt;
     color: crimson;
-    font-weight: 1000;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
 #v1 {
@@ -225,6 +240,9 @@
     background-image: url('../course2.jpg');
     background-repeat: no-repeat;
     background-size: cover;
+}
+body{
+    overflow-x: hidden;
 }
 
 #v5 {
@@ -252,7 +270,7 @@
 }
 
 #bgcPackage {
-    width: 98.5vw;
+    width: 100vw;
     z-index: 19;
 }
 
@@ -296,7 +314,7 @@
     left: 70%;
     width: 10%;
     z-index: 20;
-    font-size: 2.5rem;
+    font-size: 2rem;
     font-weight: bold;
 }
 
@@ -340,7 +358,7 @@
     left: 50%;
     width:10%;
     z-index: 20;
-    font-size: 2.5rem;
+    font-size: 2rem;
     font-weight: bold;
 }
 
@@ -384,7 +402,7 @@
     left: 30%;
     width:10%;
     z-index: 20;
-    font-size: 2.5rem;
+    font-size: 2rem;
     font-weight: bold;
 }
 
@@ -428,7 +446,7 @@
     left: 10%;
     width:10%;
     z-index: 20;
-    font-size: 2.5rem;
+    font-size: 2rem;
     font-weight: bold;
 }
 
@@ -443,17 +461,19 @@
     box-shadow: 0 0 3px 3px rgba(20, 23, 28, 0.1), 0 3px 3px 0 rgba(20, 23, 28, 0.1);
 }
 
-/* @media screen and (max-width: 740px) {
-    #cardContiner {
-        width: 215px;
-        height: 290px;
-        line-height: 1;
-        color: #29303B;
-        background-color: #F7F8FA;
-        margin-left: 25%;
-        display: inline-block;
-        position: relative;
-        text-align: left;
-        vertical-align: top;
+@media screen and (max-width: 740px) {
+    #details1,#details2,#details3,#details4 {
+        width: 40px;
+        font-size: 10px;
     }
-} */
+    #videoHometitle {
+        font-size: 2rem;
+        text-align: center;
+    }
+    #bgcCourses h3 {
+        font-weight: 500;
+        font-size: 18px;
+        /* padding: 0; */
+        padding: 0px 29px;
+    }
+}

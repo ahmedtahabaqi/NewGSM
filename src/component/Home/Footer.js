@@ -1,12 +1,7 @@
 import React from 'react';
 import Component from "@reactions/component";
-import { Dialog, Pane } from 'evergreen-ui';
-import { Button, Tab } from 'evergreen-ui';
-import AliceCarousel from 'react-alice-carousel';
-import { Media, Image, Container, Col, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
-import { Carousel } from 'react-responsive-carousel';
 import Slider from 'react-slick';
 import "react-alice-carousel/lib/alice-carousel.css";
 
@@ -64,7 +59,7 @@ class FooterHome extends Component {
         }
         return (
             <div id='footercontiner'>
-                <div id='OurTeamContiner'>
+                <div id='OurTeamContiner' > 
                     <h1 id='OURTEAM_title'>OUR TEAM</h1>
                     <div id='ourTeamSliderContiner'>
                         <Slider {...settings} >
@@ -124,11 +119,11 @@ class FooterHome extends Component {
                 <div id='newFooterContiner'>
                     <span id='New_FooterRow1'>Teach What You Love, G.S.M Gives You The Opportunity And The Tool To Create An Online Cources.</span>
                     <div id='New_FooterRow2'>
-                        <span id='trustedby_BTN'>Trusted By</span>
-                        <span id='TermsOfService_BTN'>Terms Of Service</span>
-                        <span id='GSMTeam_BTN'>G.S.M Team</span>
-                        <span id='ContactUs_BTN'>Contact Us</span>
-                        <span id='AboutUs_BTN'>About Us</span>
+                         <span id='trustedby_BTN'>Trusted By</span>
+                         <Link  id='TermsOfService_BTN' to="/contactus">  <span id='TermsOfService_BTN'>Terms Of Service</span></Link>
+                         <Link id='GSMTeam_BTN' to="/gsmteam">    <span id='GSMTeam_BTN'>G.S.M Team</span></Link>
+                        <Link id='ContactUs_BTN'  to="/ontactus"><span id='ContactUs_BTN'>Contact Us</span></Link>
+                        <Link  id='AboutUs_BTN' to="/aboutus"><span id='AboutUs_BTN'>About Us</span></Link>
                     </div>
                     <div id='New_FooterRow3'>
                         <div id='LOGANDCOPY'>
@@ -138,10 +133,18 @@ class FooterHome extends Component {
                             <div id='CORY_RIGHT'>Copyright © 2019</div>
                         </div>
                         <div id='Socil_BTN'>
-                            <img id='SosialLOGO' src={require('../../assets/facebook.png')} alt="img" />
-                            <img id='SosialLOGO' src={require('../../assets/instagram.png')} alt="img" />
-                            <img id='SosialLOGO' src={require('../../assets/twitter.png')} alt="img" />
-                            <img id='SosialLOGO' src={require('../../assets/youtube.png')} alt="img" />
+                            <a href='https://www.facebook.com/GSM-Medical-Education-2305929739630350/'>
+                            <img width={50} id='SosialLOGO' src={require('../../assets/facebook.png')} alt="img" />
+                            </a>
+                            <a href=' https://www.instagram.com/gsmmed.education/'>
+                            <img width={45} id='SosialLOGO' src={require('../../assets/instagram.png')} alt="img" />
+                            </a>
+                            <a href='https://twitter.com/GsmMedicalEdu'>
+                            <img width={50} id='SosialLOGO' src={require('../../assets/twitter.png')} alt="img" />
+                            </a>
+                            <a href='https://www.youtube.com/channel/UCjEa0e1n5nsN4RUAYRe0c2A?view_as=subscriber'>
+                            <img width={40} id='SosialLOGO' src={require('../../assets/youtube.png')} alt="img" />
+                            </a>
                         </div>
                     </div>
                 </div>

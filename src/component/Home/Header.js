@@ -1,5 +1,5 @@
 import React from 'react';
-import { InputGroup, FormControl, Button } from 'react-bootstrap';
+import { InputGroup, FormControl } from 'react-bootstrap';
 import { IconButton } from 'evergreen-ui';
 import Context from '../Context';
 import axios from 'axios';
@@ -33,11 +33,9 @@ class HeaderHome extends React.Component {
                             <div id='continer_header'>
                                 <img id='homeImage' src={require('../../assets/homeimage.jpg')} alt="img" />
                                 <div id='searchHome'>
-                                    <InputGroup >
-                                        <InputGroup.Prepend >
-                                        <IconButton icon="search" intent="danger" />
-                                        </InputGroup.Prepend>
-                                        <FormControl id='searchHome1' placeholder='Search' aria-describedby="basic-addon1" />
+                                    <InputGroup id="SearchInputGroup">
+                                       <FormControl id='searchHome1' placeholder='Search' aria-describedby="basic-addon1" />
+                                       <img height="25" style={{marginLeft:-30,zIndex:99,marginTop:3}} src={require('../../assets/search.png')} alt="img" />
                                     </InputGroup>
 
                                 </div>

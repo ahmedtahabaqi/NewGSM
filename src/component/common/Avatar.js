@@ -1,5 +1,6 @@
 import React from 'react';
-import { Pane, Dialog, Icon, Popover, Menu, Position, Avatar, Button, TextInput, FilePicker, Textarea, toaster } from 'evergreen-ui';
+import { Pane, Dialog, Icon, Menu, Button, TextInput, FilePicker, Textarea, toaster } from 'evergreen-ui';
+import { Image,Overlay} from 'react-bootstrap';
 import Component from "@reactions/component";
 import { Link } from 'react-router-dom';
 import Cookies from "universal-cookie";
@@ -10,14 +11,42 @@ const cookies = new Cookies();
 
 
 class AvataeAndEdit extends React.Component {
-    constructor() {
-        super();
+    constructor(...args) {
+        super(...args);
+        this.attachRef = target => this.setState({ target });
         this.state = {
             name: '',
             description: '',
             Country:'',
             file: [],
+            auth:'',
+            show: false,
+            session:[]
+
         }
+    }
+    componentDidMount() {
+        if (cookies.get("token")) {
+          var headers = { "Content-Type": "application/json", token: cookies.get("token") };
+          axios.get(host+ `api/user/checklogin`, 
+          { headers: headers })
+              .then(response =>  { 
+                  this.setState({ 
+                    auth: response.data[0].auth,
+                    session: response.data[1].sesson,
+    
+                  }) 
+                  
+                })
+              .catch((error) => { 
+                this.setState({ 
+                  auth:"notLogin",
+    
+                }) 
+                console.log(error) 
+              }) 
+        }
+      
     }
     EditProfile() {
         let formData = new FormData();
@@ -34,15 +63,39 @@ class AvataeAndEdit extends React.Component {
     }
 
     render() {
+        const { show, target } = this.state;
         return (
             <Context.Consumer>
                 {ctx => {
                     return (
                         <div id='avatar'>
-                            <Popover
-                                position={Position.BOTTOM_LEFT}
-                                content={
-                                    <Menu>
+          {/* <Button
+          variant="danger"
+          ref={this.attachRef}
+          onClick={() => this.setState({ show: !show })}
+        >
+          Click me to see
+        </Button> */}
+        <Overlay target={target} show={show} placement="bottom">
+          {({
+            placement,
+            scheduleUpdate,
+            arrowProps,
+            outOfBoundaries,
+            show: _show,
+            ...props
+          }) => (
+            <div
+              {...props}
+              style={{
+                backgroundColor: '#f8f9fa',
+                padding: '2px 10px',
+                color: 'black',
+                borderRadius: 3,
+                ...props.style,
+              }}
+            >
+                                             <Menu>
                                         <Menu.Group>
                                             <Menu.Item>
                                                 {ctx.value.session.email}
@@ -75,14 +128,18 @@ class AvataeAndEdit extends React.Component {
                                             </Menu.Item>
                                         </Menu.Group>
                                     </Menu>
-                                } >
-                                <Avatar id='editAvatar'
-                                    src={host+ctx.value.session.img}
-                                    name="Jeroen Ransijn"
-                                    size={40}
-                                />
 
-                            </Popover>
+            </div>
+          )}
+        </Overlay>
+
+
+
+                                <Image style={{cursor:"pointer"}}    ref={this.attachRef}  onClick={() => this.setState({ show: !show })}  width="45" height="45" src={host+this.state.session.img} roundedCircle />
+                              
+
+
+                     
                             <Component initialState={{ isShown: false }}>
                                 {({ state, setState }) => (
                                     <Pane>
@@ -119,7 +176,7 @@ class AvataeAndEdit extends React.Component {
                                                 placeholder="Description..."
                                                 onChange={(event) => this.setState({ description: event.target.value })} />
                                         </Dialog>
-                                        <Icon id='editAvatar' size={25} icon="edit" color="muted" marginLeft={10} paddingTop={10} onClick={() => setState({ isShown: true })} />
+                                        <Icon id='editAvatar' size={35} icon="edit" color="muted" marginLeft={10} paddingTop={10} onClick={() => setState({ isShown: true })} />
                                     </Pane>
                                 )
                                 }
