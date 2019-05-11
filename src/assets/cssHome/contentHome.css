@@ -219,44 +219,44 @@
 }
 
 #v1 {
-    background-image: url('../test1.png');
+    background-image: url('../imgVideo/1.png');
     background-repeat: no-repeat;
     background-size: cover;
 }
 
 #v2 {
-    background-image: url('../course9.jpg');
+    background-image: url('../imgVideo/2.png');
     background-repeat: no-repeat;
     background-size: cover;
 }
 
 #v3 {
-    background-image: url('../course3.jpg');
+    background-image: url('../imgVideo/3.png');
     background-repeat: no-repeat;
     background-size: cover;
 }
 
 #v4 {
-    background-image: url('../course2.jpg');
+    background-image: url('../imgVideo/4.png');
     background-repeat: no-repeat;
     background-size: cover;
 }
-body{
-    overflow-x: hidden;
-}
+
 
 #v5 {
-    background-image: url('../course7.jpg');
+    background-image: url('../imgVideo/5.png');
     background-repeat: no-repeat;
     background-size: cover;
 }
 
 #v6 {
-    background-image: url('../course4.jpg');
+    background-image: url('../imgVideo/6.png');
     background-repeat: no-repeat;
     background-size: cover;
 }
-
+body{
+    overflow-x: hidden; 
+}
 #v1:hover, #v2:hover, #v3:hover, #v4:hover, #v5:hover, #v6:hover {
     transform: scale(1.01);
     -moz-box-shadow: 0 0 5px rgb(197, 61, 61);

@@ -22,4 +22,6 @@ import './cssMycourse/HeaderMyCourses.css';
 import './cssMycourse/ContentMyCourses.css';
 import './dashboard/Dashboard.css';
 import './loginTecherAndUser/loginTecher.css';
+import './loginTecherAndUser/loginUser.css';
+import './loginTecherAndUser/registerUser.css';
 import './packages/packages.css';

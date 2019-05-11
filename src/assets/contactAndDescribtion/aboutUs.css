@@ -21,6 +21,7 @@
 #partOneContiner {
     display: flex;
     justify-content: center;
+    align-items: center;
     margin-top: 30px;
     font-size: 31px;
     font-weight: bold;
@@ -201,7 +202,7 @@
 @media screen and (max-width: 868px) {
     
 #headerAboutUs,#FooterAboutUs {
-    font-size: 31px;
+    font-size: 22px;
 }
     #partOneContiner {
         font-size: 16px;

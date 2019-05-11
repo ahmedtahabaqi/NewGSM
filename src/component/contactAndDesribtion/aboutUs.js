@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Context from '../Context';
 import NavbarAllPage from '../common/navbarAllPage';
+import FooterAllPage from '../common/footerAllPage';
 
 class AboutUs extends Component {
     constructor() {
@@ -24,7 +25,7 @@ class AboutUs extends Component {
                         <div id='partOneContiner'>
                             <span>Welcome to </span>
                             <img height={30} src={require('../../assets/pngz.png')} alt='img' />
-                            <span><span style={{ color: '#ee1442' }}> G</span>.S.M MEDICAL EDUCATION</span>
+                            <span><span style={{ color: '#cb8f9b' }}> G</span>.S.M MEDICAL EDUCATION</span>
                         </div>
                         <div id='partOneContent'>
                             <span>The first medical website of its kind which specifically targets medical field students ,
@@ -98,13 +99,14 @@ class AboutUs extends Component {
                                 from our place as a type of application of the sense of responsibility and the
                                 commitments that we have toward our nation so later on after a long study process
                                 <div>
+                                <img height={130} width={130}style={{float:'right'}} src={require('../../assets/process.png')} alt='img' />
                                     <span>researches</span>
                                     <img height={100} width={100} src={require('../../assets/research.png')} alt='img' />
                                     <span> taking advantages </span>
                                     <img height={100} width={100} src={require('../../assets/taking-notes.png')} alt='img' />
                                 </div>
                             </div>
-                            <img height={130} width={130} src={require('../../assets/process.png')} alt='img' />
+                            
 
                         </div>
                         <div id='partFourContient'>
@@ -143,7 +145,7 @@ class AboutUs extends Component {
                         <div id='partSavnContiner'>
                             <div>
                                 2.To make our students able to pass every qualification exam or evaluating
-                                medical exams worldwide that�s why we follow mainly USMLE SYSTEM (United State
+                                medical exams worldwide that's why we follow mainly USMLE SYSTEM (United State
                                 Medical Licensing Examination) in which we provide the highest quality, most
                                  comprehensive, evidence-based, highly organized and offer a single-point resource in
                                  our videos which will make you 100./. capable to pass any medical exam around the globe.
@@ -173,7 +175,7 @@ class AboutUs extends Component {
                         <div id='partNineContiner'>
                             <div>
                             5.To keep the Arabic medical community updated as we believe that the medical field is
-                             the most developing, growing, among all other fields and it�s a duty to spread every useful 
+                             the most developing, growing, among all other fields and it's a duty to spread every useful 
                              information to the people who are responsible of this field and we do that by creating scheduled
                               conferences, lectures presented by the most qualified doctors and of course there is a big 
                             role to be taken for undergraduate students as they represent the future of this field.
@@ -185,6 +187,7 @@ class AboutUs extends Component {
                         <div id='FooterAboutUs'>
                             Thank you for visiting our website
                             </div>
+                            <FooterAllPage/>
                     </div>
                 )
             }}

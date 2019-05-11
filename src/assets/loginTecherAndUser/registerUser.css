@@ -1,0 +1,233 @@
+#MainContinerNewSignup {
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(-180deg, #6be9f1 0, #cea7e0 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#MainContiner2NewSignup {
+    width: 80%;
+    display: flex;
+    align-items: center;
+    margin: 0px;
+    padding: 0px;
+}
+
+#COOOl1Signup {
+    background-color: #f2f2f4;
+    height: 500px;
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 5px;
+}
+
+#LOginLOgoSignup {
+    margin-top: 20px;
+}
+
+#LOginTItleSignup {
+    color: #0a0a0f;
+    font-size: 30px;
+    font-weight: 800;
+    margin-top: 0px;
+}
+
+#LOginINputSignup {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#emailNewSignup {
+    margin-top: 20px;
+    text-indent: 20px;
+    font-size: 20px;
+}
+
+#emailNewSignup::placeholder, #passwordNewSignup::placeholder {
+    text-indent: 20px;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+#passwordNewSignup {
+    margin-top: 20px;
+    text-indent: 20px;
+    font-size: 20px;
+}
+
+#COOOl2Signup {
+    /* background-color: #f2f2f4; */
+    height: 500px;
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: center; */
+    border-radius: 5px;
+}
+
+#btnNEWSignup {
+    background: linear-gradient(45deg, #f789d6 0, #f73158 100%);
+    width: 95%;
+    height: 70px;
+    color: #f2f2f4;
+    font-size: 40px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+}
+
+#part2SignUpContent {
+    background-color: #f2f2f4;
+    height: 295px;
+    width: 100%;
+    margin-top: -65px;
+    border-radius: 5px;
+}
+
+#CONTinerFIEldsSIgnUP {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0px;
+    margin-bottom: 20px;
+}
+
+#SELLYORECORSE_BTN {
+    background: linear-gradient(45deg, #18cba9 0, #9366c6 100%);
+    width: 43%;
+    height: 40px;
+    margin-right: 10px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #d7e4f9;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+#JOINGSM_BTN {
+    background: linear-gradient(45deg, #f34773 0, #f09967 100%);
+    width: 43%;
+    height: 40px;
+    margin-left: 10px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #d7e4f9;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+#CHEckBOxSIgnUPCOntiner {
+    display: flex;
+    margin-left: 5%;
+    align-items: center;
+    margin-top: -10px;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+#CHEckBOxSIgnUPCOntiner a {
+    text-decoration: underline;
+    color: #4bc7f7;
+}
+
+#SIgNuP_BTN {
+    width: 90%;
+    height: 50px;
+    background: linear-gradient(45deg, #7bede7 0, #1fcaf2 100%);
+    border-radius: 5px;
+    margin-left: 5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #d7e4f9;
+    font-size: 28px;
+    font-weight: 600;
+}
+
+@media screen and (max-width: 991px) {
+    #MainContinerNewSignup {
+        width: 100%;
+        height: 150vh;
+    }
+    #MainContiner2NewSignup {
+        margin-top: -30%;
+    }
+    #part2SignUpimg {
+        display: none;
+    }
+    #COOOl2Signup {
+        /* background-color: #f2f2f4; */
+        height: 0px;
+    }
+    #part2SignUpContent {
+        background-color: #f2f2f4;
+        height: 295px;
+        width: 100%;
+        margin-top: 0px;
+        border-radius: 5px;
+    }
+    #SIgNuP_BTN {
+         margin-bottom: 10px;
+     
+    }
+    #SELLYORECORSE_BTN {
+   
+        font-size: 16px;
+        font-weight: 300;
+    }
+    
+    #JOINGSM_BTN {
+
+        font-size: 16px;
+        font-weight: 300;
+    }
+}
+@media screen and (max-width: 550px) {
+    #CONTinerFIEldsSIgnUP {
+     flex-direction: column;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     
+    }
+    #SELLYORECORSE_BTN {
+   
+        font-size: 16px;
+        font-weight: 300;
+        margin: 0px;
+        width: 60%;
+    }
+    
+    #JOINGSM_BTN {
+
+        font-size: 16px;
+        font-weight: 300;
+        margin: 0px;
+        margin-top: 10px;
+        width: 60%;
+    }
+    #CHEckBOxSIgnUPCOntiner {
+        display: flex;
+        margin-left: 5%;
+        align-items: center;
+        margin-top: -10px;
+        font-size: 15px;
+        font-weight: 300px;
+    }
+}

@@ -130,7 +130,7 @@ class ContentHome extends React.Component {
                                                         <div id='BodyNewCardAut'>
                                                             <img id='authCardImg' src={host +cors.userImg} alt='img'></img>
                                                             <div id='authCardTitle'>
-                                                                <p>Auther :<br />
+                                                                <p>Author :<br />
                                                                     {cors.userName}</p>
                                                             </div>
                                                         </div>
@@ -157,7 +157,7 @@ class ContentHome extends React.Component {
                             <div>
                                 <h3>Feel Comfortable<br />
                                     Our Team Works 7 Days a Week Just to Make the Complex Medical Concepts as Simple &<br />
-                                    Beloved as Your Faverite Piece of Music </h3>
+                                    Beloved as Your Favorite Piece of Music </h3>
                                 <h6>Best Regards <br />
                                    <span style={{color:'red'}}>G</span>SM CEO - DR.Harith Alawadi</h6>
                             </div>

@@ -1,12 +1,13 @@
 import React from "react";
-// import { toaster, Pane } from "evergreen-ui";
-// import axios from "axios";
-// import Cookies from "universal-cookie";
-import {Link} from 'react-router-dom';
-// import host from '../Host';
-// const cookies = new Cookies();
+import { Row, Col } from 'react-bootstrap';
+import { toaster, Pane, TextInput } from "evergreen-ui";
+import axios from "axios";
+import Cookies from "universal-cookie";
+import { Link } from 'react-router-dom';
+import host from '../Host';
+const cookies = new Cookies();
 
-class LoginTeacher extends React.Component {
+class Login extends React.Component {
     constructor() {
         super();
         this.state = {
@@ -22,72 +23,70 @@ class LoginTeacher extends React.Component {
     }
 
     Login(event) {
-        // event.preventDefault();
-        // axios.post(host+`api/user/login`, {
-        //     email: this.state.Email,
-        //     password: this.state.Password
-        //   })
-        //   .then(function(response) {
-        //     cookies.set("token", response.data, {
-        //       path: "/",
-        //       expires: new Date(Date.now() + 604800000)
-        //     });
-        //     window.location.href = "/files";
-        //   })
-        //   .catch(function(error) {
-        //     if (error.response) {
-        //       toaster.danger("Please check your email and password then try again");
-        //     }
-        //   });
+        event.preventDefault();
+        axios.post(host + `api/user/login`, {
+            email: this.state.Email,
+            password: this.state.Password
+        })
+            .then(function (response) {
+                cookies.set("token", response.data.token, {
+                    path: "/",
+                    expires: new Date(Date.now() + 604800000)
+                });
+                window.location.href = "/Addcourses";
+            })
+            .catch(function (error) {
+                if (error.response) {
+                    toaster.danger("Please check your email and password then try again");
+                }
+            });
     }
-
     render() {
         return (
-            <div className="authmain">
-                <div className="authDiv">
-                    <React.Fragment>
-                        <div className="mainSignIn">
-                            <div className="leftside">
-                                <div className="logoSignin">
-                                    <img width="100" src={require('../../assets/loog.png')} alt='img' />
+            <div>
+                <form >
+                    <div id="MainContinerNewLogin">
+
+                        <Row id="MainContiner2NewLogin">
+                            <Col id='COOOl1' md={12} lg={5}>
+                                <div id='LOginLOgo'><img height={120} src={require('../../assets/pngz.png')} alt='1' /></div>
+                                <div id='LOginTItle'> Logn in</div>
+                                <div id='LOginINput'>
+
+                                    <TextInput width={'80%'} height={'40px'}
+                                        name="Email"
+                                        placeholder="Your E-mail..."
+                                        id="emailNewLogin"
+                                        onChange={this.handleChange.bind(this)}
+                                        value={this.state.Email}
+                                    />
+                                    <TextInput width={'80%'} height={'40px'}
+                                        name="Password"
+                                        placeholder="Password..."
+                                        id="passwordNewLogin"
+                                        onChange={this.handleChange.bind(this)}
+                                        value={this.state.Password}
+                                    />
+                                      <a id='forgetpasswordNew' href="/forgetpassword">Forget Password</a>
                                 </div>
-                                <div className="namelogo">Medical Education</div>
-                               
-                               
-                                <div className="icons-container">
-                                </div>
-                            </div>
-                            <div className="auth">
-                                <div className="Authenticate">Login as a User</div>
-                                <form className="authform">
-                                    <div className="email">
-                                        <input type="email" placeholder="Email" name="Email"
-                                            onChange={this.handleChange.bind(this)}
-                                            value={this.state.Email}
-                                        />
-                                    </div>
-                                    <div className="password">
-                                        <input type="password" placeholder="Password" name="Password"
-                                            onChange={this.handleChange.bind(this)}
-                                            value={this.state.Password}
-                                        />
-                                    </div>
-                                    <button className="btnauth"
-                                        onClick={this.Login.bind(this)}>
-                                        Login
-                                   </button>
-                                </form>
-                                <a id='forgetpassword' href="/forgetpassword">Forget Password</a>
-                                <div className="linkSignUp">
+                                <div id="linkSignUp">
+                                    
                                     <span>Don’t have an account? &nbsp;</span>
                                     <Link to="/registeruser"> Sign Up</Link>
                                 </div>
-                            </div>
-                        </div>
-                    </React.Fragment>
-                </div>
+                            </Col>
+                            <Col md={12} lg={1} />
+                            <Col id='COOOl2' md={12} lg={6}>
+                                <div onClick={this.Login.bind(this)} id='btnNEWlogin'>
+                                    Logn in
+                               </div>
+
+                            </Col>
+                        </Row>
+                    </div>
+                </form>
             </div>
         )
     }
 }
-export default LoginTeacher;
+export default Login;

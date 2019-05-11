@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Context from '../Context';
 import { Tab } from 'evergreen-ui';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 class FooterAllPage extends Component {
     render() {
@@ -10,19 +10,36 @@ class FooterAllPage extends Component {
 
                 return (
                     <div>
-                        <div id='copyriteContiner'>
-                            <div id='logoAndCopy'>
-                                <img height="27" src={require('../../assets/logo.png')} alt="img" />
-                                <p> Copyright © 2019.</p>
+                        <div id='newFooterContiner'>
+                            <span id='New_FooterRow1'></span>
+                            <div id='New_FooterRow2'>
+                                <span id='trustedby_BTN'>Trusted By</span>
+                                <Link id='TermsOfService_BTN' to="/contactus">  <span id='TermsOfService_BTN'>Terms Of Service</span></Link>
+                                <Link id='GSMTeam_BTN' to="/gsmteam">    <span id='GSMTeam_BTN'>G.S.M Team</span></Link>
+                                <Link id='ContactUs_BTN' to="/contactus"><span id='ContactUs_BTN'>Contact Us</span></Link>
+                                <Link id='AboutUs_BTN' to="/aboutus"><span id='AboutUs_BTN'>About Us</span></Link>
                             </div>
-                            <div>
-                                <Link to='/aboutus'><Tab>About Us</Tab></Link>
-                                
-                                <Link to='/contactus'><Tab>Contact Us</Tab></Link>
-                                
-                                <Link to='/gsmteam'><Tab>G.S.M Team </Tab></Link>
-                               
-                                <Link to=''><Tab>Terms Of Service</Tab></Link>                               
+                            <div id='New_FooterRow3'>
+                                <div id='LOGANDCOPY'>
+                                    <div>
+                                        <img id='logoFOOTER' src={require('../../assets/pngz.png')} alt="img" />
+                                    </div>
+                                    <div id='CORY_RIGHT'>Copyright © 2019</div>
+                                </div>
+                                <div id='Socil_BTN'>
+                                    <a href='https://www.facebook.com/GSM-Medical-Education-2305929739630350/'>
+                                        <img width={50} id='SosialLOGO' src={require('../../assets/facebook.png')} alt="img" />
+                                    </a>
+                                    <a href=' https://www.instagram.com/gsmmed.education/'>
+                                        <img width={45} id='SosialLOGO' src={require('../../assets/instagram.png')} alt="img" />
+                                    </a>
+                                    <a href='https://twitter.com/GsmMedicalEdu'>
+                                        <img width={50} id='SosialLOGO' src={require('../../assets/twitter.png')} alt="img" />
+                                    </a>
+                                    <a href='https://www.youtube.com/channel/UCjEa0e1n5nsN4RUAYRe0c2A?view_as=subscriber'>
+                                        <img width={40} id='SosialLOGO' src={require('../../assets/youtube.png')} alt="img" />
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
