@@ -59,7 +59,7 @@ class FooterHome extends Component {
         }
         return (
             <div id='footercontiner'>
-                <div id='OurTeamContiner' > 
+                <div id='OurTeamContiner' >
                     <h1 id='OURTEAM_title'>OUR TEAM</h1>
                     <div id='ourTeamSliderContiner'>
                         <Slider {...settings} >
@@ -86,21 +86,111 @@ class FooterHome extends Component {
                             <div>
                                 <div id='cardOurTeam' >
                                     <img id='imageOurteamCard' className="align-self-start mr-3"
-                                        src={require('../../assets/NANCY.png')}
+                                        src={require('../../assets/team/DR. DANI MAMO.jpg')}
                                         alt="Generic placeholder" roundedCircle
                                     />
-                                    <p id='titleourTeamCard'>DR.NANCY JOSEPH</p>
+                                    <p id='titleourTeamCard'>DR.DANI MAMO,MD</p>
+                                   
+                                </div>
+                            </div>
+                            <div>
+                                <div id='cardOurTeam' >
+                                    <img id='imageOurteamCard' className="align-self-start mr-3"
+                                        src={require('../../assets/team/DR. KARRAR MAHDI.jpg')}
+                                        alt="Generic placeholder" roundedCircle
+                                    />
+                                    <p id='titleourTeamCard'>DR.KARRAR MAHDI,MD</p>
+                                    
+                                </div>
+                            </div>
+                            <div>
+                                <div id='cardOurTeam' >
+                                    <img id='imageOurteamCard' className="align-self-start mr-3"
+                                        src={require('../../assets/team/AHMED SAMEER.jpg')}
+                                        alt="Generic placeholder" roundedCircle
+                                    />
+                                    <p id='titleourTeamCard'>AHMED SAMEER</p>
                                     <p id='titleourTeamCard1'>MD STUDENT</p>
                                 </div>
                             </div>
                             <div>
                                 <div id='cardOurTeam' >
                                     <img id='imageOurteamCard' className="align-self-start mr-3"
-                                        src={require('../../assets/HARITH ALAWADI.png')}
+                                        src={require('../../assets/team/BILAL HUSSEIN.jpg')}
                                         alt="Generic placeholder" roundedCircle
                                     />
-                                    <p id='titleourTeamCard'>DR.HARITH ALAWADI</p>
-                                    <p id='titleourTeamCard1'>CEO&FOUNDER</p>
+                                    <p id='titleourTeamCard'>BILAL HUSSEIN</p>
+                                    <p id='titleourTeamCard1'>MD STUDENT</p>
+                                </div>
+                            </div>
+                            <div>
+                                <div id='cardOurTeam' >
+                                    <img id='imageOurteamCard' className="align-self-start mr-3"
+                                        src={require('../../assets/team/MUTHANNA ALAMI.jpg')}
+                                        alt="Generic placeholder" roundedCircle
+                                    />
+                                    <p id='titleourTeamCard'>MUTHANNA ALAMI </p>
+                                    <p id='titleourTeamCard1'>MD STUDENT</p>
+                                </div>
+                            </div>
+                            <div>
+                                <div id='cardOurTeam' >
+                                    <img id='imageOurteamCard' className="align-self-start mr-3"
+                                        src={require('../../assets/team/NANCY JOSEPH.png')}
+                                        alt="Generic placeholder" roundedCircle
+                                    />
+                                    <p id='titleourTeamCard'>NANCY JOSEPH</p>
+                                    <p id='titleourTeamCard1'>MD STUDENT</p>
+                                </div>
+                            </div>
+                            <div>
+                                <div id='cardOurTeam' >
+                                    <img id='imageOurteamCard' className="align-self-start mr-3"
+                                        src={require('../../assets/team/ALI YOUSIF.jpg')}
+                                        alt="Generic placeholder" roundedCircle
+                                    />
+                                    <p id='titleourTeamCard'>ALI YOUSIF</p>
+                                    <p id='titleourTeamCard1'>MD STUDENT</p>
+                                </div>
+                            </div>
+                            <div>
+                                <div id='cardOurTeam' >
+                                    <img id='imageOurteamCard' className="align-self-start mr-3"
+                                        src={require('../../assets/team/HUMAM ADNAN AL-OBAIDI.jpg')}
+                                        alt="Generic placeholder" roundedCircle
+                                    />
+                                    <p id='titleourTeamCard'>HUMAM ADNAN AL-OBAIDI</p>
+                                    <p id='titleourTeamCard1'>MD STUDENT</p>
+                                </div>
+                            </div>
+                            <div>
+                                <div id='cardOurTeam' >
+                                    <img id='imageOurteamCard' className="align-self-start mr-3"
+                                        src={require('../../assets/team/OMAR ALFAROOQ AL-OBAIDI.jpg')}
+                                        alt="Generic placeholder" roundedCircle
+                                    />
+                                    <p id='titleourTeamCard'>OMAR ALFAROOQ <br/>AL-OBAIDI</p>
+                                    <p id='titleourTeamCard1'>MD STUDENT</p>
+                                </div>
+                            </div>
+                            <div>
+                                <div id='cardOurTeam' >
+                                    <img id='imageOurteamCard' className="align-self-start mr-3"
+                                        src={require('../../assets/team/Dr.Mohammed Elward.jpg')}
+                                        alt="Generic placeholder" roundedCircle
+                                    />
+                                    <p id='titleourTeamCard'>Dr.Mohammed Elward</p>
+                                    <p id='titleourTeamCard1'>Emergency Hospital Of Bu-<br/>charest Orthopedics</p>
+                                </div>
+                            </div>
+                            <div>
+                                <div id='cardOurTeam' >
+                                    <img id='imageOurteamCard' className="align-self-start mr-3"
+                                        src={require('../../assets/team/RUQAYA SAMEER.jpg')}
+                                        alt="Generic placeholder" roundedCircle
+                                    />
+                                    <p id='titleourTeamCard'>RUQAYA SAMEER</p>
+                                    <p id='titleourTeamCard1'>MD STUDENT</p>
                                 </div>
                             </div>
 
@@ -111,7 +201,7 @@ class FooterHome extends Component {
                 <div id='barinstructorContiner'>
                     <img id='logoInstructour' src={require('../../assets/pngz.png')} alt="img" />
                     <div id='btn_InstrctorContiner'>
-                        <span id='pargrapBforeBtn'>Become an</span>
+                        <div id='pargrapBforeBtn'>Become an</div>
                         <div id='btn_Instrctor'>Instructor</div>
                     </div>
 
@@ -119,31 +209,34 @@ class FooterHome extends Component {
                 <div id='newFooterContiner'>
                     <span id='New_FooterRow1'>Teach What You Love, G.S.M Gives You The Opportunity And The Tool To Create An Online Cources.</span>
                     <div id='New_FooterRow2'>
-                         <span id='trustedby_BTN'>Trusted By</span>
-                         <Link  id='TermsOfService_BTN' to="/contactus">  <span id='TermsOfService_BTN'>Terms Of Service</span></Link>
-                         <Link id='GSMTeam_BTN' to="/gsmteam">    <span id='GSMTeam_BTN'>G.S.M Team</span></Link>
-                        <Link id='ContactUs_BTN'  to="/ontactus"><span id='ContactUs_BTN'>Contact Us</span></Link>
-                        <Link  id='AboutUs_BTN' to="/aboutus"><span id='AboutUs_BTN'>About Us</span></Link>
+                        <Link id='trustedby_BTN' to="/trustedby"><span id='trustedby_BTN'>Trusted By</span></Link>
+                        <Link id='TermsOfService_BTN' to="/contactus">  <span id='TermsOfService_BTN'>Terms Of Service</span></Link>
+                        <Link id='GSMTeam_BTN' to="/gsmteam">    <span id='GSMTeam_BTN'>G.S.M Team</span></Link>
+                        <Link id='ContactUs_BTN' to="/ontactus"><span id='ContactUs_BTN'>Contact Us</span></Link>
+                        <Link id='AboutUs_BTN' to="/aboutus"><span id='AboutUs_BTN'>About Us</span></Link>
                     </div>
                     <div id='New_FooterRow3'>
                         <div id='LOGANDCOPY'>
                             <div>
-                                <img id='logoFOOTER' src={require('../../assets/pngz.png')} alt="img" />
+                                
+                                <img  onClick={() => {  window.location.href = "#continer_header" }}
+                                id='logoFOOTER' src={require('../../assets/pngz.png')} alt="img" />
+                             
                             </div>
                             <div id='CORY_RIGHT'>Copyright © 2019</div>
                         </div>
                         <div id='Socil_BTN'>
                             <a href='https://www.facebook.com/GSM-Medical-Education-2305929739630350/'>
-                            <img width={50} id='SosialLOGO' src={require('../../assets/facebook.png')} alt="img" />
+                                <img width={50} id='SosialLOGO' src={require('../../assets/facebook.png')} alt="img" />
                             </a>
                             <a href=' https://www.instagram.com/gsmmed.education/'>
-                            <img width={45} id='SosialLOGO' src={require('../../assets/instagram.png')} alt="img" />
+                                <img width={50} id='SosialLOGO' src={require('../../assets/instagram.png')} alt="img" />
                             </a>
                             <a href='https://twitter.com/GsmMedicalEdu'>
-                            <img width={50} id='SosialLOGO' src={require('../../assets/twitter.png')} alt="img" />
+                                <img width={50} id='SosialLOGO' src={require('../../assets/twitter.png')} alt="img" />
                             </a>
                             <a href='https://www.youtube.com/channel/UCjEa0e1n5nsN4RUAYRe0c2A?view_as=subscriber'>
-                            <img width={40} id='SosialLOGO' src={require('../../assets/youtube.png')} alt="img" />
+                                <img width={50} id='SosialLOGO' src={require('../../assets/youtube.png')} alt="img" />
                             </a>
                         </div>
                     </div>

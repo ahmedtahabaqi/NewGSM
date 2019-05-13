@@ -15,6 +15,7 @@ import ContentCourses from './component/courses/contentCourses';
 import HeaderAllCourses from './component/allCorses/HeaderAllCourses';
 import Upload from './component/AddCourse/upload';
 import GsmTeam from './component/contactAndDesribtion/gsmTeam';
+import TrustedBy from './component/contactAndDesribtion/trustedby';
 import AboutUs from './component/contactAndDesribtion/aboutUs';
 import Instructer from './component/contactAndDesribtion/instructer';
 import ContactUs from './component/contactAndDesribtion/contactUs';
@@ -89,6 +90,7 @@ class App extends Component {
           <Route path='/gsmteam' component={GsmTeam} />
           <Route path='/aboutus' component={AboutUs} />
           <Route path='/contactus' component={ContactUs} />
+          <Route path='/trustedby' component={TrustedBy} />
           <Route path='/instructer' component={Instructer} />
           <Route path='/coursepackage/:id' component={Package} />
           <Route path='/CoursesByCategory/:id' component={CoursesByCategory}/>

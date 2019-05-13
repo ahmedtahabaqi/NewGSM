@@ -147,7 +147,8 @@ class NavbarAllPage extends Component {
                                                 </Menu>
                                             }
                                         >
-                                            <Button marginRight={10} marginTop={5} >Login</Button>
+                                        
+                                            <Button id="loginBtn" marginRight={10} marginTop={5} >Login</Button>
                                         </Popover>
                                     </div>
                                     <div style={ctx.value.auth !== 'login' ? {} : { display: "none" }}>
@@ -162,7 +163,7 @@ class NavbarAllPage extends Component {
                                                 </Menu>
                                             }
                                         >
-                                            <Button marginRight={10} marginTop={5} appearance="primary" intent="danger">Sign Up</Button>
+                                            <Button id='logoutBtn' marginRight={10} marginTop={5} >Sign Up</Button>
                                         </Popover>
                                     </div>
                                 </Nav>

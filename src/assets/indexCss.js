@@ -11,6 +11,7 @@ import './contactAndDescribtion/footerAllPage.css';
 import './contactAndDescribtion/GsmTeam.css';
 import './contactAndDescribtion/instructer.css';
 import './contactAndDescribtion/contactUs.css';
+import './contactAndDescribtion/trustedby.css';
 import './coursesByCategory/coursesByCategory.css';
 import './cssCourse/ContentCourses.css';
 import './cssCourse/FooterCourses.css';

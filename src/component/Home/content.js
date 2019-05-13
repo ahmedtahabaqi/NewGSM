@@ -15,7 +15,7 @@ class ContentHome extends React.Component {
             course: [],
             packages: [],
             rating: 3.5,
-            colors:[' #bce9aa, #20b2aa','#6e99d6, #b22222','#ffeb78, #4edeff','#ea92e0, #ff892a'
+            colors: [' #bce9aa, #20b2aa', '#6e99d6, #b22222', '#ffeb78, #4edeff', '#ea92e0, #ff892a'
 
             ]
         }
@@ -102,64 +102,65 @@ class ContentHome extends React.Component {
                             <di>
                                 <br></br>
                                 <h1>Courses</h1>
-                                </di>
+                            </di>
 
                             <div id='continerSlider2'>
                                 <Slider {...settings} >
-                                    {this.state.course.map((cors,i) =>
+                                    {this.state.course.map((cors, i) =>
                                         <div key={cors._id} id='continerNewCard'>
-                                         <Component initialState={{ color1: Math.floor(Math.random() * 3) }}>
-                                                 {({ state, setState }) => (
-                                            <div id='MaincontinerNewCard'>
-                                               <Link to={`/courses/${cors._id}`}>
-                                                <div id='continerNewCard1'>
-                                               
-                                                    <div id='continerNewCard2' style={{background: `linear-gradient(to right , ${this.state.colors[state.color1]})`}}>
-                                                        <div id='headerNewCard'> 
-                                                        <img alt="img" height="150" width="250" src={host + cors.img}/>
-                                                        </div>
-                                                        <div id='divReduisCard' style={{background: `linear-gradient(to right , ${this.state.colors[state.color1]})`}}></div>
-                                                    </div>
-                                                    <div id='TitleNewCard' style={{background: `linear-gradient(to right , ${this.state.colors[state.color1]})`}}>{cors.title}</div>
-                                                    <div id='BodyNewCard'>
-                                                        <div id='BodyNewCardImg'>
-                                                            <div>
-                                                                <p id="CorsSubT">{cors.sub_title}</p>
+                                            <Component initialState={{ color1: Math.floor(Math.random() * 3) }}>
+                                                {({ state, setState }) => (
+                                                    <div id='MaincontinerNewCard'>
+                                                        <Link to={`/courses/${cors._id}`}>
+                                                            <div id='continerNewCard1'>
+
+                                                                <div id='continerNewCard2' style={{ background: `linear-gradient(to right , ${this.state.colors[state.color1]})` }}>
+                                                                    <div id='headerNewCard'>
+                                                                        <img alt="img" height="150" width="250" src={host + cors.img} />
+                                                                    </div>
+                                                                    <div id='divReduisCard' style={{ background: `linear-gradient(to right , ${this.state.colors[state.color1]})` }}></div>
+                                                                </div>
+                                                                <div id='TitleNewCard' style={{ background: `linear-gradient(to right , ${this.state.colors[state.color1]})` }}>{cors.title}</div>
+                                                                <div id='BodyNewCard'>
+                                                                    <div id='BodyNewCardImg'>
+                                                                        <div>
+                                                                            <pre id="CorsSubT">{cors.sub_title}</pre>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div id='BodyNewCardAut'>
+                                                                        <img id='authCardImg' src={host + cors.userImg} alt='img'></img>
+                                                                        <div id='authCardTitle'>
+                                                                            <p>Author :<br />
+                                                                                {cors.userName}</p>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div id='btnBuyNewCardPrice'>{cors.price[cors.__v]} $</div>
+
+                                                                    <div id='btnBuyNewCard'>
+
+                                                                        <Button marginRight={16} intent="danger"> Buy Now</Button>
+                                                                    </div>
+
+                                                                </div>
+
                                                             </div>
-                                                        </div>
-                                                        <div id='BodyNewCardAut'>
-                                                            <img id='authCardImg' src={host +cors.userImg} alt='img'></img>
-                                                            <div id='authCardTitle'>
-                                                                <p>Author :<br />
-                                                                    {cors.userName}</p>
-                                                            </div>
-                                                        </div>
-                                                      
-                                                        <div id='btnBuyNewCardPrice'>{cors.price[cors.__v]} $</div>
-                                                    
-                                                        <div id='btnBuyNewCard'>
 
-                                                            <Button marginRight={16} intent="danger"> Buy Now</Button>
-                                                        </div>
-
+                                                        </Link>
                                                     </div>
-                                                    
-                                                </div>
-
-                                                </Link>
-                                            </div>
-                                          )}
-                                          </Component>
+                                                )}
+                                            </Component>
                                         </div>
                                     )}
                                 </Slider>
                             </div>
                             <div>
-                                <h3>Feel Comfortable<br />
+                                <h3>Feel Comfortable</h3>
+                                    <h2>
                                     Our Team Works 7 Days a Week Just to Make the Complex Medical Concepts as Simple &<br />
-                                    Beloved as Your Favorite Piece of Music </h3>
+                                    Beloved as Your Favorite Piece of Music </h2>
                                 <h6>Best Regards <br />
-                                   <span style={{color:'red'}}>G</span>SM CEO - DR.Harith Alawadi</h6>
+                                    <span style={{ color: 'red' }}>G</span>SM CEO - DR.Harith Alawadi</h6>
                             </div>
                         </div>
                         <div id='videoHomeContiner'>
@@ -185,33 +186,33 @@ class ContentHome extends React.Component {
                                         <img id='daimond' src={require('../../assets/daimond.png')} alt='img' />
                                         <div>
                                             <div id='details1'>Details</div>
-                                            <img id='daimondShop' src={require('../../assets/shopping.png')} alt='img' />
+
                                         </div>
-                                        <span id='daimondPrice'>19.99 $</span>
+
                                     </div>
                                     <div>
                                         <img id='platinum' src={require('../../assets/platinum.png')} alt='img' />
                                         <div>
                                             <div id='details2'>Details</div>
-                                            <img id='platinumShop' src={require('../../assets/shopping.png')} alt='img' />
+
                                         </div>
-                                        <span id='platinumPrice'>19.99 $</span>
+
                                     </div>
                                     <div>
                                         <img id='gold' src={require('../../assets/gold.png')} alt='img' />
                                         <div>
                                             <div id='details3'>Details</div>
-                                            <img id='goldShop' src={require('../../assets/shopping.png')} alt='img' />
+
                                         </div>
-                                        <span id='goldPrice'>19.99 $</span>
+
                                     </div>
                                     <div>
                                         <img id='selver' src={require('../../assets/selver.png')} alt='img' />
                                         <div>
                                             <div id='details4'>Details</div>
-                                            <img id='selverShop' src={require('../../assets/shopping.png')} alt='img' />
+
                                         </div>
-                                        <span id='selverPrice'>19.99 $</span>
+
                                     </div>
                                 </div>
                             </div>
