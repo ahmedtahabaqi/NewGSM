@@ -63,24 +63,25 @@ class FooterHome extends Component {
                     <h1 id='OURTEAM_title'>OUR TEAM</h1>
                     <div id='ourTeamSliderContiner'>
                         <Slider {...settings} >
-                            <div>
-                                <div id='cardOurTeam' >
-                                    <img id='imageOurteamCard'
-                                        src={require('../../assets/ALI ALWAILY.png')}
-                                        alt="Generic placeholder"
-                                    />
-                                    <p id='titleourTeamCard'>DR.ALI ALWAILY </p>
-                                    <p id='titleourTeamCard1'>CO-FOUNDER</p>
-                                </div>
-                            </div>
+                          
                             <div>
                                 <div id='cardOurTeam' >
                                     <img id='imageOurteamCard' className="align-self-start mr-3"
-                                        src={require('../../assets/HARITH ALAWADI.png')}
+                                        src={require('../../assets/team/DR.HARITH ALAWADI.jpg')}
                                         alt="Generic placeholder" roundedCircle
                                     />
                                     <p id='titleourTeamCard'>DR.HARITH ALAWADI</p>
                                     <p id='titleourTeamCard1'>CEO&FOUNDER</p>
+                                </div>
+                            </div>
+                            <div>
+                                <div id='cardOurTeam' >
+                                    <img id='imageOurteamCard'
+                                        src={require('../../assets/team/DR.ALI ALWAILY.jpg')}
+                                        alt="Generic placeholder"
+                                    />
+                                    <p id='titleourTeamCard'>DR.ALI ALWAILY </p>
+                                    <p id='titleourTeamCard1'>CO-FOUNDER</p>
                                 </div>
                             </div>
                             <div>
@@ -193,6 +194,96 @@ class FooterHome extends Component {
                                     <p id='titleourTeamCard1'>MD STUDENT</p>
                                 </div>
                             </div>
+                            <div>
+                                <div id='cardOurTeam' >
+                                    <img id='imageOurteamCard' className="align-self-start mr-3"
+                                        src={require('../../assets/team/DR.ABDULLAH ALKHATEEB1.jpg')}
+                                        alt="Generic placeholder" roundedCircle
+                                    />
+                                    <p id='titleourTeamCard'>DR.ABDULLAH ALKHATEEB</p>
+                                    <p id='titleourTeamCard1'>DENTIST</p>
+                                </div>
+                            </div>
+                            <div>
+                                <div id='cardOurTeam' >
+                                    <img id='imageOurteamCard' className="align-self-start mr-3"
+                                        src={require('../../assets/team/DR.ALI ALJOBORY .jpg')}
+                                        alt="Generic placeholder" roundedCircle
+                                    />
+                                    <p id='titleourTeamCard'>DR.ALI ALJOBORY</p>
+                                    <p id='titleourTeamCard1'>DENTIST</p>
+                                </div>
+                            </div>
+                            <div>
+                                <div id='cardOurTeam' >
+                                    <img id='imageOurteamCard' className="align-self-start mr-3"
+                                        src={require('../../assets/team/DR. HAYDER ALSLMAWY.jpg')}
+                                        alt="Generic placeholder" roundedCircle
+                                    />
+                                    <p id='titleourTeamCard'>DR.HAYDER ALSLMAWY</p>
+                                    <p id='titleourTeamCard1'>DENTIST</p>
+                                </div>
+                            </div>
+                            <div>
+                                <div id='cardOurTeam' >
+                                    <img id='imageOurteamCard' className="align-self-start mr-3"
+                                        src={require('../../assets/team/DR.AHMED ALDAWOODI.jpg')}
+                                        alt="Generic placeholder" roundedCircle
+                                    />
+                                    <p id='titleourTeamCard'>DR.AHMED ALDAWOODI</p>
+                                    <p id='titleourTeamCard1'>DENTIST</p>
+                                </div>
+                            </div>
+                            <div>
+                                <div id='cardOurTeam' >
+                                    <img id='imageOurteamCard' className="align-self-start mr-3"
+                                        src={require('../../assets/team/DR. ABDULHADI KUMAIT.jpg')}
+                                        alt="Generic placeholder" roundedCircle
+                                    />
+                                    <p id='titleourTeamCard'>DR.ABDULHADI KUMAIT</p>
+                                    <p id='titleourTeamCard1'>DENTIST</p>
+                                </div>
+                            </div>
+                            <div>
+                                <div id='cardOurTeam' >
+                                    <img id='imageOurteamCard' className="align-self-start mr-3"
+                                        src={require('../../assets/team/DR. SAJA HAMED ALAMI.jpg')}
+                                        alt="Generic placeholder" roundedCircle
+                                    />
+                                    <p id='titleourTeamCard'>DR.SAJA HAMED ALAMI</p>
+                                    <p id='titleourTeamCard1'>DENTIST</p>
+                                </div>
+                            </div>
+                            <div>
+                                <div id='cardOurTeam' >
+                                    <img id='imageOurteamCard' className="align-self-start mr-3"
+                                        src={require('../../assets/team/DR. ZIYAD TARIQ ALWAILY.jpg')}
+                                        alt="Generic placeholder" roundedCircle
+                                    />
+                                    <p id='titleourTeamCard'>DR.ZIYAD TARIQ ALWAILY</p>
+                                    <p id='titleourTeamCard1'>DENTIST</p>
+                                </div>
+                            </div>
+                            <div>
+                                <div id='cardOurTeam' >
+                                    <img id='imageOurteamCard' className="align-self-start mr-3"
+                                        src={require('../../assets/team/AHMED ALZAEDY.jpg')}
+                                        alt="Generic placeholder" roundedCircle
+                                    />
+                                    <p id='titleourTeamCard'>Ahmed Alzaedy</p>
+                                    <p id='titleourTeamCard1'>VOCALS AND DIRECTOR</p>
+                                </div>
+                            </div>
+                            <div>
+                                <div id='cardOurTeam' >
+                                    <img id='imageOurteamCard' className="align-self-start mr-3"
+                                        src={require('../../assets/team/ABDULLAH ALAWADI.jpg')}
+                                        alt="Generic placeholder" roundedCircle
+                                    />
+                                    <p id='titleourTeamCard'>ABDULLAH ALAWADI</p>
+                                 <p id='titleourTeamCard1'>LAWYER</p>
+                                </div>
+                            </div>
 
                         </Slider>
                     </div>
@@ -210,7 +301,7 @@ class FooterHome extends Component {
                     <span id='New_FooterRow1'>Teach What You Love, G.S.M Gives You The Opportunity And The Tool To Create An Online Cources.</span>
                     <div id='New_FooterRow2'>
                         <Link id='trustedby_BTN' to="/trustedby"><span id='trustedby_BTN'>Trusted By</span></Link>
-                        <Link id='TermsOfService_BTN' to="/contactus">  <span id='TermsOfService_BTN'>Terms Of Service</span></Link>
+                        <Link id='TermsOfService_BTN' to="/tearmsOfService">  <span id='TermsOfService_BTN'>Terms Of Service</span></Link>
                         <Link id='GSMTeam_BTN' to="/gsmteam">    <span id='GSMTeam_BTN'>G.S.M Team</span></Link>
                         <Link id='ContactUs_BTN' to="/ontactus"><span id='ContactUs_BTN'>Contact Us</span></Link>
                         <Link id='AboutUs_BTN' to="/aboutus"><span id='AboutUs_BTN'>About Us</span></Link>

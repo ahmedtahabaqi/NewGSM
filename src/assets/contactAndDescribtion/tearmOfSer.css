@@ -1,0 +1,21 @@
+#TearmsOFSERContiner{
+    width: 100%;
+    background: linear-gradient(90deg, #83acfe 0, #d498bb  100%);
+    font-size: 19px;
+    color: #282d2d;
+    font-family: Arial, Helvetica, sans-serif
+}
+#TearmsContent{
+ padding: 100px 50px;
+}
+#FirstTERMS{
+font-size: 25px;
+font-weight: 600;
+margin-bottom: 20px;
+margin-top: 20px;
+}
+#SecondTERMS{
+    font-size: 20px;
+ line-height: 0.8;
+    margin-top: 40px; 
+}

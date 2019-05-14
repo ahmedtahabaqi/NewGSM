@@ -12,6 +12,7 @@ import './contactAndDescribtion/GsmTeam.css';
 import './contactAndDescribtion/instructer.css';
 import './contactAndDescribtion/contactUs.css';
 import './contactAndDescribtion/trustedby.css';
+import './contactAndDescribtion/tearmOfSer.css';
 import './coursesByCategory/coursesByCategory.css';
 import './cssCourse/ContentCourses.css';
 import './cssCourse/FooterCourses.css';

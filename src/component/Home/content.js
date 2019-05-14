@@ -7,6 +7,7 @@ import { Button } from 'evergreen-ui';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import host from '../Host';
+import ReactTooltip from 'react-tooltip';
 
 class ContentHome extends React.Component {
     constructor() {
@@ -124,7 +125,8 @@ class ContentHome extends React.Component {
                                                                 <div id='BodyNewCard'>
                                                                     <div id='BodyNewCardImg'>
                                                                         <div>
-                                                                            <pre id="CorsSubT">{cors.sub_title}</pre>
+                                                                            <pre id="CorsSubT" data-tip={cors.sub_title}>{cors.sub_title}</pre>
+                                                                            <ReactTooltip place={'bottom'} type={'info'} border={true} className='yyy'/>
                                                                         </div>
                                                                     </div>
                                                                     <div id='BodyNewCardAut'>
@@ -166,15 +168,15 @@ class ContentHome extends React.Component {
                         <div id='videoHomeContiner'>
                             <div id='videoHometitle'>GET TO KNOW US</div>
                             <div id='videoHomeContiner1'>
-                                <ReactPlayer id='v1' width={'33vw'} height={'19vw'} url={require('../../assets/video1.mp4')} light={true} playsinline={true} controls />
-                                <ReactPlayer id='v2' width={'33vw'} height={'19vw'} url={require('../../assets/video1.mp4')} light={true} playsinline={true} controls />
-                                <ReactPlayer id='v3' width={'33vw'} height={'19vw'} url={require('../../assets/video1.mp4')} light={true} playsinline={true} controls />
+                                <ReactPlayer id='v1' width={'33vw'} height={'19vw'} url={'https://vimeo.com/336060739/7180730e85'} light={true} playsinline={true} controls />
+                                <ReactPlayer id='v2' width={'33vw'} height={'19vw'} url={'https://vimeo.com/336059946/3a257c3b43'} light={true} playsinline={true} controls />
+                                <ReactPlayer id='v3' width={'33vw'} height={'19vw'} url={'https://vimeo.com/336059149/7108d01261'} light={true} playsinline={true} controls />
 
                             </div>
                             <div id='videoHomeContiner2'>
-                                <ReactPlayer id='v4' width={'33vw'} height={'19vw'} url={require('../../assets/video1.mp4')} light={true} playsinline={true} controls />
-                                <ReactPlayer id='v5' width={'33vw'} height={'19vw'} url={require('../../assets/video1.mp4')} light={true} playsinline={true} controls />
-                                <ReactPlayer id='v6' width={'33vw'} height={'19vw'} url={require('../../assets/video1.mp4')} light={true} playsinline={true} controls />
+                                <ReactPlayer id='v4' width={'33vw'} height={'19vw'} url={'https://vimeo.com/336058976/8bb930753d'} light={true} playsinline={true} controls />
+                                <ReactPlayer id='v5' width={'33vw'} height={'19vw'} url={'https://vimeo.com/336058669/1e4e9dc0ca'} light={true} playsinline={true} controls />
+                                <ReactPlayer id='v6' width={'33vw'} height={'19vw'} url={'https://vimeo.com/336057224/37fe80a268'} light={true} playsinline={true} controls />
 
                             </div>
                         </div>

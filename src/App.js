@@ -19,6 +19,7 @@ import TrustedBy from './component/contactAndDesribtion/trustedby';
 import AboutUs from './component/contactAndDesribtion/aboutUs';
 import Instructer from './component/contactAndDesribtion/instructer';
 import ContactUs from './component/contactAndDesribtion/contactUs';
+import Tearms from './component/contactAndDesribtion/tearmOfService';
 import axios from 'axios';
 import host from './component/Host';
 import'./assets/indexCss';
@@ -91,6 +92,7 @@ class App extends Component {
           <Route path='/aboutus' component={AboutUs} />
           <Route path='/contactus' component={ContactUs} />
           <Route path='/trustedby' component={TrustedBy} />
+          <Route path='/tearmsOfService' component={Tearms} />
           <Route path='/instructer' component={Instructer} />
           <Route path='/coursepackage/:id' component={Package} />
           <Route path='/CoursesByCategory/:id' component={CoursesByCategory}/>

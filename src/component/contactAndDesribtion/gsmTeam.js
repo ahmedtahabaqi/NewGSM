@@ -181,6 +181,16 @@ class GsmTeme extends Component {
                                     </div>
                                 </Col>
                                 </Row>
+                                
+                            <div id='partOneTitleOurTEam'>LAWYERS TEAM</div>
+                                <Row className="justify-content-md-center">
+                                <Col  id='ColOur'>
+                                    <div id='ourTeamCards'>
+                                        <img id='imgOURTEAM1' src={require('../../assets/team/ABDULLAH ALAWADI.jpg')} alt='img' />
+                                        <p id='nameCardOURTEAM'>ABDULLAH ALAWADI</p>
+                                    </div>
+                                </Col>
+                                </Row>
                                 <div id='shadowBetweenFooter'></div>
                         </div>
                         
