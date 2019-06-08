@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Context from '../Context';
-import { Tab } from 'evergreen-ui';
 import { Link } from 'react-router-dom';
 
 class FooterAllPage extends Component {

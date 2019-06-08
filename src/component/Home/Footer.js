@@ -68,7 +68,7 @@ class FooterHome extends Component {
                                 <div id='cardOurTeam' >
                                     <img id='imageOurteamCard' className="align-self-start mr-3"
                                         src={require('../../assets/team/DR.HARITH ALAWADI.jpg')}
-                                        alt="Generic placeholder" roundedCircle
+                                        alt="Generic placeholder" 
                                     />
                                     <p id='titleourTeamCard'>DR.HARITH ALAWADI</p>
                                     <p id='titleourTeamCard1'>CEO&FOUNDER</p>
@@ -88,7 +88,7 @@ class FooterHome extends Component {
                                 <div id='cardOurTeam' >
                                     <img id='imageOurteamCard' className="align-self-start mr-3"
                                         src={require('../../assets/team/DR. DANI MAMO.jpg')}
-                                        alt="Generic placeholder" roundedCircle
+                                        alt="Generic placeholder" 
                                     />
                                     <p id='titleourTeamCard'>DR.DANI MAMO,MD</p>
                                    
@@ -98,7 +98,7 @@ class FooterHome extends Component {
                                 <div id='cardOurTeam' >
                                     <img id='imageOurteamCard' className="align-self-start mr-3"
                                         src={require('../../assets/team/DR. KARRAR MAHDI.jpg')}
-                                        alt="Generic placeholder" roundedCircle
+                                        alt="Generic placeholder" 
                                     />
                                     <p id='titleourTeamCard'>DR.KARRAR MAHDI,MD</p>
                                     
@@ -108,7 +108,7 @@ class FooterHome extends Component {
                                 <div id='cardOurTeam' >
                                     <img id='imageOurteamCard' className="align-self-start mr-3"
                                         src={require('../../assets/team/AHMED SAMEER.jpg')}
-                                        alt="Generic placeholder" roundedCircle
+                                        alt="Generic placeholder" 
                                     />
                                     <p id='titleourTeamCard'>AHMED SAMEER</p>
                                     <p id='titleourTeamCard1'>MD STUDENT</p>
@@ -118,7 +118,7 @@ class FooterHome extends Component {
                                 <div id='cardOurTeam' >
                                     <img id='imageOurteamCard' className="align-self-start mr-3"
                                         src={require('../../assets/team/BILAL HUSSEIN.jpg')}
-                                        alt="Generic placeholder" roundedCircle
+                                        alt="Generic placeholder" 
                                     />
                                     <p id='titleourTeamCard'>BILAL HUSSEIN</p>
                                     <p id='titleourTeamCard1'>MD STUDENT</p>
@@ -128,7 +128,7 @@ class FooterHome extends Component {
                                 <div id='cardOurTeam' >
                                     <img id='imageOurteamCard' className="align-self-start mr-3"
                                         src={require('../../assets/team/MUTHANNA ALAMI.jpg')}
-                                        alt="Generic placeholder" roundedCircle
+                                        alt="Generic placeholder" 
                                     />
                                     <p id='titleourTeamCard'>MUTHANNA ALAMI </p>
                                     <p id='titleourTeamCard1'>MD STUDENT</p>
@@ -138,7 +138,7 @@ class FooterHome extends Component {
                                 <div id='cardOurTeam' >
                                     <img id='imageOurteamCard' className="align-self-start mr-3"
                                         src={require('../../assets/team/NANCY JOSEPH.png')}
-                                        alt="Generic placeholder" roundedCircle
+                                        alt="Generic placeholder" 
                                     />
                                     <p id='titleourTeamCard'>NANCY JOSEPH</p>
                                     <p id='titleourTeamCard1'>MD STUDENT</p>
@@ -148,7 +148,7 @@ class FooterHome extends Component {
                                 <div id='cardOurTeam' >
                                     <img id='imageOurteamCard' className="align-self-start mr-3"
                                         src={require('../../assets/team/ALI YOUSIF.jpg')}
-                                        alt="Generic placeholder" roundedCircle
+                                        alt="Generic placeholder" 
                                     />
                                     <p id='titleourTeamCard'>ALI YOUSIF</p>
                                     <p id='titleourTeamCard1'>MD STUDENT</p>
@@ -158,7 +158,7 @@ class FooterHome extends Component {
                                 <div id='cardOurTeam' >
                                     <img id='imageOurteamCard' className="align-self-start mr-3"
                                         src={require('../../assets/team/HUMAM ADNAN AL-OBAIDI.jpg')}
-                                        alt="Generic placeholder" roundedCircle
+                                        alt="Generic placeholder" 
                                     />
                                     <p id='titleourTeamCard'>HUMAM ADNAN AL-OBAIDI</p>
                                     <p id='titleourTeamCard1'>MD STUDENT</p>
@@ -168,7 +168,7 @@ class FooterHome extends Component {
                                 <div id='cardOurTeam' >
                                     <img id='imageOurteamCard' className="align-self-start mr-3"
                                         src={require('../../assets/team/OMAR ALFAROOQ AL-OBAIDI.jpg')}
-                                        alt="Generic placeholder" roundedCircle
+                                        alt="Generic placeholder" 
                                     />
                                     <p id='titleourTeamCard'>OMAR ALFAROOQ <br/>AL-OBAIDI</p>
                                     <p id='titleourTeamCard1'>MD STUDENT</p>
@@ -178,7 +178,7 @@ class FooterHome extends Component {
                                 <div id='cardOurTeam' >
                                     <img id='imageOurteamCard' className="align-self-start mr-3"
                                         src={require('../../assets/team/Dr.Mohammed Elward.jpg')}
-                                        alt="Generic placeholder" roundedCircle
+                                        alt="Generic placeholder" 
                                     />
                                     <p id='titleourTeamCard'>Dr.Mohammed Elward</p>
                                     <p id='titleourTeamCard1'>Emergency Hospital Of Bu-<br/>charest Orthopedics</p>
@@ -188,7 +188,7 @@ class FooterHome extends Component {
                                 <div id='cardOurTeam' >
                                     <img id='imageOurteamCard' className="align-self-start mr-3"
                                         src={require('../../assets/team/RUQAYA SAMEER.jpg')}
-                                        alt="Generic placeholder" roundedCircle
+                                        alt="Generic placeholder" 
                                     />
                                     <p id='titleourTeamCard'>RUQAYA SAMEER</p>
                                     <p id='titleourTeamCard1'>MD STUDENT</p>
@@ -198,7 +198,7 @@ class FooterHome extends Component {
                                 <div id='cardOurTeam' >
                                     <img id='imageOurteamCard' className="align-self-start mr-3"
                                         src={require('../../assets/team/DR.ABDULLAH ALKHATEEB1.jpg')}
-                                        alt="Generic placeholder" roundedCircle
+                                        alt="Generic placeholder" 
                                     />
                                     <p id='titleourTeamCard'>DR.ABDULLAH ALKHATEEB</p>
                                     <p id='titleourTeamCard1'>DENTIST</p>
@@ -208,7 +208,7 @@ class FooterHome extends Component {
                                 <div id='cardOurTeam' >
                                     <img id='imageOurteamCard' className="align-self-start mr-3"
                                         src={require('../../assets/team/DR.ALI ALJOBORY .jpg')}
-                                        alt="Generic placeholder" roundedCircle
+                                        alt="Generic placeholder" 
                                     />
                                     <p id='titleourTeamCard'>DR.ALI ALJOBORY</p>
                                     <p id='titleourTeamCard1'>DENTIST</p>
@@ -218,7 +218,7 @@ class FooterHome extends Component {
                                 <div id='cardOurTeam' >
                                     <img id='imageOurteamCard' className="align-self-start mr-3"
                                         src={require('../../assets/team/DR. HAYDER ALSLMAWY.jpg')}
-                                        alt="Generic placeholder" roundedCircle
+                                        alt="Generic placeholder" 
                                     />
                                     <p id='titleourTeamCard'>DR.HAYDER ALSLMAWY</p>
                                     <p id='titleourTeamCard1'>DENTIST</p>
@@ -228,7 +228,7 @@ class FooterHome extends Component {
                                 <div id='cardOurTeam' >
                                     <img id='imageOurteamCard' className="align-self-start mr-3"
                                         src={require('../../assets/team/DR.AHMED ALDAWOODI.jpg')}
-                                        alt="Generic placeholder" roundedCircle
+                                        alt="Generic placeholder" 
                                     />
                                     <p id='titleourTeamCard'>DR.AHMED ALDAWOODI</p>
                                     <p id='titleourTeamCard1'>DENTIST</p>
@@ -238,7 +238,7 @@ class FooterHome extends Component {
                                 <div id='cardOurTeam' >
                                     <img id='imageOurteamCard' className="align-self-start mr-3"
                                         src={require('../../assets/team/DR. ABDULHADI KUMAIT.jpg')}
-                                        alt="Generic placeholder" roundedCircle
+                                        alt="Generic placeholder" 
                                     />
                                     <p id='titleourTeamCard'>DR.ABDULHADI KUMAIT</p>
                                     <p id='titleourTeamCard1'>DENTIST</p>
@@ -248,7 +248,7 @@ class FooterHome extends Component {
                                 <div id='cardOurTeam' >
                                     <img id='imageOurteamCard' className="align-self-start mr-3"
                                         src={require('../../assets/team/DR. SAJA HAMED ALAMI.jpg')}
-                                        alt="Generic placeholder" roundedCircle
+                                        alt="Generic placeholder" 
                                     />
                                     <p id='titleourTeamCard'>DR.SAJA HAMED ALAMI</p>
                                     <p id='titleourTeamCard1'>DENTIST</p>
@@ -258,7 +258,7 @@ class FooterHome extends Component {
                                 <div id='cardOurTeam' >
                                     <img id='imageOurteamCard' className="align-self-start mr-3"
                                         src={require('../../assets/team/DR. ZIYAD TARIQ ALWAILY.jpg')}
-                                        alt="Generic placeholder" roundedCircle
+                                        alt="Generic placeholder" 
                                     />
                                     <p id='titleourTeamCard'>DR.ZIYAD TARIQ ALWAILY</p>
                                     <p id='titleourTeamCard1'>DENTIST</p>
@@ -268,7 +268,7 @@ class FooterHome extends Component {
                                 <div id='cardOurTeam' >
                                     <img id='imageOurteamCard' className="align-self-start mr-3"
                                         src={require('../../assets/team/AHMED ALZAEDY.jpg')}
-                                        alt="Generic placeholder" roundedCircle
+                                        alt="Generic placeholder" 
                                     />
                                     <p id='titleourTeamCard'>Ahmed Alzaedy</p>
                                     <p id='titleourTeamCard1'>VOCALS AND DIRECTOR</p>
@@ -278,7 +278,7 @@ class FooterHome extends Component {
                                 <div id='cardOurTeam' >
                                     <img id='imageOurteamCard' className="align-self-start mr-3"
                                         src={require('../../assets/team/ABDULLAH ALAWADI.jpg')}
-                                        alt="Generic placeholder" roundedCircle
+                                        alt="Generic placeholder" 
                                     />
                                     <p id='titleourTeamCard'>ABDULLAH ALAWADI</p>
                                  <p id='titleourTeamCard1'>LAWYER</p>
@@ -293,12 +293,12 @@ class FooterHome extends Component {
                     <img id='logoInstructour' src={require('../../assets/pngz.png')} alt="img" />
                     <div id='btn_InstrctorContiner'>
                         <div id='pargrapBforeBtn'>Become an</div>
-                        <div id='btn_Instrctor'>Instructor</div>
+                        <span id='btn_Instrctor'>Instructor</span>
                     </div>
 
                 </div>
                 <div id='newFooterContiner'>
-                    <span id='New_FooterRow1'>Teach What You Love, G.S.M Gives You The Opportunity And The Tool To Create An Online Cources.</span>
+                    <span id='New_FooterRow1'>Teach What You Love, G.S.M Gives You The Opportunity And The Tool To Create An Online Courses.</span>
                     <div id='New_FooterRow2'>
                         <Link id='trustedby_BTN' to="/trustedby"><span id='trustedby_BTN'>Trusted By</span></Link>
                         <Link id='TermsOfService_BTN' to="/tearmsOfService">  <span id='TermsOfService_BTN'>Terms Of Service</span></Link>

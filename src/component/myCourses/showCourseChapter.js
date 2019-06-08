@@ -1,5 +1,5 @@
 import React from 'react';
-import { Icon, Dialog, Button, Spinner, Pane } from 'evergreen-ui';
+import { Icon, Dialog, Spinner, Pane } from 'evergreen-ui';
 import { Collapse } from 'react-bootstrap';
 import Component from "@reactions/component";
 import Vimeo from '@u-wave/react-vimeo';
@@ -7,9 +7,12 @@ import Context from '../Context';
 import NavbarAllPage from '../common/navbarAllPage';
 import FooterAllPage from '../common/footerAllPage';
 import axios from 'axios';
+import Cookies from "universal-cookie";
 import host from '../Host';
+const cookies = new Cookies();
 
-class ContentCourses extends React.Component {
+
+class ShowCourseChapter extends React.Component {
     constructor(props) {
         super(props);
         this.displayDataAdt = [];
@@ -32,9 +35,10 @@ class ContentCourses extends React.Component {
         };
     }
     componentDidMount() {
-        axios.get(host + `api/course/Course/` + this.props.match.params.id, { headers: {} })
+        const headers = { "Content-Type": "application/json", token: cookies.get("tokenUser") };
+        axios.get(host + `api/Buyed/mycourses/` + this.props.match.params.id, { headers: headers})
             .then(response => {
-                // console.log(response.data)
+                console.log(response.data)
                 this.setState({
                     lectures: response.data.chapters,
                     spinner: false,
@@ -57,7 +61,7 @@ class ContentCourses extends React.Component {
         let html = []
         for (let index = 0; index < value; index++) {
             html.push(
-                <div key={index} id='AddLectureContinerCourse'>
+                <div key={this.state.lectures[index]._id} id='AddLectureContinerCourse'>
                     <Component initialState={{
                         ['open' + index]: false, videos: [], getFile: []
                     }}>
@@ -107,17 +111,12 @@ class ContentCourses extends React.Component {
 
 
                                                                     </Dialog>
-                                                                    {video.free ?(
+                                                                    
                                                                     <div style={{ display: 'flex', alignItems: 'center', cursor: 'pointer' }} onClick={() => { setState({ isShown: true }) }}>
                                                                         <Icon icon="video" size={20} color="success" marginLeft={16} marginRight={16} />
                                                                         <p id='NameofVideoInLectureCourse'>{video.name}</p>
                                                                     </div>
-                                                                    ):(
-                                                                    <div style={{ display: 'flex', alignItems: 'center', cursor: 'pointer' }} >
-                                                                    <Icon icon="video" size={20} color="muted" marginLeft={16} marginRight={16} />
-                                                                    <p id='NameofVideoInLectureCourse'>{video.name}</p>
-                                                                </div>
-                                                                )}
+                                                               
                                                                     
                                                                 </Pane>
                                                             )}
@@ -130,7 +129,7 @@ class ContentCourses extends React.Component {
 
                                                     ? {}
                                                     : { display: "none" }} id='showVideoContiner'>
-                                                         {video.free ?(
+                                                        
                                                     <div id='iconVideoAndName' style={{ cursor: 'pointer' }}
                                                         onClick={() => {
                                                             window.open(host + video.url, '_blank');
@@ -139,13 +138,7 @@ class ContentCourses extends React.Component {
                                                             style={{ display: 'flex', alignItems: 'center', cursor: 'pointer' }} />                                                          
                                                         <p id='NameofVideoInLecture'>{video.name}</p>     
                                                     </div>
-                                                         ):(
-                                                            <div id='iconVideoAndName' style={{ cursor: 'pointer' }}>                                                    
-                                                            <Icon icon="document" size={20} color="muted" marginRight={16} marginLeft={16}
-                                                                style={{ display: 'flex', alignItems: 'center', cursor: 'pointer' }} />                                                          
-                                                            <p id='NameofVideoInLecture'>{video.name}</p>     
-                                                        </div>
-                                                         )}
+                                                         
                                                 </div>
 
                                             </div>
@@ -189,9 +182,7 @@ class ContentCourses extends React.Component {
                                                 <span>{'Author: ' + this.state.courseDetels.user.name}</span>
                                             </div>
                                             <div id='byNowContiner'>
-                                                <Button size={400} appearance="primary" intent="danger" > By Now</Button>
-                                                {/* <div id='orginalPrice'>{this.state.courseDetels.__v + ' $'}</div> */}
-                                                <div id='priceNow'>{this.state.courseDetels.price[this.state.courseDetels.__v] + ' $'}</div>
+                                 
                                             </div>
 
                                         </div>
@@ -220,4 +211,4 @@ class ContentCourses extends React.Component {
     }
 }
 
-export default ContentCourses;
+export default ShowCourseChapter;

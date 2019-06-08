@@ -1,6 +1,6 @@
 import React from "react";
 import { Row, Col } from 'react-bootstrap';
-import { toaster, Pane, TextInput } from "evergreen-ui";
+import { toaster,  TextInput } from "evergreen-ui";
 import axios from "axios";
 import Cookies from "universal-cookie";
 import { Link } from 'react-router-dom';
@@ -24,16 +24,17 @@ class Login extends React.Component {
 
     Login(event) {
         event.preventDefault();
-        axios.post(host + `api/user/login`, {
+        axios.post(host + `api/student/login`, {
             email: this.state.Email,
             password: this.state.Password
         })
             .then(function (response) {
-                cookies.set("token", response.data.token, {
+                console.log(response.data)
+                cookies.set("tokenUser", response.data, {
                     path: "/",
                     expires: new Date(Date.now() + 604800000)
                 });
-                window.location.href = "/Addcourses";
+                window.location.href = "/";
             })
             .catch(function (error) {
                 if (error.response) {
@@ -55,6 +56,7 @@ class Login extends React.Component {
 
                                     <TextInput width={'80%'} height={'40px'}
                                         name="Email"
+                                        autocomplete="off"
                                         placeholder="Your E-mail..."
                                         id="emailNewLogin"
                                         onChange={this.handleChange.bind(this)}
@@ -64,6 +66,8 @@ class Login extends React.Component {
                                         name="Password"
                                         placeholder="Password..."
                                         id="passwordNewLogin"
+                                        autocomplete="off"
+                                        type='password'
                                         onChange={this.handleChange.bind(this)}
                                         value={this.state.Password}
                                     />

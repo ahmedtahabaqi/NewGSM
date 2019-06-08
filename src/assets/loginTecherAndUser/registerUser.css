@@ -95,6 +95,13 @@
     margin-top: -65px;
     border-radius: 5px;
 }
+#part2SignUpContentuser {
+    background-color: #f2f2f4;
+    height: 295px;
+    width: 100%;
+    margin-top: -8px;
+    border-radius: 5px;
+}
 
 #CONTinerFIEldsSIgnUP {
     display: flex;
@@ -114,7 +121,7 @@
     align-items: center;
     justify-content: center;
     color: #d7e4f9;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 600;
 }
 
@@ -128,7 +135,7 @@
     align-items: center;
     justify-content: center;
     color: #d7e4f9;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 600;
 }
 
@@ -188,13 +195,13 @@
     }
     #SELLYORECORSE_BTN {
    
-        font-size: 16px;
+        font-size: 14px;
         font-weight: 300;
     }
     
     #JOINGSM_BTN {
 
-        font-size: 16px;
+        font-size: 14px;
         font-weight: 300;
     }
 }
@@ -208,7 +215,7 @@
     }
     #SELLYORECORSE_BTN {
    
-        font-size: 16px;
+        font-size: 14px;
         font-weight: 300;
         margin: 0px;
         width: 60%;
@@ -216,7 +223,7 @@
     
     #JOINGSM_BTN {
 
-        font-size: 16px;
+        font-size: 14px;
         font-weight: 300;
         margin: 0px;
         margin-top: 10px;

@@ -68,9 +68,10 @@
     justify-content: center;
 }
 
-#menuEdit1{
-margin-left: 40px; 
-}
+/* #menuEdit1{
+display: flex;
+align-items: center;
+} */
 #continerEditAndTrush{
     display: inline-block;
 }

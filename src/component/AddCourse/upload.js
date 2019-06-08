@@ -44,6 +44,7 @@ class Upload extends Component {
         }
         const urlParams = new URLSearchParams(window.location.search);
         const chapter = urlParams.get('chapter');
+        const course = urlParams.get('course');
       document.getElementById('progeDiv').style.display='flex';
             this.setState({ percent: 0 });
             
@@ -53,6 +54,7 @@ class Upload extends Component {
             data.append('name', this.state.addLecture);
             data.append('free', this.state.free);
             data.append('chapter', chapter);
+            data.append('course', course);
             data.append('token', cookies.get("token"));
             
         

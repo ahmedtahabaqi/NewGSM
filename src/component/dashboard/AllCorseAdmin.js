@@ -1,11 +1,11 @@
 import React from 'react';
-import { Button, Icon, Pane, Dialog, TextInput, toaster, Spinner, Heading, FilePicker, Switch } from 'evergreen-ui';
+import {  Icon, Pane, Dialog, TextInput, toaster, Spinner, Heading,  Switch } from 'evergreen-ui';
 import { Collapse } from 'react-bootstrap';
 import Component from "@reactions/component";
 import FooterAllPage from '../common/footerAllPage';
 // import Vimeo from '@u-wave/react-vimeo';
 import Context from '../Context';
-import { NavLink, Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import axios from 'axios';
 import Cookies from "universal-cookie";
 import NavbarAllPage from '../common/navbarAllPage'
@@ -14,7 +14,7 @@ import Iframe from 'react-iframe'
 
 const cookies = new Cookies();
 
-class AddLecture extends React.Component {
+class AllCourseAdmin extends React.Component {
     constructor(props) {
         super(props);
         this.displayDataAdt = [];
@@ -39,23 +39,32 @@ class AddLecture extends React.Component {
             nameFile: '',
             Uploadfile: [],
             getFile: [],
-            spinner: false,
+            spinner: true,
 
         };
     }
 
     componentDidMount() {
-        axios.get(host + `api/course/teacher/` + this.props.match.params.id, { headers: { token: cookies.get("token") } })
-            .then(response => {
-                console.log(response.data)
-                this.setState({
+        
+        const urlParams = new URLSearchParams(window.location.search);
+        const userId = urlParams.get('userId');
+
+            let formData = new FormData();
+            var headers = { "Content-Type": "application/json", token: cookies.get("token") };
+            formData.append("user_id",userId );
+
+            axios({ url: host + `api/course/admin/course/`+ this.props.match.params.id, method: "POST", data: formData, headers: headers })
+                .then(response => {
+                   console.log(response.data);
+                   this.setState({
                     lectures: response.data.chapters,
                     spinner: false,
                     courseDetels: response.data.course,
                 })
                 this.Html(response.data.chapters.length)
-            })
-            .catch((error) => { console.log('error ' + error); })
+                   
+                })
+                .catch(function (error) { toaster.danger(error.message) });
 
     }
     deleteLecture(id) {
@@ -65,27 +74,11 @@ class AddLecture extends React.Component {
             .then(response => {
                 if (response.status === 200) {
                     toaster.success("Successful");
-                    window.location.reload(1);
                     this.componentDidMount();
                 }
             })
             .catch(function (error) { toaster.danger(error.message) });
 
-    }
-
-    addLecture() {
-        let formData = new FormData();
-        var headers = { "Content-Type": "application/json", token: cookies.get("token") };
-        formData.append("courseId", this.state.courseId);
-        formData.append("title", this.state.addLecture);
-        axios({ url: host + "api/course/addchapter", method: "POST", data: formData, headers: headers })
-            .then(response => {
-                if (response.status === 200) {
-                    toaster.success("Successful");
-                    this.componentDidMount();
-                }
-            })
-            .catch(function (error) { toaster.danger(error.message) });
     }
 
     DeleteVideo(id) {
@@ -129,74 +122,6 @@ class AddLecture extends React.Component {
         if (stat) { return <Icon id='menuicon' icon="minus" color="danger" size={30} /> }
         else { return <Icon id='menuicon' icon="menu" color="info" size={30} /> }
     }
-    uploadFile(id) {
-        let formData = new FormData();
-        var headers = { "Content-Type": "application/json", token: cookies.get("token") };
-
-        formData.append("name", this.state.nameFile);
-        formData.append("course", id);
-        formData.append("chapter", this.state.chapterId);
-        formData.append("file", this.state.Uploadfile[0]);
-
-        axios({ url: host + "api/course/addFile", method: "POST", data: formData, headers: headers })
-            .then(response => {
-                if (response.status === 200) {
-                    toaster.success("Successful");
-                    this.componentDidMount();
-                }
-            })
-            .catch(function (error) {
-                if (error.request.response) {
-                    toaster.danger(error.request.response);
-                }
-            });
-    }
-
-
-    customFormRenderer(onSubmit) {
-        return (
-            <form id="customForm" method="post" action={host + `api/course/Videoadd`}>
-                <input type="hidden" name="token" value={cookies.get("token")} />
-                <input type="hidden" name="chapter" value={this.state.chapterId} />
-                <input type="hidden" name="free" value={this.state.free} />
-
-                <div id='inputofuploadVideo'>
-                    <div id='labelOfInputuploadVideo'>
-                        <p>Name of Video</p>
-                    </div>
-
-                    <TextInput width='75%'
-                        name="name"
-                        placeholder="input name of video..."
-
-                        onChange={(event) =>
-                            this.setState({ addLecture: event.target.value })} />
-                </div>
-
-                <Heading size={400} marginLeft={32} width="90%" marginBottom={10} marginTop="default">
-                    Choose File
-            </Heading>
-
-                <FilePicker marginLeft={32} width="90%" marginBottom={10} id="FilePicker"
-                    onChange={files => console.log(files)}
-                    display="none;" name="file" />
-                <Heading size={400} marginLeft={32} marginBottom={10} marginTop="default">
-                    Free ?
-            </Heading>
-                <Switch marginLeft={32} marginBottom={10}
-                    onChange={() => this.chengeCheked()} />
-                <Button appearance="primary" marginLeft={210} onClick={onSubmit}>
-                    Upload File
-            </Button>
-            </form>
-        );
-    }
-
-    formGetter() {
-        return new FormData(document.getElementById("customForm"));
-    }
-
-
 
     Html(value) {
         var html = []
@@ -264,75 +189,9 @@ class AddLecture extends React.Component {
                                                 </Pane>
                                             )}
                                         </Component>
-                                        <Component initialState={{ isShown: false }}>
-                                            {({ state, setState }) => (
-                                                <Pane>
-                                                    <Dialog
-                                                        isShown={state.isShown}
-                                                        title={'Upload File to ' + this.state.lectures[index].title}
-                                                        onCloseComplete={() => setState({ isShown: false })}
-                                                        confirmLabel="Upload"
-                                                        onConfirm={() => {
-                                                            this.uploadFile(this.props.match.params.id)
-                                                            setState({ isShown: false })
-                                                        }}
-                                                    >
-                                                        <p>File Name</p>
-                                                        <TextInput width='100%' name="text-input-name"
-                                                            placeholder="input name of file..."
-                                                            onChange={(event) => this.setState({ nameFile: event.target.value })}
-                                                        />
-                                                        <p style={{ marginTop: 30 }}>Upload File</p>
-                                                        <FilePicker
-                                                            width='100%'
-                                                            marginBottom={32}
-                                                            onChange={files => { this.setState({ Uploadfile: files }) }}
-
-                                                        />
-                                                    </Dialog>
-
-                                                    <Icon icon="folder-new" onClick={() => {
-                                                        setState({ isShown: true })
-                                                        this.setState({ chapterId: this.state.lectures[index].chapter_id })
-                                                    }}
-                                                        size={20} color="selected" marginRight={16} id='iconTrushAddlecture' />
-                                                </Pane>
-                                            )}
-                                        </Component>
-
-                                        <Link to={`/uploadvideo?chapter=${this.state.lectures[index].chapter_id}&course=${this.props.match.params.id}`}>
-                                            <Icon icon="upload" onClick={() => {
-                                                this.setState({
-                                                    chapterId: this.state.lectures[index].chapter_id
-                                                })
-
-                                            }}
-                                                size={20} color="selected" marginRight={16} id='iconTrushAddlecture' />
-                                        </Link>
-                                        <Component initialState={{ isShown: false }}>
-                                            {({ state, setState }) => (
-                                                <Pane>
-                                                    <Dialog
-                                                        isShown={state.isShown}
-                                                        intent="danger"
-                                                        title="Delete File"
-                                                        onCloseComplete={() => setState({ isShown: false })}
-                                                        confirmLabel="Delete"
-                                                        onConfirm={() => {
-                                                            this.deleteLecture(this.state.lectures[index].chapter_id)
-                                                            setState({  isShown: false})
-                                                        }}
-                                                    >
-                                                        <center> <h4>Are You Sure You Want To Delete this Chapter</h4></center>
-
-                                                    </Dialog>
-                                                    <Icon icon="trash" onClick={() => { setState({ isShown: true }) }}
-                                                        size={20} color="danger" marginRight={16} id='iconTrushAddlecture' />
-                                                </Pane>
-                                            )}
-                                        </Component>
-
-
+                                    
+                                        <Icon icon="trash" onClick={() => this.deleteLecture(this.state.lectures[index].chapter_id)}
+                                            size={20} color="danger" marginRight={16} id='iconTrushAddlecture' />
                                     </div>
                                 </div>
                                 <Collapse in={state['open' + index]}>
@@ -392,7 +251,7 @@ class AddLecture extends React.Component {
                                                                                 })
                                                                                 .catch(function (error) { toaster.danger(error.message) });
                                                                         }
-
+                                                                       
 
                                                                         setState({ isShown: false })
                                                                     }}
@@ -555,43 +414,12 @@ class AddLecture extends React.Component {
 
                                     </div>
                                     {/* )} */}
-                                    <NavLink exact to='/Addcourses'>
+                                    <NavLink exact to='/dashboard1/table1'>
                                         <div id='iconBack'>
                                             <Icon icon='arrow-left' size={30} color="white" />
                                         </div>
                                     </NavLink>
-                                    <Component initialState={{ isShown: false }}>
-                                        {({ state, setState }) => (
-                                            <Pane>
-                                                <Dialog onConfirm={() => {
-                                                    this.addLecture()
-                                                    setState({ isShown: false })
-                                                }}
-                                                    isShown={state.isShown}
-                                                    title="Create Lecture"
-                                                    onCloseComplete={() => setState({ isShown: false })}
-                                                    confirmLabel="Add"
-
-                                                >
-                                                    <div id='inputofAddlecture'>
-                                                        <div id='labelOfInputAddLecture'>
-                                                            <p>Name of Lecture</p>
-                                                        </div >
-                                                        <TextInput width='75%' name="text-input-name"
-                                                            placeholder="input name of leacture..."
-                                                            onChange={(event) =>
-                                                                this.setState({ addLecture: event.target.value, courseId: this.props.match.params.id })}
-                                                        />
-                                                    </div>
-                                                </Dialog>
-
-                                                <div id='AddLectureButtom'>
-                                                    <Button onClick={() => setState({ isShown: true })}
-                                                        appearance="primary" marginLeft={20} intent="danger">Add Lecture</Button>
-                                                </div>
-                                            </Pane>
-                                        )}
-                                    </Component>
+                                   
                                     {this.displayDataAdt}
                                 </div>
                                 <FooterAllPage />
@@ -612,4 +440,4 @@ class AddLecture extends React.Component {
     }
 }
 
-export default AddLecture;
+export default AllCourseAdmin;

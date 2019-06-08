@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Context from '../Context';
 
 // import {Link} from 'react-router-dom';
-import NavbarAllPage from '../common/navbarAllPage'
+// import NavbarAllPage from '../common/navbarAllPage'
 import FooterAllPage from '../common/footerAllPage';
 
 

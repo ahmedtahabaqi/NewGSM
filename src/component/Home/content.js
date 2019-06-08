@@ -26,8 +26,6 @@ class ContentHome extends React.Component {
     componentDidMount() {
         axios.get(host + `api/course`, { headers: {} })
             .then(response => {
-                console.log(response.data);
-
                 this.setState({ course: response.data })
             })
             .catch((error) => { console.log('error ' + error) })
@@ -100,10 +98,10 @@ class ContentHome extends React.Component {
                 return (
                     <div >
                         <div id='bgcCourses'>
-                            <di>
+                            <div>
                                 <br></br>
                                 <h1>Courses</h1>
-                            </di>
+                            </div>
 
                             <div id='continerSlider2'>
                                 <Slider {...settings} >
@@ -168,32 +166,33 @@ class ContentHome extends React.Component {
                         <div id='videoHomeContiner'>
                             <div id='videoHometitle'>GET TO KNOW US</div>
                             <div id='videoHomeContiner1'>
-                                <ReactPlayer id='v1' width={'33vw'} height={'19vw'} url={'https://vimeo.com/336060739/7180730e85'} light={true} playsinline={true} controls />
-                                <ReactPlayer id='v2' width={'33vw'} height={'19vw'} url={'https://vimeo.com/336059946/3a257c3b43'} light={true} playsinline={true} controls />
-                                <ReactPlayer id='v3' width={'33vw'} height={'19vw'} url={'https://vimeo.com/336059149/7108d01261'} light={true} playsinline={true} controls />
-
+                                <ReactPlayer id='v1' width={'33vw'} height={'19vw'} url={'https://vimeo.com/336057224/37fe80a268'} light={true} playsinline={true} controls />
+                                <ReactPlayer id='v2' width={'33vw'} height={'19vw'} url={'https://vimeo.com/336058669/1e4e9dc0ca'} light={true} playsinline={true} controls />
+                                <ReactPlayer id='v3' width={'33vw'} height={'19vw'} url={'https://vimeo.com/336058976/8bb930753d'} light={true} playsinline={true} controls />
                             </div>
                             <div id='videoHomeContiner2'>
-                                <ReactPlayer id='v4' width={'33vw'} height={'19vw'} url={'https://vimeo.com/336058976/8bb930753d'} light={true} playsinline={true} controls />
-                                <ReactPlayer id='v5' width={'33vw'} height={'19vw'} url={'https://vimeo.com/336058669/1e4e9dc0ca'} light={true} playsinline={true} controls />
-                                <ReactPlayer id='v6' width={'33vw'} height={'19vw'} url={'https://vimeo.com/336057224/37fe80a268'} light={true} playsinline={true} controls />
-
+                                <ReactPlayer id='v4' width={'33vw'} height={'19vw'} url={'https://vimeo.com/336059149/7108d01261'} light={true} playsinline={true} controls />
+                                <ReactPlayer id='v5' width={'33vw'} height={'19vw'} url={'https://vimeo.com/336059946/3a257c3b43'} light={true} playsinline={true} controls />
+                                <ReactPlayer id='v6' width={'33vw'} height={'19vw'} url={'https://vimeo.com/336060739/7180730e85'} light={true} playsinline={true} controls />
                             </div>
                         </div>
                         <div id='homePackagesContiner'>
                             <div >
+                                
                                 <img id='bgcPackage' src={require('../../assets/bgcPackage.png')} alt='img' />
                                 <div>
                                     <div >
+                                    <Link to='/diamond'>
                                         <img id='daimond' src={require('../../assets/daimond.png')} alt='img' />
+                                        </Link>   
                                         <div>
                                             <div id='details1'>Details</div>
-
                                         </div>
-
                                     </div>
                                     <div>
+                                    <Link to='/platinum'>
                                         <img id='platinum' src={require('../../assets/platinum.png')} alt='img' />
+                                        </Link>
                                         <div>
                                             <div id='details2'>Details</div>
 
@@ -201,7 +200,9 @@ class ContentHome extends React.Component {
 
                                     </div>
                                     <div>
+                                    <Link to='/gold'>
                                         <img id='gold' src={require('../../assets/gold.png')} alt='img' />
+                                        </Link>
                                         <div>
                                             <div id='details3'>Details</div>
 
@@ -209,7 +210,9 @@ class ContentHome extends React.Component {
 
                                     </div>
                                     <div>
+                                    <Link to='/silver'>
                                         <img id='selver' src={require('../../assets/selver.png')} alt='img' />
+                                        </Link>
                                         <div>
                                             <div id='details4'>Details</div>
 

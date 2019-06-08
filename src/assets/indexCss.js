@@ -27,3 +27,4 @@ import './loginTecherAndUser/loginTecher.css';
 import './loginTecherAndUser/loginUser.css';
 import './loginTecherAndUser/registerUser.css';
 import './packages/packages.css';
+import './common/profile.css';

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Context from '../Context';
-import NavbarAllPage from '../common/navbarAllPage';
+// import NavbarAllPage from '../common/navbarAllPage';
 import FooterAllPage from '../common/footerAllPage';
 
 class AboutUs extends Component {

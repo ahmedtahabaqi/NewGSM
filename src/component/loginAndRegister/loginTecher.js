@@ -1,6 +1,6 @@
 import React from "react";
 import { Row, Col } from 'react-bootstrap';
-import { toaster, Pane, TextInput } from "evergreen-ui";
+import { toaster,  TextInput } from "evergreen-ui";
 import axios from "axios";
 import Cookies from "universal-cookie";
 import { Link } from 'react-router-dom';
@@ -57,6 +57,7 @@ class Login extends React.Component {
                                         name="Email"
                                         placeholder="Your E-mail..."
                                         id="emailNewLogin"
+                                        autocomplete="off"
                                         onChange={this.handleChange.bind(this)}
                                         value={this.state.Email}
                                     />
@@ -65,6 +66,7 @@ class Login extends React.Component {
                                         placeholder="Password..."
                                         id="passwordNewLogin"
                                         type="password"
+                                        autocomplete="off"
                                         onChange={this.handleChange.bind(this)}
                                         value={this.state.Password}
                                     />

@@ -12,9 +12,45 @@ flex: 4;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: linear-gradient(-45deg, #0096d9 0, #025cab 100%);
+    background: linear-gradient(45deg, #00b9d4 0, #2affcc 100%);
     color: #FFF;
     
+    min-height:295px;
+}
+#titleCourseContinerShowG{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(90deg,#fdd044  0, #fffaba 100%);
+    color: #000;
+    min-height:295px;
+}
+#titleCourseContinerShowS{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(90deg,#c2c5c7  0, #eaeaea 100%);
+    color: #000;
+    min-height:295px;
+}
+#titleCourseContinerShowP{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(90deg,#e4e4e2  0, #b0ddce 100%);
+    color: #000;
+    min-height:295px;
+}
+#titleCourseContinerShowD{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(90deg,#f5c7f7  0, #a866cd 100%);
+    color: #000;
     min-height:295px;
 }
 #titleCourse{

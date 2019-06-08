@@ -21,6 +21,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@material-ui/core": "^4.0.1",
+    "@material-ui/icons": "^4.0.1",
     "@reactions/component": "^2.0.2",
     "@u-wave/react-vimeo": "^0.6.0",
     "axios": "^0.18.0",
