@@ -1,12 +1,12 @@
 import React from 'react';
 import NavbarAllPage from '../common/navbarAllPage';
 import FooterAllPage from '../common/footerAllPage';
-// import Component from "@reactions/component";
+import Component from "@reactions/component";
 // import { Button } from 'evergreen-ui';
-// import { Row, Col } from 'react-bootstrap';
-// import { Link } from 'react-router-dom';
+import { Row, Col } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
-// import ReactTooltip from 'react-tooltip';
+import ReactTooltip from 'react-tooltip';
 import Cookies from "universal-cookie";
 import host from '../Host';
 const cookies = new Cookies();
@@ -33,7 +33,7 @@ class ContentMyCourses extends React.Component {
       <div>
         <div id='contentUpFooter'>
           <NavbarAllPage />
-{/* 
+
           <Row style={{ margin: 0, padding: 0 }}>
           {this.state.myCourse.map(cors =>
             <Col key={cors._id} id="col1" style={{ margin: 0, marginTop: 50,marginBottom:50, padding: 0 }} xs={12} sm={6} md={4} lg={3} xl={3} >
@@ -41,32 +41,32 @@ class ContentMyCourses extends React.Component {
                 <Component initialState={{ color1: Math.floor(Math.random() * 3) }}>
                   {({ state, setState }) => (
                     <div id='MaincontinerNewCard'>
-                      <Link to={`/mycoursesChapter/${cors._id}`}>
+                      <Link to={`/mycoursesChapter/${cors.course._id}`}>
                         <div id='continerNewCard1'>
 
                           <div id='continerNewCard2' style={{ background: `linear-gradient(to right , ${this.state.colors[state.color1]})` }}>
                             <div id='headerNewCard'>
-                              <img alt="img" height="150" width="250" src={host + cors.img} />
+                              <img alt="img" height="150" width="250" src={host + cors.course.img} />
                             </div>
                             <div id='divReduisCard' style={{ background: `linear-gradient(to right , ${this.state.colors[state.color1]})` }}></div>
                           </div>
-                          <div id='TitleNewCard' style={{ background: `linear-gradient(to right , ${this.state.colors[state.color1]})` }}>{cors.title}</div>
+                          <div id='TitleNewCard' style={{ background: `linear-gradient(to right , ${this.state.colors[state.color1]})` }}>{cors.course.title}</div>
                           <div id='BodyNewCard'>
                             <div id='BodyNewCardImg'>
                               <div>
-                                <pre id="CorsSubT" data-tip={cors.sub_title}>{cors.sub_title}</pre>
+                                <pre id="CorsSubT" data-tip={cors.course.sub_title}>{cors.course.sub_title}</pre>
                                 <ReactTooltip place={'bottom'} type={'info'} border={true} className='yyy' />
                               </div>
                             </div>
                             <div id='BodyNewCardAut'>
-                              <img id='authCardImg' src={host + cors.userImg} alt='img'></img>
+                              <img id='authCardImg' src={host + cors.course.userImg} alt='img'></img>
                               <div id='authCardTitle'>
                                 <p>Author :<br />
                                   {cors.userName}</p>
                               </div>
                             </div>
 
-                            <div id='btnBuyNewCardPrice'>{cors.price[cors.__v]} $</div>
+                            <div id='btnBuyNewCardPrice'>{cors.course.price[cors.course.__v]} $</div>
 
                             
 
@@ -82,7 +82,7 @@ class ContentMyCourses extends React.Component {
               
             </Col>
           )}
-        </Row> */}
+        </Row> 
 
         </div>
         <FooterAllPage />

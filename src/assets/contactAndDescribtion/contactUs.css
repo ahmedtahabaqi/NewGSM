@@ -1,0 +1,65 @@
+#contactUSTitle{
+    margin-top: 50px;
+    text-align: center;
+    font-size: 35px;
+    font-weight: 600;
+}
+#inputContactContiner{
+    width: 90%;
+    margin: 0px 5%;
+display: flex;
+align-items: center;
+justify-content: space-between;
+}
+#inputContactUs{
+    width: 29%;
+    height: 50px;
+    margin-top: 50px;
+    border-radius: 10px;
+    border: solid 1px #999;
+    padding-left: 10px;
+}
+#inputContactUs:hover,#inputContactUsArea:hover,#bTnContactSend:focus,#bTnContactClear:focus{
+    border: solid 1px #f75457;
+}
+#inputContactUs:focus,#bTnContactSend:focus,#bTnContactClear:focus{
+    outline: none;
+}
+#inputContactUsArea{
+    width:90%;
+    margin: 50px 5%;
+    height: 120px;
+    border-radius: 10px;
+    border: solid 1px #999;
+    padding-left: 10px;
+}
+#btnCOntactusContiner{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+#bTnContactSend{
+height: 60px;
+width: 80px;
+background-color: #f75457;
+color: #fff;
+font-weight: 400;
+font-size: 18px;
+border-radius: 10px;
+border: 0px;
+margin-right: 10px;
+cursor: pointer;
+}
+#bTnContactClear{
+    height: 60px;
+    width: 80px;
+    background-color: #2f3334;
+    color: #fff;
+    font-weight: 400;
+    font-size: 18px;
+    border-radius: 10px;
+    border: 0px;
+    margin-left: 10px;
+    cursor: pointer;
+}

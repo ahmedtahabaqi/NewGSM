@@ -29,52 +29,38 @@ class ContentCoursesPkg extends React.Component {
             chapterId: '',
             rating: 3.5,
             courseDetels: {},
-            spinner:true,
-            price:[]
+            spinner: true,
+            price: []
         };
     }
-    changeRating(newRating, name) { this.setState({ rating: newRating }); }
-
     componentDidMount() {
         axios.get(host + `api/course/Course/` + this.props.match.params.id, { headers: {} })
             .then(response => {
-                this.setState({ lectures: response.data })
-                this.Html(response.data.length)
+                // console.log(response.data)
+                this.setState({
+                    lectures: response.data.chapters,
+                    spinner: false,
+                    courseDetels: response.data.course,
+                })
+                this.Html(response.data.chapters.length)
             })
             .catch((error) => { console.log('error ' + error); })
 
-        axios.get(host + `api/course/CourseDetails/` + this.props.match.params.id, { headers: { token: cookies.get('token') } })
-            .then(response => {
-                this.setState({spinner:false})
-                this.setState({ courseDetels: response.data[0],price: response.data[0].price[response.data[0].__v]})
-                // console.log(response.data[0].price[response.data[0].__v]);
-            })
-            .catch((error) => { console.log('error ' + error); })
     }
-    
-    network(id) {
-        axios.get(host + `api/course/Chapters/` + id,
-            { headers: { token: cookies.get('token') } })
-            .then(response => {
-                let data = { [id]: response.data }
-                let videos = [...this.state.videos2, data]
-                this.setState({ videos: response.data, videos2: videos })
-            })
-            .catch((error) => { console.log('error ' + error); })
-    }
+
+
 
     renderIcon = (_id, stat) => {
         if (stat) { return <Icon id='menuiconCourse' icon="minus" color="danger" size={30} /> }
         else { return <Icon id='menuiconCourse' icon="menu" color="info" size={30} /> }
     }
-
     Html(value) {
         let html = []
         for (let index = 0; index < value; index++) {
             html.push(
-                <div key={this.state.lectures[index]._id} id='AddLectureContinerCourse'>
+                <div key={index} id='AddLectureContinerCourse'>
                     <Component initialState={{
-                        ['open' + index]: false, videos: [],getFile:[]
+                        ['open' + index]: false, videos: [], getFile: []
                     }}>
                         {({ state, setState }) => (
                             <div id='plusContinerAddCourse'>
@@ -82,90 +68,90 @@ class ContentCoursesPkg extends React.Component {
 
                                     <div id='menuAndTitleCourse'>
                                         <div onClick={() => {
-                                                      axios.get(host + `api/course/ChaptersFiles/` + this.state.lectures[index]._id,
-                                                      { headers: { token: cookies.get('token') } })
-                                                      .then(response => {                                                                                                   
-                                                          setState({
-                                                              getFile: response.data,
-                                                              ['open' + index]: !state['open' + index]
-      
-                                                          })
-                                                      })
-                                                      .catch((error) => {
-                                                          console.log('error ' + error);
-                                                      })
-
-                                            axios.get(host + `api/course/Chapters/` + this.state.lectures[index]._id,
-                                                { headers: { token: cookies.get('token') } })
-                                                .then(response => {
-                                                    setState({
-                                                        videos: response.data,
-                                                        ['open' + index]: !state['open' + index]
-                                                    })
-                                                })
-                                                .catch((error) => {
-                                                    console.log('error ' + error);
-                                                })
+                                            setState({
+                                                ['open' + index]: !state['open' + index]
+                                            })
                                         }
                                         } aria-controls="example-collapse-text" >
                                             {this.renderIcon(this.state.lectures[index]._id, state['open' + index])} {}
                                         </div>
-                                        <span >{this.state.lectures[index].title}</span>
+                                        <span >{this.state.lectures[index].chapter_title}</span>
                                     </div>
 
                                 </div>
                                 <Collapse in={state['open' + index]}>
                                     <div id="example-collapse-text">
-                                        {state.videos.map((video) =>
-                                            <div key={video._id} id='showVideoContinerCourse'>
-                                                <div id='iconVideoAndNameCourse'>
-                                                    <Component initialState={{ isShown: false }}>
-                                                        {({ state, setState }) => (
-                                                            <Pane>
-                                                                <Dialog
-                                                                    isShown={state.isShown}
-                                                                    title="No footer"
-                                                                    onCloseComplete={() => setState({ isShown: false })}
-                                                                    hasFooter={false}
-                                                                    hasHeader={false}
-                                                                >
-                                                                    <Vimeo
-                                                                        video={video.VideoId}
-                                                                        frameborder="0"
-                                                                        width={525}
-                                                                        webkitallowfullscreen mozallowfullscreen allowfullscreen
-                                                                        autoplay
-                                                                    />
+                                        {this.state.lectures[index].Data.map((video) =>
+                                            <div key={video._id}>
+                                                <div id='showVideoContinerCourse' style={video.type === "video"? {}: { display: "none" }} >
 
-                                                                </Dialog>
-                                                                <div style={{ display: 'flex', alignItems: 'center', cursor: 'pointer' }} onClick={() => { setState({ isShown: true }) }}>
-                                                                    <Icon icon="video" size={20} color="success" marginLeft={16} marginRight={16} />
+                                                    <div id='iconVideoAndNameCourse' >
+                                                        <Component initialState={{ isShown: false }}>
+                                                            {({ state, setState }) => (
+                                                                <Pane>
+                                                                    <Dialog
+                                                                        isShown={state.isShown}
+                                                                        title="No footer"
+                                                                        onCloseComplete={() => setState({ isShown: false })}
+                                                                        hasFooter={false}
+                                                                        hasHeader={false}
+                                                                    >
+                                                                        <div  >
+                                                                            <Vimeo
+                                                                                video={video.VideoId}
+                                                                                frameborder="0"
+                                                                                width={525}
+                                                                                webkitallowfullscreen mozallowfullscreen allowfullscreen
+                                                                                autoplay
+                                                                            />
+                                                                        </div>
+
+
+                                                                    </Dialog>
+                                                                    {video.free ?(
+                                                                    <div style={{ display: 'flex', alignItems: 'center', cursor: 'pointer' }} onClick={() => { setState({ isShown: true }) }}>
+                                                                        <Icon icon="video" size={20} color="success" marginLeft={16} marginRight={16} />
+                                                                        <p id='NameofVideoInLectureCourse'>{video.name}</p>
+                                                                    </div>
+                                                                    ):(
+                                                                    <div style={{ display: 'flex', alignItems: 'center', cursor: 'pointer' }} >
+                                                                    <Icon icon="video" size={20} color="muted" marginLeft={16} marginRight={16} />
                                                                     <p id='NameofVideoInLectureCourse'>{video.name}</p>
                                                                 </div>
-                                                            </Pane>
-                                                        )}
-                                                    </Component>
+                                                                )}
+                                                                    
+                                                                </Pane>
+                                                            )}
+                                                        </Component>
 
+                                                    </div>
+
+                                                </div>
+                                                <div style={video.type === "file"
+
+                                                    ? {}
+                                                    : { display: "none" }} id='showVideoContiner'>
+                                                         {video.free ?(
+                                                    <div id='iconVideoAndName' style={{ cursor: 'pointer' }}
+                                                        onClick={() => {
+                                                            window.open(host + video.url, '_blank');
+                                                        }}>                                                    
+                                                        <Icon icon="document" size={20} color="info" marginRight={16} marginLeft={16}
+                                                            style={{ display: 'flex', alignItems: 'center', cursor: 'pointer' }} />                                                          
+                                                        <p id='NameofVideoInLecture'>{video.name}</p>     
+                                                    </div>
+                                                         ):(
+                                                            <div id='iconVideoAndName' style={{ cursor: 'pointer' }}>                                                    
+                                                            <Icon icon="document" size={20} color="muted" marginRight={16} marginLeft={16}
+                                                                style={{ display: 'flex', alignItems: 'center', cursor: 'pointer' }} />                                                          
+                                                            <p id='NameofVideoInLecture'>{video.name}</p>     
+                                                        </div>
+                                                         )}
                                                 </div>
 
                                             </div>
                                         )}
-                                                      {state.getFile.map(filess=>
-                                        <div key={filess._id} id='showVideoContiner'>
-                                            <div id='iconVideoAndName' style={{ cursor: 'pointer' }}
-                                            onClick={()=>{
-                                                window.open(host+filess.url, '_blank');
-                                            }}>
-                                                <Icon icon="document"  size={20} color="info" marginRight={16} marginLeft={16}
-                                                    style={{ display: 'flex', alignItems: 'center', cursor: 'pointer' }} />
-                                                <p id='NameofVideoInLecture'>{filess.name}</p>
-                                            </div>
-                                            <div>
-                                        
-                                               
-                                            </div>
-                                        </div>
-                                        )}
+
                                     </div>
                                 </Collapse>
                             </div>

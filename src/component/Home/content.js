@@ -166,14 +166,14 @@ class ContentHome extends React.Component {
                         <div id='videoHomeContiner'>
                             <div id='videoHometitle'>GET TO KNOW US</div>
                             <div id='videoHomeContiner1'>
-                                <ReactPlayer id='v1' width={'33vw'} height={'19vw'} url={'https://vimeo.com/336057224/37fe80a268'} light={true} playsinline={true} controls />
-                                <ReactPlayer id='v2' width={'33vw'} height={'19vw'} url={'https://vimeo.com/336058669/1e4e9dc0ca'} light={true} playsinline={true} controls />
-                                <ReactPlayer id='v3' width={'33vw'} height={'19vw'} url={'https://vimeo.com/336058976/8bb930753d'} light={true} playsinline={true} controls />
+                                <ReactPlayer id='v1' width={'33vw'} height={'19vw'} url={'https://vimeo.com/336057224/37fe80a268'}  playsinline={true} controls />
+                                <ReactPlayer id='v2' width={'33vw'} height={'19vw'} url={'https://vimeo.com/336058669/1e4e9dc0ca'}  playsinline={true} controls />
+                                <ReactPlayer id='v3' width={'33vw'} height={'19vw'} url={'https://vimeo.com/336058976/8bb930753d'}  playsinline={true} controls />
                             </div>
                             <div id='videoHomeContiner2'>
-                                <ReactPlayer id='v4' width={'33vw'} height={'19vw'} url={'https://vimeo.com/336059149/7108d01261'} light={true} playsinline={true} controls />
-                                <ReactPlayer id='v5' width={'33vw'} height={'19vw'} url={'https://vimeo.com/336059946/3a257c3b43'} light={true} playsinline={true} controls />
-                                <ReactPlayer id='v6' width={'33vw'} height={'19vw'} url={'https://vimeo.com/336060739/7180730e85'} light={true} playsinline={true} controls />
+                                <ReactPlayer id='v4' width={'33vw'} height={'19vw'} url={'https://vimeo.com/336059149/7108d01261'}  playsinline={true} controls />
+                                <ReactPlayer id='v5' width={'33vw'} height={'19vw'} url={'https://vimeo.com/336059946/3a257c3b43'}  playsinline={true} controls />
+                                <ReactPlayer id='v6' width={'33vw'} height={'19vw'} url={'https://vimeo.com/336060739/7180730e85'}  playsinline={true} controls />
                             </div>
                         </div>
                         <div id='homePackagesContiner'>

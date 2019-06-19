@@ -33,7 +33,7 @@ class Silver extends React.Component {
         var arr = []
         var packages =this.state.packages
         for (let i = 0; i < packages.length; i++) {
-            if (packages[i].tire === 'sliver') {
+            if (packages[i].tire === 'Silver') {
                 arr.push(
                     <Col key={packages[i]._id} id="col1" style={{ margin: 0, marginTop: 50, padding: 0 }} xs={12} sm={6} md={4} lg={3} xl={3} >
                     <Link to={'/Showsilver/' + packages[i]._id} >

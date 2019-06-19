@@ -35,6 +35,8 @@ class ShowCourseChapter extends React.Component {
         };
     }
     componentDidMount() {
+        console.log(this.props.match.params.id);
+        
         const headers = { "Content-Type": "application/json", token: cookies.get("tokenUser") };
         axios.get(host + `api/Buyed/mycourses/` + this.props.match.params.id, { headers: headers})
             .then(response => {
@@ -46,7 +48,8 @@ class ShowCourseChapter extends React.Component {
                 })
                 this.Html(response.data.chapters.length)
             })
-            .catch((error) => { console.log('error ' + error); })
+            .catch((error) => {this.setState({spinner: false}) 
+                console.log('error ' + error); })
 
     }
 

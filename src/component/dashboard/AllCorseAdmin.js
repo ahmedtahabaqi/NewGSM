@@ -61,10 +61,16 @@ class AllCourseAdmin extends React.Component {
                     spinner: false,
                     courseDetels: response.data.course,
                 })
+                if (response.data.chapters) {
                 this.Html(response.data.chapters.length)
+                    
+                }
                    
                 })
-                .catch(function (error) { toaster.danger(error.message) });
+                .catch(function (error) {
+                    console.log(error)
+                     toaster.danger(error.message) 
+                    });
 
     }
     deleteLecture(id) {

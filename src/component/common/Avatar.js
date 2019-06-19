@@ -75,14 +75,15 @@ class AvataeAndEdit extends React.Component {
                                         <div
                                             {...props}
                                             style={{
-                                                backgroundColor: '#f8f9fa',
+                                                backgroundColor: '#eeeeee',
                                                 padding: '2px 10px',
                                                 color: 'black',
                                                 borderRadius: 3,
+                                                zIndex:111,
                                                 ...props.style,
                                             }}
                                         >
-                                            <Menu>
+                                            <Menu >
                                                 <Menu.Group>
                                                     <Menu.Item>
                                                         {ctx.value.session.email}
@@ -131,7 +132,7 @@ class AvataeAndEdit extends React.Component {
                                         </div>
                                     )}
                             </Overlay>
-                            <Image style={{ cursor: "pointer" }} ref={this.attachRef} onClick={() => this.setState({ show: !show })} width="45" height="45" src={host + ctx.value.session.img} roundedCircle />
+                            <Image style={{ cursor: "pointer"}} ref={this.attachRef} onClick={() => this.setState({ show: !show })} width="45" height="45" src={host + ctx.value.session.img} roundedCircle />
                             {ctx.value.session.role === 1 || ctx.value.session.role === 0 ? (
                                 <Component initialState={{ isShown: false }}>
                                     {({ state, setState }) => (

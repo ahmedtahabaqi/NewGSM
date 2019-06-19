@@ -8,6 +8,11 @@ import ShowCourseChapter from './component/myCourses/showCourseChapter';
 import LoginAndRegister from './component/loginAndRegister/loginAndRegister';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Profile from './component/common/profile';
+import ForgetPassword from './component/forgetPassword/forgetpassword';
+import ForgetPassword1 from './component/forgetPassword/forgetpassword1';
+import ResetPassword from './component/forgetPassword/resetPassword';
+import ResetPassword1 from './component/forgetPassword/resetPassword1';
+import MessageCheack from './component/forgetPassword/messageCheack';
 import Dashboard from './component/dashboard/Dashboard';
 import AllCourseAdmin from './component/dashboard/AllCorseAdmin';
 import ShowPackages from './component/packages/showPackages';
@@ -89,7 +94,7 @@ class App extends Component {
 
         })
         .catch((error) => {
-        
+         this.setState({spinner: false})
             console.log(error.message)
             
 
@@ -131,7 +136,11 @@ class App extends Component {
           <Route path='/silver' component={Silver} />
           <Route path='/platinum' component={Platinum} />
           <Route path='/diamond' component={Diamond} />
-
+          <Route path='/forgetpassword' component={ForgetPassword} />
+          <Route path='/forgetpassword1' component={ForgetPassword1} />
+          <Route path='/resetoken' component={ResetPassword} />
+          <Route path='/resetoken1' component={ResetPassword1} />
+          <Route path='/message' component={MessageCheack} />
           <Route path='/gsmteam' component={GsmTeam} />
           <Route path='/aboutus' component={AboutUs} />
           <Route path='/contactus' component={ContactUs} />
@@ -157,6 +166,7 @@ class App extends Component {
             <Route path='/dashboard1/table6' component={Dashboard} />
             <Route path='/dashboard1/table7' component={Dashboard} />
             <Route path='/dashboard1/table8' component={Dashboard} />
+            <Route path='/dashboard1/table9' component={Dashboard} />
           </Switch>
 
 

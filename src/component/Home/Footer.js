@@ -303,7 +303,7 @@ class FooterHome extends Component {
                         <Link id='trustedby_BTN' to="/trustedby"><span id='trustedby_BTN'>Trusted By</span></Link>
                         <Link id='TermsOfService_BTN' to="/tearmsOfService">  <span id='TermsOfService_BTN'>Terms Of Service</span></Link>
                         <Link id='GSMTeam_BTN' to="/gsmteam">    <span id='GSMTeam_BTN'>G.S.M Team</span></Link>
-                        <Link id='ContactUs_BTN' to="/ontactus"><span id='ContactUs_BTN'>Contact Us</span></Link>
+                        <Link id='ContactUs_BTN' to="/contactus"><span id='ContactUs_BTN'>Contact Us</span></Link>
                         <Link id='AboutUs_BTN' to="/aboutus"><span id='AboutUs_BTN'>About Us</span></Link>
                     </div>
                     <div id='New_FooterRow3'>

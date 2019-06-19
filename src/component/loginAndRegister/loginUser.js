@@ -71,7 +71,8 @@ class Login extends React.Component {
                                         onChange={this.handleChange.bind(this)}
                                         value={this.state.Password}
                                     />
-                                      <a id='forgetpasswordNew' href="/forgetpassword">Forget Password</a>
+                                    <Link to='/forgetpassword1' id='forgetpasswordNew'>Forget Password</Link>
+                                      {/* <a id='forgetpasswordNew' href="/forgetpassword">Forget Password</a> */}
                                 </div>
                                 <div id="linkSignUp">
                                     

@@ -9,7 +9,7 @@ import { NavLink, Link } from 'react-router-dom';
 import axios from 'axios';
 import Cookies from "universal-cookie";
 import NavbarAllPage from '../common/navbarAllPage'
-import host from '../Host';
+import host from '../Host'
 import Iframe from 'react-iframe'
 
 const cookies = new Cookies();

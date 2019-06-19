@@ -143,7 +143,7 @@ transform: scale(1.08)
 }
 #sideBarBGC{
     background: linear-gradient(0deg,#94eef8  0, #30f9d7 100%);
-    height: 100vh;
+    height: 100vw;
 }
 @media screen and (max-width: 1080px) {
     #CateNewDashContiner{

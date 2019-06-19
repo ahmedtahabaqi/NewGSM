@@ -249,6 +249,10 @@ body{
     -moz-box-shadow: 0 0 5px rgb(197, 61, 61);
     -webkit-box-shadow: 0 0 5px rgb(197, 61, 61);
     box-shadow: 0 0 5px rgb(197, 61, 61);
+    
+}
+#V1{
+    background-color: #32dbc6;
 }
 
 #homePackagesContiner {
