@@ -8,7 +8,7 @@
     width: 100vw;
 
   }
-  
+
  #searchHome{
   position: absolute;
   top: 3.8vw;
@@ -18,9 +18,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
+ 
  }
  #searchHome1{
 height: 32px;
+padding-left: 10px;
+margin-left: -30px;
  }
  #gifHomePageCOntiner{
    position: relative;
@@ -49,10 +52,11 @@ width: 100%;
   #searchHome{
     top: -7vw;
     left:35vw ;
-    width: 150px;
+    width: 200px;
   }
   #gifHomePageCOntiner {
     height: 20px;
 }
+
  
 }

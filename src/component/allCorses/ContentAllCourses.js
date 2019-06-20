@@ -23,13 +23,29 @@ class ContentAllCourses extends React.Component {
   componentDidMount() {
     const urlParams = new URLSearchParams(window.location.search);
     const category = urlParams.get('category');
+
+    const name = urlParams.get('name');
+    console.log(name)
     if (category === 'all') {
       axios.get(host + `api/course`, { headers: {} })
         .then(response => {
 
-          this.setState({
-            course: response.data
-          })
+          if (name) {
+
+            const result = response.data.filter(
+              sort =>
+                sort.title === name
+            );
+            this.setState({
+              course: result
+            });
+          }else{
+            this.setState({
+              course: response.data
+            })
+          }
+          
+
 
 
         })
