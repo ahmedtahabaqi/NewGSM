@@ -1,7 +1,7 @@
 import React from 'react';
 import { Row, Col } from 'react-bootstrap';
 import Component from "@reactions/component";
-import { Button,Spinner, Pane  } from 'evergreen-ui';
+import { Button,Spinner, Pane ,Dialog } from 'evergreen-ui';
 import Context from '../Context';
 import FooterAllPage from '../common/footerAllPage';
 import { Link } from 'react-router-dom';
@@ -53,7 +53,33 @@ class ShowSilver extends React.Component {
                                         <p id='descripCourse'> {this.state.packageContent.body} </p>
 
                                         <div id='byNowContiner'>
-                                            <Button size={30} appearance="primary" intent="danger" > By Now</Button>
+                                        <Component initialState={{ isShown: false }}>
+                                                    {({ state, setState }) => (
+                                                        <Pane>
+                                                            <Dialog
+                                                                isShown={state.isShown}
+                                                                title="By Now"
+                                                                onCloseComplete={() => setState({ isShown: false })}
+                                                                hasFooter={false}
+                                                            >
+                                                                <div id='dialogBayNow'>
+                                                                    <p>To purchase this course and for more informations please, contact us on</p>
+                                                                    <p>What'sapp +964 0773 504 4810 </p>
+                                                                    <p>Or email us at <span style={{ color: '#32dbc6' }}>gsm.med.edu@gmail.com</span></p>
+                                                                </div>
+                                                                <div id='LineDialog' />
+                                                                <div id='dialogBayNow'>
+                                                                    <p>لشراء هذه الدوره التدريبيه ولمعلومات اخرى يرجى التواصل على</p>
+                                                                    <p>الواتساب +964 0773 504 4810 </p>
+                                                                    <p><span style={{ color: '#32dbc6' }}>gsm.med.edu@gmail.com</span> او التواصل على الايميل التالي</p>
+                                                                </div>
+                                                            </Dialog>
+                                                            <Button size={400} appearance="primary" intent="danger"
+                                                                onClick={() => setState({ isShown: true })} > By Now</Button>
+
+                                                        </Pane>
+                                                    )}
+                                                </Component>
 
                                             <div id='priceNow'>{this.state.packageContent.Price + ' $'}</div>
                                         </div>

@@ -1,0 +1,43 @@
+#COOOOOlInstructor1{
+    padding: 0px;
+    margin: 0px;
+    background: linear-gradient(90deg,#7cd8d5  0, #c7bad8 100%);
+}
+#COOOOOlInstructor2{
+    padding: 0px;
+    margin: 0px;
+    background: linear-gradient(90deg,#7cd8d5  0, #c7bad8 100%);
+}
+#titleHeaderInstructor1{
+    height: 150px;
+    background: linear-gradient(45deg,#17ccab  0, #9865c1 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    font-weight: 600;
+    color: #cdf3ff;
+}
+#titleHeaderInstructor2{
+    height: 150px;
+    background: linear-gradient(45deg,#f24676  0, #f19b6a 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    font-weight: 600;
+    color: #cdf3ff;
+}
+#logoInstructorContiner{
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    margin-top: 50px;
+}
+#logoInstructorContiner div{
+    margin-top: 10px;
+}
+#COnTENtInstructor1{
+    padding: 50px;
+}

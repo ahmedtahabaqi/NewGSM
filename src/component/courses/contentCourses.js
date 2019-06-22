@@ -4,6 +4,7 @@ import { Collapse } from 'react-bootstrap';
 import Component from "@reactions/component";
 import Vimeo from '@u-wave/react-vimeo';
 import Context from '../Context';
+import { Link } from 'react-router-dom'
 import NavbarAllPage from '../common/navbarAllPage';
 import FooterAllPage from '../common/footerAllPage';
 import axios from 'axios';
@@ -82,7 +83,7 @@ class ContentCourses extends React.Component {
                                     <div id="example-collapse-text">
                                         {this.state.lectures[index].Data.map((video) =>
                                             <div key={video._id}>
-                                                <div id='showVideoContinerCourse' style={video.type === "video"? {}: { display: "none" }} >
+                                                <div id='showVideoContinerCourse' style={video.type === "video" ? {} : { display: "none" }} >
 
                                                     <div id='iconVideoAndNameCourse' >
                                                         <Component initialState={{ isShown: false }}>
@@ -107,18 +108,18 @@ class ContentCourses extends React.Component {
 
 
                                                                     </Dialog>
-                                                                    {video.free ?(
-                                                                    <div style={{ display: 'flex', alignItems: 'center', cursor: 'pointer' }} onClick={() => { setState({ isShown: true }) }}>
-                                                                        <Icon icon="video" size={20} color="success" marginLeft={16} marginRight={16} />
-                                                                        <p id='NameofVideoInLectureCourse'>{video.name}</p>
-                                                                    </div>
-                                                                    ):(
-                                                                    <div style={{ display: 'flex', alignItems: 'center', cursor: 'pointer' }} >
-                                                                    <Icon icon="video" size={20} color="muted" marginLeft={16} marginRight={16} />
-                                                                    <p id='NameofVideoInLectureCourse'>{video.name}</p>
-                                                                </div>
-                                                                )}
-                                                                    
+                                                                    {video.free ? (
+                                                                        <div style={{ display: 'flex', alignItems: 'center', cursor: 'pointer' }} onClick={() => { setState({ isShown: true }) }}>
+                                                                            <Icon icon="video" size={20} color="success" marginLeft={16} marginRight={16} />
+                                                                            <p id='NameofVideoInLectureCourse'>{video.name}</p>
+                                                                        </div>
+                                                                    ) : (
+                                                                            <div style={{ display: 'flex', alignItems: 'center', cursor: 'pointer' }} >
+                                                                                <Icon icon="video" size={20} color="muted" marginLeft={16} marginRight={16} />
+                                                                                <p id='NameofVideoInLectureCourse'>{video.name}</p>
+                                                                            </div>
+                                                                        )}
+
                                                                 </Pane>
                                                             )}
                                                         </Component>
@@ -130,22 +131,22 @@ class ContentCourses extends React.Component {
 
                                                     ? {}
                                                     : { display: "none" }} id='showVideoContiner'>
-                                                         {video.free ?(
-                                                    <div id='iconVideoAndName' style={{ cursor: 'pointer' }}
-                                                        onClick={() => {
-                                                            window.open(host + video.url, '_blank');
-                                                        }}>                                                    
-                                                        <Icon icon="document" size={20} color="info" marginRight={16} marginLeft={16}
-                                                            style={{ display: 'flex', alignItems: 'center', cursor: 'pointer' }} />                                                          
-                                                        <p id='NameofVideoInLecture'>{video.name}</p>     
-                                                    </div>
-                                                         ):(
-                                                            <div id='iconVideoAndName' style={{ cursor: 'pointer' }}>                                                    
-                                                            <Icon icon="document" size={20} color="muted" marginRight={16} marginLeft={16}
-                                                                style={{ display: 'flex', alignItems: 'center', cursor: 'pointer' }} />                                                          
-                                                            <p id='NameofVideoInLecture'>{video.name}</p>     
+                                                    {video.free ? (
+                                                        <div id='iconVideoAndName' style={{ cursor: 'pointer' }}
+                                                            onClick={() => {
+                                                                window.open(host + video.url, '_blank');
+                                                            }}>
+                                                            <Icon icon="document" size={20} color="info" marginRight={16} marginLeft={16}
+                                                                style={{ display: 'flex', alignItems: 'center', cursor: 'pointer' }} />
+                                                            <p id='NameofVideoInLecture'>{video.name}</p>
                                                         </div>
-                                                         )}
+                                                    ) : (
+                                                            <div id='iconVideoAndName' style={{ cursor: 'pointer' }}>
+                                                                <Icon icon="document" size={20} color="muted" marginRight={16} marginLeft={16}
+                                                                    style={{ display: 'flex', alignItems: 'center', cursor: 'pointer' }} />
+                                                                <p id='NameofVideoInLecture'>{video.name}</p>
+                                                            </div>
+                                                        )}
                                                 </div>
 
                                             </div>
@@ -189,7 +190,33 @@ class ContentCourses extends React.Component {
                                                 <span>{'Author: ' + this.state.courseDetels.user.name}</span>
                                             </div>
                                             <div id='byNowContiner'>
-                                                <Button size={400} appearance="primary" intent="danger" > By Now</Button>
+                                                <Component initialState={{ isShown: false }}>
+                                                    {({ state, setState }) => (
+                                                        <Pane>
+                                                            <Dialog
+                                                                isShown={state.isShown}
+                                                                title="By Now"
+                                                                onCloseComplete={() => setState({ isShown: false })}
+                                                                hasFooter={false}
+                                                            >
+                                                                <div id='dialogBayNow'>
+                                                                    <p>To purchase this course and for more informations please, contact us on</p>
+                                                                    <p>What'sapp +964 0773 504 4810 </p>
+                                                                    <p>Or email us at <span style={{ color: '#32dbc6' }}>gsm.med.edu@gmail.com</span></p>
+                                                                </div>
+                                                                <div id='LineDialog' />
+                                                                <div id='dialogBayNow'>
+                                                                    <p>لشراء هذه الدوره التدريبيه ولمعلومات اخرى يرجى التواصل على</p>
+                                                                    <p>الواتساب +964 0773 504 4810 </p>
+                                                                    <p><span style={{ color: '#32dbc6' }}>gsm.med.edu@gmail.com</span> او التواصل على الايميل التالي</p>
+                                                                </div>
+                                                            </Dialog>
+                                                            <Button size={400} appearance="primary" intent="danger"
+                                                                onClick={() => setState({ isShown: true })} > By Now</Button>
+
+                                                        </Pane>
+                                                    )}
+                                                </Component>
                                                 {/* <div id='orginalPrice'>{this.state.courseDetels.__v + ' $'}</div> */}
                                                 <div id='priceNow'>{this.state.courseDetels.price[this.state.courseDetels.__v] + ' $'}</div>
                                             </div>

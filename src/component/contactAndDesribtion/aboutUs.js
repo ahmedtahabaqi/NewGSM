@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Context from '../Context';
 // import NavbarAllPage from '../common/navbarAllPage';
 import FooterAllPage from '../common/footerAllPage';
-
+import {Link} from 'react-router-dom';
 class AboutUs extends Component {
     constructor() {
         super()
@@ -24,7 +24,9 @@ class AboutUs extends Component {
                             </div>
                         <div id='partOneContiner'>
                             <span>Welcome to </span>
+                            <Link to='/'>
                             <img height={30} src={require('../../assets/pngz.png')} alt='img' />
+                            </Link>
                             <span><span style={{ color: '#cb8f9b' }}> G</span>.S.M MEDICAL EDUCATION</span>
                         </div>
                         <div id='partOneContent'>
@@ -34,7 +36,11 @@ class AboutUs extends Component {
                         </div>
                         { /*///////////////////////////////////////////////////// */}
                         <div id='partTowContiner'>
-                            <div id='notebookContiner'> <img id='notebookimg' src={require('../../assets/notebook.png')} alt='img' /></div>
+                            <div id='notebookContiner'> 
+                            <Link to='/'>
+                            <img id='notebookimg' src={require('../../assets/notebook.png')} alt='img' />
+                            </Link>
+                            </div>
                             <div>
                                 <div id='partTowContent1'>
                                     <span>As Medical Doctors </span>
@@ -59,7 +65,7 @@ class AboutUs extends Component {
                                         systems specially in this vitally important part (health care system).
                                     </p>
                                         </div>
-                                        <img id='bigImageAbuoutUs' src={require('../../assets/simulation.png')} alt='img' />
+                                        <img id='bigImageAbuoutUs' width= {200} src={require('../../assets/simulation.png')} alt='img' />
                                     </div>
                                 </div>
 
@@ -115,7 +121,12 @@ class AboutUs extends Component {
                             great development in teaching techniques and surely better students and doctors.
                         </div>
                         <div id='partfiveContiner'>
-                            <img width={300} src={require('../../assets/presentation.png')} alt='img' />
+                            <div style={{position:'absolute', marginTop:-80, marginLeft:60}}>
+                                <Link to='/'>
+                        <img width={40} src={require('../../assets/loog.png')} alt='img' />
+                        </Link>
+                        </div>
+            <img width={300} src={require('../../assets/presentation.png')} alt='img' />
                         </div>
                         <div id='partfiveContient'>
                             <p>

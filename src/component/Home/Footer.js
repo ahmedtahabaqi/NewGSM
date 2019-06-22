@@ -8,7 +8,24 @@ import "react-alice-carousel/lib/alice-carousel.css";
 
 
 class FooterHome extends Component {
-
+constructor(props){
+    super(props);
+    this.state={
+        intervalId: 0
+    }
+}
+scrollStep() {
+    if (window.pageYOffset === 0) {
+        clearInterval(this.state.intervalId);
+    }
+    window.scroll(0, window.pageYOffset - this.props.scrollStepInPx);
+  }
+  
+  scrollToTop() {
+    let intervalId = setInterval(this.scrollStep.bind(this), this.props.delayInMs);
+    this.setState({ intervalId: intervalId });
+  }
+  
     responsive = {
         0: { items: 1 },
         600: { items: 2 },
@@ -290,10 +307,15 @@ class FooterHome extends Component {
 
                 </div>
                 <div id='barinstructorContiner'>
-                    <img id='logoInstructour' src={require('../../assets/pngz.png')} alt="img" />
+                    
+                    <img  onClick={ () => { this.scrollToTop(); }}
+                    id='logoInstructour' src={require('../../assets/pngz.png')} alt="img" />
+                    
                     <div id='btn_InstrctorContiner'>
                         <div id='pargrapBforeBtn'>Become an</div>
+                        <Link to='/instructer'>
                         <span id='btn_Instrctor'>Instructor</span>
+                        </Link>
                     </div>
 
                 </div>
@@ -310,7 +332,7 @@ class FooterHome extends Component {
                         <div id='LOGANDCOPY'>
                             <div>
                                 
-                                <img  onClick={() => {  window.location.href = "#continer_header" }}
+                                <img  onClick={ () => { this.scrollToTop(); }}
                                 id='logoFOOTER' src={require('../../assets/pngz.png')} alt="img" />
                              
                             </div>

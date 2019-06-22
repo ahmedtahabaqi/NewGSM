@@ -3,7 +3,7 @@ import Context from '../Context';
 import Slider from 'react-slick';
 import Component from "@reactions/component";
 import ReactPlayer from 'react-player'
-import { Button } from 'evergreen-ui';
+import { Tooltip, Button } from 'evergreen-ui';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import host from '../Host';
@@ -124,7 +124,7 @@ class ContentHome extends React.Component {
                                                                     <div id='BodyNewCardImg'>
                                                                         <div>
                                                                             <pre id="CorsSubT" data-tip={cors.sub_title}>{cors.sub_title}</pre>
-                                                                            <ReactTooltip place={'bottom'} type={'info'} border={true} className='yyy'/>
+                                                                            <ReactTooltip place={'bottom'} type={'info'} border={true} className='yyy' />
                                                                         </div>
                                                                     </div>
                                                                     <div id='BodyNewCardAut'>
@@ -156,7 +156,7 @@ class ContentHome extends React.Component {
                             </div>
                             <div>
                                 <h3>Feel Comfortable</h3>
-                                    <h2>
+                                <h2>
                                     Our Team Works 7 Days a Week Just to Make the Complex Medical Concepts as Simple &<br />
                                     Beloved as Your Favorite Piece of Music </h2>
                                 <h6>Best Regards <br />
@@ -166,55 +166,59 @@ class ContentHome extends React.Component {
                         <div id='videoHomeContiner'>
                             <div id='videoHometitle'>GET TO KNOW US</div>
                             <div id='videoHomeContiner1'>
-                                <ReactPlayer id='v1' width={'33vw'} height={'19vw'} url={'https://vimeo.com/336057224/37fe80a268'}  playsinline={true} controls />
-                                <ReactPlayer id='v2' width={'33vw'} height={'19vw'} url={'https://vimeo.com/336058669/1e4e9dc0ca'}  playsinline={true} controls />
-                                <ReactPlayer id='v3' width={'33vw'} height={'19vw'} url={'https://vimeo.com/336058976/8bb930753d'}  playsinline={true} controls />
+                                <ReactPlayer id='v1' width={'33vw'} height={'19vw'} url={'https://vimeo.com/336057224/37fe80a268'} playsinline={true} controls />
+                                <ReactPlayer id='v2' width={'33vw'} height={'19vw'} url={'https://vimeo.com/336058669/1e4e9dc0ca'} playsinline={true} controls />
+                                <ReactPlayer id='v3' width={'33vw'} height={'19vw'} url={'https://vimeo.com/336058976/8bb930753d'} playsinline={true} controls />
                             </div>
                             <div id='videoHomeContiner2'>
-                                <ReactPlayer id='v4' width={'33vw'} height={'19vw'} url={'https://vimeo.com/336059149/7108d01261'}  playsinline={true} controls />
-                                <ReactPlayer id='v5' width={'33vw'} height={'19vw'} url={'https://vimeo.com/336059946/3a257c3b43'}  playsinline={true} controls />
-                                <ReactPlayer id='v6' width={'33vw'} height={'19vw'} url={'https://vimeo.com/336060739/7180730e85'}  playsinline={true} controls />
+                                <ReactPlayer id='v4' width={'33vw'} height={'19vw'} url={'https://vimeo.com/336059149/7108d01261'} playsinline={true} controls />
+                                <ReactPlayer id='v5' width={'33vw'} height={'19vw'} url={'https://vimeo.com/336059946/3a257c3b43'} playsinline={true} controls />
+                                <ReactPlayer id='v6' width={'33vw'} height={'19vw'} url={'https://vimeo.com/336060739/7180730e85'} playsinline={true} controls />
                             </div>
                         </div>
                         <div id='homePackagesContiner'>
                             <div >
-                                
+
                                 <img id='bgcPackage' src={require('../../assets/bgcPackage.png')} alt='img' />
                                 <div>
                                     <div >
-                                    <Link to='/diamond'>
-                                        <img id='daimond' src={require('../../assets/daimond.png')} alt='img' />
-                                        </Link>   
+                                        <Link to='/diamond'>
+                                            <img id='daimond' src={require('../../assets/daimond.png')} alt='img' />
+                                        </Link>
                                         <div>
-                                            <div id='details1'>Details</div>
+                                                <div id='details1' data-tip='Postgraduate & Undergraduate'>Details</div>
+                                                <ReactTooltip place={'bottom'} type={'info'} border={true} className='yyy2' />
                                         </div>
                                     </div>
                                     <div>
-                                    <Link to='/platinum'>
-                                        <img id='platinum' src={require('../../assets/platinum.png')} alt='img' />
+                                        <Link to='/platinum'>
+                                            <img id='platinum' src={require('../../assets/platinum.png')} alt='img' />
                                         </Link>
                                         <div>
-                                            <div id='details2'>Details</div>
-
-                                        </div>
-
-                                    </div>
-                                    <div>
-                                    <Link to='/gold'>
-                                        <img id='gold' src={require('../../assets/gold.png')} alt='img' />
-                                        </Link>
-                                        <div>
-                                            <div id='details3'>Details</div>
+                                        <div id='details2' data-tip='Step1 & Step2'>Details</div>
+                                                <ReactTooltip place={'bottom'} type={'info'} border={true} className='yyy2' />
 
                                         </div>
 
                                     </div>
                                     <div>
-                                    <Link to='/silver'>
-                                        <img id='selver' src={require('../../assets/selver.png')} alt='img' />
+                                        <Link to='/gold'>
+                                            <img id='gold' src={require('../../assets/gold.png')} alt='img' />
                                         </Link>
                                         <div>
-                                            <div id='details4'>Details</div>
+                                        <div id='details3' data-tip='Step 2'>Details</div>
+                                                <ReactTooltip place={'bottom'} type={'info'} border={true} className='yyy2' />
+
+                                        </div>
+
+                                    </div>
+                                    <div>
+                                        <Link to='/silver'>
+                                            <img id='selver' src={require('../../assets/selver.png')} alt='img' />
+                                        </Link>
+                                        <div>
+                                        <div id='details4' data-tip='Step1'>Details</div>
+                                                <ReactTooltip place={'bottom'} type={'info'} border={true} className='yyy2' />
 
                                         </div>
 

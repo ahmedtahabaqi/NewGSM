@@ -384,6 +384,12 @@ body{
     min-height: 50px;
     white-space: pre;
 }
+.yyy2{
+    min-width: 60px;
+    max-width: auto;
+    min-height: 40px;
+    white-space: pre;
+}
 @media screen and (max-width: 740px) {
     #details1,#details2,#details3,#details4 {
         width: 40px;

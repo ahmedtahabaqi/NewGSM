@@ -1,5 +1,5 @@
 import React from 'react';
-import { InputGroup, FormControl } from 'react-bootstrap';
+import { InputGroup } from 'react-bootstrap';
 import Context from '../Context';
 import axios from 'axios';
 import host from '../Host';
@@ -125,10 +125,11 @@ class HeaderHome extends React.Component {
                                     getSuggestionValue={getSuggestionValue}
                                     renderSuggestion={renderSuggestion}
                                     inputProps={inputProps}
-                                /></div>
+                                />
+                                </div>
                                        {/* <FormControl id='searchHome1' placeholder='Search' aria-describedby="basic-addon1" /> */}
                                        <img height="25" style={{marginLeft:170,zIndex:99,marginTop:3,cursor:'pointer'}} src={require('../../assets/search.png')} alt="img"  onClick={()=>{
-                                           window.location.href=`http://localhost:3000/allcourses?category=all&name=${this.state.value}`
+                                           window.location.href=`/allcourses?category=all&name=${this.state.value}`
                                        }}/>
                                     </InputGroup>
 

@@ -3,6 +3,7 @@ import { Row, Col,Form } from 'react-bootstrap';
 import { toaster, Pane, TextInput } from "evergreen-ui";
 import axios from "axios";
 import Cookies from "universal-cookie";
+import {Link} from 'react-router-dom';
 import host from '../Host';
 const cookies = new Cookies();
 
@@ -136,7 +137,7 @@ class Login extends React.Component {
                                         // label={`Check this custom ${type}`}
                                     />
                                     </Pane>
-                                        &nbsp;&nbsp;I Agree to the &nbsp;<span>Terms & Conditions</span></div>
+                                        &nbsp;&nbsp;I Agree to the &nbsp;<Link to='/tearmsOfService'><span>Terms & Conditions</span></Link></div>
                                     <div id='SIgNuP_BTN' style={{cursor:"pointer"}} onClick={()=>{
                                         this.Login()
                                     }}> Sign Up</div>

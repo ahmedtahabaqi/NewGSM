@@ -49,4 +49,14 @@
     #NameofVideoInLectureCourse{
         margin-top: 15px;
       }
-      
+      #dialogBayNow{
+          text-align: center;
+      }
+      #LineDialog{
+          
+          border: 2px solid #32dbc6;
+          width: 90%;
+          margin-left: 5%;
+          margin-right: 5%;
+          margin-bottom: 20px;
+      }
