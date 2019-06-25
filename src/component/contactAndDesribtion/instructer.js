@@ -14,7 +14,9 @@ class Instructer extends Component {
                         <div id='contentUpFooter'>
                             <Row style={{ padding: 0, margin: 0 }}>
                                 <Col id='COOOOOlInstructor1' md={12} lg={6}>
+                                <Link to='/contactus'>
                                     <div id='titleHeaderInstructor1'>Instructor Terms & Conditions</div>
+                                   </Link>
                                     <div id='logoInstructorContiner'>
                                         <Link to='/'>
                                             <img width={60} src={require('../../assets/loog.png')} alt='logo' />
@@ -95,7 +97,9 @@ class Instructer extends Component {
                                     </div>
                                 </Col>
                                 <Col id='COOOOOlInstructor2' md={12} lg={6}>
+                                    <Link to='/contactus'>
                                     <div id='titleHeaderInstructor2'>Instructor Terms & Privilages</div>
+                                    </Link>
                                     <div id='logoInstructorContiner'>
                                         <Link to='/'>
                                             <img width={60} src={require('../../assets/loog.png')} alt='logo' />

@@ -123,8 +123,20 @@
     color: #d7e4f9;
     font-size: 16px;
     font-weight: 600;
+    -webkit-user-select: none;  
+    -moz-user-select: none;    
+    -ms-user-select: none;      
+    user-select: none;
 }
-
+#SELLYORECORSE_BTN:hover ,#JOINGSM_BTN:hover{
+    transform: scale(1.02);
+}
+#SELLYORECORSE_BTN:active{
+    background: linear-gradient(45deg, #f34773 0, #f09967 100%);
+}
+#JOINGSM_BTN:active{
+    background: linear-gradient(45deg, #18cba9 0, #9366c6 100%);
+}
 #JOINGSM_BTN {
     background: linear-gradient(45deg, #f34773 0, #f09967 100%);
     width: 43%;
@@ -137,6 +149,10 @@
     color: #d7e4f9;
     font-size: 16px;
     font-weight: 600;
+    -webkit-user-select: none;  
+    -moz-user-select: none;    
+    -ms-user-select: none;      
+    user-select: none;
 }
 
 #CHEckBOxSIgnUPCOntiner {

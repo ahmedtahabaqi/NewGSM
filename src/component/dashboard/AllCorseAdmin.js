@@ -153,51 +153,9 @@ class AllCourseAdmin extends React.Component {
                                         <span >{this.state.lectures[index].chapter_title}</span>
                                     </div>
                                     <div id="uploadAnddeletContiner">
-                                        <Component initialState={{ isShown: false }}>
-                                            {({ state, setState }) => (
-                                                <Pane>
-                                                    <Dialog
-                                                        isShown={state.isShown}
-                                                        title="Dialog title"
-                                                        onCloseComplete={() => setState({ isShown: false })}
-                                                        confirmLabel="Edit Lecture"
-                                                        onConfirm={() => {
-
-
-
-                                                            let formData = new FormData();
-                                                            var headers = { "Content-Type": "application/json", token: cookies.get("token") };
-                                                            formData.append("title", this.state.editChapter);
-
-                                                            axios({ url: host + "api/course/editchapter/" + this.state.lectures[index].chapter_id, method: "POST", data: formData, headers: headers })
-                                                                .then(response => {
-                                                                    if (response.status === 200) {
-                                                                        window.location.reload();
-                                                                        this.componentDidMount();
-                                                                    }
-                                                                })
-                                                                .catch(function (error) { toaster.danger(error.message) });
-
-                                                            setState({ isShown: false })
-                                                        }}
-                                                    >
-                                                        <p>Chapter Name</p>
-                                                        <TextInput width='100%' name="text-input-name"
-                                                            placeholder="input chapter name..."
-                                                            onChange={(event) => this.setState({ editChapter: event.target.value })}
-                                                        />
-                                                    </Dialog>
-
-                                                    <Icon icon="edit" size={20} color="muted" marginRight={16}
-                                                        onClick={() => { setState({ isShown: true }) }}
-                                                        style={{ cursor: 'pointer' }}
-                                                    />
-                                                </Pane>
-                                            )}
-                                        </Component>
+                       
                                     
-                                        <Icon icon="trash" onClick={() => this.deleteLecture(this.state.lectures[index].chapter_id)}
-                                            size={20} color="danger" marginRight={16} id='iconTrushAddlecture' />
+                                    
                                     </div>
                                 </div>
                                 <Collapse in={state['open' + index]}>
@@ -420,11 +378,11 @@ class AllCourseAdmin extends React.Component {
 
                                     </div>
                                     {/* )} */}
-                                    <NavLink exact to='/dashboard1/table1'>
+                                    {/* <NavLink exact to='/dashboard1/table1'>
                                         <div id='iconBack'>
                                             <Icon icon='arrow-left' size={30} color="white" />
                                         </div>
-                                    </NavLink>
+                                    </NavLink> */}
                                    
                                     {this.displayDataAdt}
                                 </div>

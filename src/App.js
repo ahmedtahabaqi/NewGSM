@@ -15,6 +15,7 @@ import ResetPassword1 from './component/forgetPassword/resetPassword1';
 import MessageCheack from './component/forgetPassword/messageCheack';
 import Dashboard from './component/dashboard/Dashboard';
 import AllCourseAdmin from './component/dashboard/AllCorseAdmin';
+import CourseT from './component/dashboard/courseT';
 import ShowPackages from './component/packages/showPackages';
 import Gold from './component/packages/gold';
 import ShowGold from './component/packages/ShowGold';
@@ -157,6 +158,7 @@ class App extends Component {
           <Route path='/Showdiamond/:id' component={ShowDiamond} />
           <Route path='/Showplatinum/:id' component={ShowPlatinum} />
           <Route path='/CoursesByCategory/:id' component={CoursesByCategory} />
+          <Route path='/courseinstructor/:id' component={CourseT} />
           <Switch>
             <Route path='/dashboard1/table1' component={Dashboard} />
             <Route path='/dashboard1/table2' component={Dashboard} />

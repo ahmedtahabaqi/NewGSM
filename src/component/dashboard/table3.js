@@ -2,6 +2,7 @@ import React from 'react';
 // import Component from "@reactions/component";
 import { Icon, toaster } from 'evergreen-ui';
 import { Col, Row, Table } from 'react-bootstrap';
+import {Link} from 'react-router-dom';
 import axios from 'axios';
 import Cookies from "universal-cookie";
 import host from '../Host';
@@ -23,19 +24,22 @@ class Table3 extends React.Component {
             })
             .catch((error) => { toaster.danger(error.request.response) })
     }
+
     filter1() {
         let filt1 = []
         const gsm = this.state.allUser
         for (let i = 0; i < gsm.length; i++) {
             if (gsm[i].GSM) {
                 filt1.push(
-                    <tr>
+                    <tr key={gsm[i]._id}>
                         <td>{gsm[i].name}</td>
                         <td>{gsm[i].field}</td>
                         <td>{gsm[i].email}</td>
                         <td style={{display:'flex',justifyContent:'center'}}>
+                            <Link to={'/courseinstructor/'+gsm[i]._id}>
                             <Icon style={{ cursor: 'pointer' }}
                                 icon="video" color="success" size={20} />
+                                </Link>
                         </td>
                         
                     </tr>
@@ -57,8 +61,10 @@ class Table3 extends React.Component {
                         <td>{gsm[i].field}</td>
                         <td>{gsm[i].email}</td>
                         <td style={{display:'flex',justifyContent:'center'}}>
+                        <Link to={'/courseinstructor/'+gsm[i]._id}>
                             <Icon style={{ cursor: 'pointer' }}
                                 icon="video" color="success" size={20} />
+                                </Link>
                         </td>
                         
                     </tr>

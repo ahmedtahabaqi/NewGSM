@@ -17,6 +17,7 @@
     font-size: 30px;
     font-weight: 600;
     color: #cdf3ff;
+    cursor: pointer;
 }
 #titleHeaderInstructor2{
     height: 150px;
@@ -27,6 +28,7 @@
     font-size: 30px;
     font-weight: 600;
     color: #cdf3ff;
+    cursor: pointer;
 }
 #logoInstructorContiner{
     display: flex;

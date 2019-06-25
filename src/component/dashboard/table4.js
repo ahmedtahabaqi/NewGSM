@@ -17,6 +17,7 @@ class Table4 extends React.Component {
             lastName:"",
             team:false,
             field:"",
+            
         };
     }
 
@@ -44,16 +45,13 @@ class Table4 extends React.Component {
             gsm:this.state.team,
         })
             .then(function (response) {
-                cookies.set("token", response.data, {
-                    path: "/",
-                    expires: new Date(Date.now() + 604800000)
-                });
-                window.location.href = "/Addcourses";
+              
+                window.location.reload();
             })
             .catch(function (error) {
-                console.log(error.response)
+                console.log(error)
                 if (error.response) {
-                    toaster.danger("Email is already in use");
+                    toaster.danger(error.message);
                 }
             });
     }
