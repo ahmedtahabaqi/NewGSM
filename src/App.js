@@ -54,7 +54,7 @@ class App extends Component {
       packageId: '',
       auth: "logding",
       session: [],
-      spinner: false,
+      spinner: true,
     }
   }
   componentDidMount() {
