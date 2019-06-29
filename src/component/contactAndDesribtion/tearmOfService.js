@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Context from '../Context';
+import NavbarAllPage from '../common/navbarAllPage'
 
 // import {Link} from 'react-router-dom';
 // import NavbarAllPage from '../common/navbarAllPage'
@@ -20,6 +21,7 @@ class Tearms extends Component {
 
                 return (
                     <div id='TearmsOFSERContiner'>
+                        <NavbarAllPage />
                         <div id='contentUpFooter'>
                             <div id='headerAboutUs'>
                                 Tearms Of Service

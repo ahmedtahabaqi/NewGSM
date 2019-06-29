@@ -96,11 +96,12 @@ class NavbarAllPage extends Component {
                                    
                                 </Nav>
                                 <Nav>
-                                    <div style={{ marginRight: 40, marginTop: 7, cursor: 'pointer' }}>
+                                    {/* <div style={{ marginRight: 40, marginTop: 7, cursor: 'pointer' }}>
                                         <img height="35" src={require('../../assets/nof.png')} alt="img" />
                                     </div>
                                     <div style={{ marginRight: 40, marginTop: 7, cursor: 'pointer' }}>
                                         <img height="35" src={require('../../assets/shopping.png')} alt="img" /></div>
+                                    */}
                                     <div style={ctx.value.auth === "login" ? {} : { display: "none" }}>
                                         <AvataeAndEdit />
                                     </div>

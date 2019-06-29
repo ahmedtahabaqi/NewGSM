@@ -26,6 +26,8 @@ class ShowDiamond extends React.Component {
         
         axios.get(host + `api/packege/Course/` + this.state.id, { headers: {} })
             .then(response => {
+                console.log(response.data)
+                
                 this.setState({spinner:false,
                     packageContent: response.data[0].Package
                     , coursePackge: response.data
@@ -58,7 +60,7 @@ class ShowDiamond extends React.Component {
                                                         <Pane>
                                                             <Dialog
                                                                 isShown={state.isShown}
-                                                                title="By Now"
+                                                                title="Buy Now"
                                                                 onCloseComplete={() => setState({ isShown: false })}
                                                                 hasFooter={false}
                                                             >
@@ -70,12 +72,12 @@ class ShowDiamond extends React.Component {
                                                                 <div id='LineDialog' />
                                                                 <div id='dialogBayNow'>
                                                                     <p>لشراء هذه الدوره التدريبيه ولمعلومات اخرى يرجى التواصل على</p>
-                                                                    <p>الواتساب +964 0773 504 4810 </p>
+                                                                    <p>+964 0773 504 4810 <span>الواتساب</span></p>
                                                                     <p><span style={{ color: '#32dbc6' }}>gsm.med.edu@gmail.com</span> او التواصل على الايميل التالي</p>
                                                                 </div>
                                                             </Dialog>
                                                             <Button size={400} appearance="primary" intent="danger"
-                                                                onClick={() => setState({ isShown: true })} > By Now</Button>
+                                                                onClick={() => setState({ isShown: true })} > Buy Now</Button>
 
                                                         </Pane>
                                                     )}
@@ -113,10 +115,9 @@ class ShowDiamond extends React.Component {
                                                                             </div>
                                                                         </div>
                                                                         <div id='BodyNewCardAut'>
-                                                                            <img id='authCardImg' src={host + coursePackge.course.userImg} alt='img'></img>
-                                                                            <div id='authCardTitle'>
-                                                                                <p>Author :<br />
-                                                                                    {coursePackge.course.userName}</p>
+                                                                            
+                                                                            <div id='authCardTitle1'>
+                                                                                <p>Author : {coursePackge.course.user.name}</p>
                                                                             </div>
                                                                         </div>
                                                                         <div id='btnBuyNewCard'>

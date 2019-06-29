@@ -35,7 +35,7 @@ class Diamond extends React.Component {
         var arr = []
         var packages = this.state.packages
         for (let i = 0; i < packages.length; i++) {
-            if (packages[i].tire === 'Diamond') {
+            if (packages[i].tire === 'Daimond') {
                 arr.push(
                     <Col key={packages[i]._id} id="col1" style={{ margin: 0, marginTop: 50, padding: 0 }} xs={12} sm={6} md={4} lg={3} xl={3} >
                         <Link to={'/Showdiamond/' + packages[i]._id} >

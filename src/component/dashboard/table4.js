@@ -49,10 +49,15 @@ class Table4 extends React.Component {
                 window.location.reload();
             })
             .catch(function (error) {
-                console.log(error)
-                if (error.response) {
-                    toaster.danger(error.message);
+                console.log(error.response.data)
+                if (error.response.data.code===11000) {
+                    toaster.danger('Email is already in use');
+                }else{
+                    toaster.danger(error.response.data);
                 }
+                // if (error.response.data) {
+                //     toaster.danger(error.response.data);
+                // }
             });
     }
 }else{

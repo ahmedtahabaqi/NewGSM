@@ -9,6 +9,7 @@ import FooterAllPage from '../common/footerAllPage';
 import axios from 'axios';
 import Cookies from "universal-cookie";
 import host from '../Host';
+import natsort from 'natsort'
 const cookies = new Cookies();
 
 class ContentCoursesPkg extends React.Component {
@@ -36,9 +37,14 @@ class ContentCoursesPkg extends React.Component {
     componentDidMount() {
         axios.get(host + `api/course/Course/` + this.props.match.params.id, { headers: {} })
             .then(response => {
+                let chapters=response.data.chapters;
+                var sorter = natsort();
+                chapters.sort(function(a, b) {
+                 return sorter(a.chapter_title, b.chapter_title);
+                 });
                 // console.log(response.data)
                 this.setState({
-                    lectures: response.data.chapters,
+                    lectures: chapters,
                     spinner: false,
                     courseDetels: response.data.course,
                 })
@@ -187,7 +193,7 @@ class ContentCoursesPkg extends React.Component {
                                         <p id='descripCourse'>{this.state.courseDetels.body} </p>
                                         <div className='rating'>
                                           
-                                            <span>{'Author: ' + this.state.courseDetels.userName}</span>
+                                            <span>{'Author: ' + this.state.courseDetels.user.name}</span>
                                         </div>
                                        
 

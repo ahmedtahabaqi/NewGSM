@@ -71,8 +71,8 @@
     height: 160px;
     width: 200px;
     padding-top: 20px;
-    padding-right: 50px;
-    padding-left: 10px;
+    /* padding-right: 50px; */
+    /* padding-left: 10px; */
 }
 
 #partthreetitle {

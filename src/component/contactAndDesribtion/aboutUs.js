@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Context from '../Context';
-// import NavbarAllPage from '../common/navbarAllPage';
+
+import NavbarAllPage from '../common/navbarAllPage'
 import FooterAllPage from '../common/footerAllPage';
 import {Link} from 'react-router-dom';
 class AboutUs extends Component {
@@ -18,6 +19,7 @@ class AboutUs extends Component {
 
                 return (
                     <div id='aboutUsContiner'>
+                        <NavbarAllPage />
                         {/* <NavbarAllPage /> */}
                         <div id="headerAboutUs">
                             About us

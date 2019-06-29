@@ -9,6 +9,7 @@ import NavbarAllPage from '../common/navbarAllPage';
 import FooterAllPage from '../common/footerAllPage';
 import axios from 'axios';
 import host from '../Host';
+import natsort from 'natsort'
 
 class ContentCourses extends React.Component {
     constructor(props) {
@@ -33,11 +34,17 @@ class ContentCourses extends React.Component {
         };
     }
     componentDidMount() {
+
         axios.get(host + `api/course/Course/` + this.props.match.params.id, { headers: {} })
             .then(response => {
+                let chapters=response.data.chapters;
+               var sorter = natsort();
+               chapters.sort(function(a, b) {
+                return sorter(a.chapter_title, b.chapter_title);
+                });
                 // console.log(response.data)
                 this.setState({
-                    lectures: response.data.chapters,
+                    lectures: chapters,
                     spinner: false,
                     courseDetels: response.data.course,
                 })
@@ -195,7 +202,7 @@ class ContentCourses extends React.Component {
                                                         <Pane>
                                                             <Dialog
                                                                 isShown={state.isShown}
-                                                                title="By Now"
+                                                                title="Buy Now"
                                                                 onCloseComplete={() => setState({ isShown: false })}
                                                                 hasFooter={false}
                                                             >
@@ -207,12 +214,12 @@ class ContentCourses extends React.Component {
                                                                 <div id='LineDialog' />
                                                                 <div id='dialogBayNow'>
                                                                     <p>لشراء هذه الدوره التدريبيه ولمعلومات اخرى يرجى التواصل على</p>
-                                                                    <p>الواتساب +964 0773 504 4810 </p>
+                                                                    <p>+964 0773 504 4810 <span>الواتساب</span></p>
                                                                     <p><span style={{ color: '#32dbc6' }}>gsm.med.edu@gmail.com</span> او التواصل على الايميل التالي</p>
                                                                 </div>
                                                             </Dialog>
                                                             <Button size={400} appearance="primary" intent="danger"
-                                                                onClick={() => setState({ isShown: true })} > By Now</Button>
+                                                                onClick={() => setState({ isShown: true })} > Buy Now</Button>
 
                                                         </Pane>
                                                     )}

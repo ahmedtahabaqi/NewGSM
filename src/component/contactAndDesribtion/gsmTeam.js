@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Context from '../Context';
 import { Row, Col } from 'react-bootstrap';
+import NavbarAllPage from '../common/navbarAllPage'
 import FooterAllPage from '../common/footerAllPage';
 // import {Link} from 'react-router-dom';
 
@@ -18,6 +19,7 @@ class GsmTeme extends Component {
 
                 return (
                     <div id='ourTeamContinerPage'>
+                        <NavbarAllPage />
                         <div id='ourTeamHeader'>
                             OUR TEAM
                         </div>

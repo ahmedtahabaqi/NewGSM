@@ -11,7 +11,7 @@ import Cookies from "universal-cookie";
 import NavbarAllPage from '../common/navbarAllPage'
 import host from '../Host'
 import Iframe from 'react-iframe'
-
+import natsort from 'natsort'
 const cookies = new Cookies();
 
 class AddLecture extends React.Component {
@@ -47,9 +47,14 @@ class AddLecture extends React.Component {
     componentDidMount() {
         axios.get(host + `api/course/teacher/` + this.props.match.params.id, { headers: { token: cookies.get("token") } })
             .then(response => {
-                console.log(response.data)
+             
+                let chapters=response.data.chapters;
+               var sorter = natsort();
+               chapters.sort(function(a, b) {
+                return sorter(a.chapter_title, b.chapter_title);
+                });
                 this.setState({
-                    lectures: response.data.chapters,
+                    lectures: chapters,
                     spinner: false,
                     courseDetels: response.data.course,
                 })

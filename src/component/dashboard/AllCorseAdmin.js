@@ -11,6 +11,7 @@ import Cookies from "universal-cookie";
 import NavbarAllPage from '../common/navbarAllPage'
 import host from '../Host';
 import Iframe from 'react-iframe'
+import natsort from 'natsort'
 
 const cookies = new Cookies();
 
@@ -54,10 +55,16 @@ class AllCourseAdmin extends React.Component {
             formData.append("user_id",userId );
 
             axios({ url: host + `api/course/admin/course/`+ this.props.match.params.id, method: "POST", data: formData, headers: headers })
-                .then(response => {
+               
+            .then(response => {
+                let chapters=response.data.chapters;
+                var sorter = natsort();
+                chapters.sort(function(a, b) {
+                 return sorter(a.chapter_title, b.chapter_title);
+                 });
                    console.log(response.data);
                    this.setState({
-                    lectures: response.data.chapters,
+                    lectures: chapters,
                     spinner: false,
                     courseDetels: response.data.course,
                 })

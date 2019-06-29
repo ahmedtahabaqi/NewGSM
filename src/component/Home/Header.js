@@ -93,7 +93,18 @@ class HeaderHome extends React.Component {
           suggestions: []
         });
       };
+onEnter(){
+  var input = document.getElementById("SearchInputGroup");
+input.addEventListener("keyup", function(event) {
 
+  if (event.keyCode === 13) {
+   
+    event.preventDefault();
+   
+    document.getElementById("imgSearchIcon").click();
+  }
+});
+}
     render() {
         const { value, suggestions } = this.state;
 
@@ -116,7 +127,7 @@ class HeaderHome extends React.Component {
                             <div id='continer_header'>
                                 <img id='homeImage' src={require('../../assets/homeimage.jpg')} alt="img" />
                                 <div id='searchHome'>
-                                    <InputGroup id="SearchInputGroup">
+                                    <InputGroup id="SearchInputGroup" onChange={()=>this.onEnter()}>
                                       <div style={{backgroundColor:'#fff',position:'absolute',zIndex:18,paddingLeft:30}}>
                                     <Autosuggest 
                                     suggestions={suggestions}
@@ -128,7 +139,7 @@ class HeaderHome extends React.Component {
                                 />
                                 </div>
                                        {/* <FormControl id='searchHome1' placeholder='Search' aria-describedby="basic-addon1" /> */}
-                                       <img height="25" style={{marginLeft:170,zIndex:19,marginTop:3,cursor:'pointer'}} src={require('../../assets/search.png')} alt="img"  onClick={()=>{
+                                       <img height="25" style={{marginLeft:170,zIndex:19,marginTop:3,cursor:'pointer'}} src={require('../../assets/search.png')} alt="img" id='imgSearchIcon'  onClick={()=>{
                                            window.location.href=`/allcourses?category=all&name=${this.state.value}`
                                        }}/>
                                     </InputGroup>

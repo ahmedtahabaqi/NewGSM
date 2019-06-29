@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Context from '../Context';
 import { Row, Col } from 'react-bootstrap';
 // import {Link} from 'react-router-dom';
-
+import NavbarAllPage from '../common/navbarAllPage'
 import FooterAllPage from '../common/footerAllPage';
 
 
@@ -20,6 +20,7 @@ class TrustedBy extends Component {
 
                 return (
                     <div id='BGcTRustedBy'>
+                        <NavbarAllPage />
                         <div id='contentUpFooter'>
                             <div id="headerAboutUs">
                                 Trusted By
@@ -36,16 +37,15 @@ class TrustedBy extends Component {
                                                 <div class="flip-card-back">
                                                     
                                                     <p style={{fontSize:16,textAlign:'left',marginLeft:10,marginRight:10,marginTop:10}}>
-                                                        Molecular oral pathology <br/>
-                                                        MS.c <br/>
-                                                        High Dental Deplona of oral surgery<br/>
+                                                        Molecular Oral Pathology <br/>
+                                                        MS.C <br/>
+                                                        High Dental Deplona of Oral Surgery<br/>
                                                         H.D.D.<br/>
-                                                        member of ISCO <br/>
-                                                        Member of rare cancer <br/>
-                                                        cases committy <br/>
-                                                        current position<br/>
-                                                        Director of cancer control department /medical city <br/>
-                                                        Director of cancer research lab. in oncology teaching hospital <br/>
+                                                        Member of ISCO <br/>
+                                                        Member of Rare Cancer <br/>
+                                                        Cases Committy <br/>
+                                                        Current Position : Director of Cancer Control Department /Medical City <br/>
+                                                        Director of Cancer Research Lab. in Oncology Teaching Hospital <br/>
                                                     </p>
                                                 </div>
                                             </div>
@@ -91,7 +91,7 @@ class TrustedBy extends Component {
                                                 <div class="flip-card-back">
                                                     <p style={{fontSize:16,textAlign:'left',marginLeft:10,marginRight:10,marginTop:10}}>
                                                     • M.B.Ch.B ,D.G.O ,C.A.B.G.O,<br/>
-                                                    • Working in Dubai Star Polyclinic, a Private Sector in Dubai and at the same time Obstetrician and Gynecologist Consultant in Belhoul Hospital<br/>
+                                                    • Working in Dubai Star Polyclinic, a Private Sector in Dubai and at the Same Time Obstetrician and Gynecologist Consultant in Belhoul Hospital<br/>
                                                     • Member of Iraqi Medical Association 1981.<br/>
                                                     • Member of Libyan Medical Association 1997.<br/>
                                                     </p>
@@ -127,8 +127,8 @@ class TrustedBy extends Component {
                                                 </div>
                                                 <div class="flip-card-back">
                                                     
-                                                <p style={{marginTop:30}}>Vice President at Iraqi dental association</p>
-                                                    <p>Works at Baghdad smile Clinics</p>
+                                                <p style={{marginTop:30}}>Vice President at Iraqi Dental Association</p>
+                                                    <p>Works at Baghdad Smile Clinics</p>
                                                 </div>
                                             </div>
                                         </div>

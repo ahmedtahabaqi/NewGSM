@@ -149,6 +149,16 @@
     overflow: hidden;
     text-overflow: ellipsis;
 }
+#authCardTitle1 {
+    margin-top: 20px;
+    /* margin-left: 10px; */
+    line-height: 1.2;
+    font-size: 0.8rem;
+    width: 120px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
 
 #btnBuyNewCard {
     margin-left: 60px;

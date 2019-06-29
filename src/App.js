@@ -7,6 +7,7 @@ import MyCourses from './component/myCourses/ContentMyCourses';
 import ShowCourseChapter from './component/myCourses/showCourseChapter';
 import LoginAndRegister from './component/loginAndRegister/loginAndRegister';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import ScrollToTop from './component/common/scrolToTop';
 import Profile from './component/common/profile';
 import ForgetPassword from './component/forgetPassword/forgetpassword';
 import ForgetPassword1 from './component/forgetPassword/forgetpassword1';
@@ -53,7 +54,7 @@ class App extends Component {
       packageId: '',
       auth: "logding",
       session: [],
-      spinner: true,
+      spinner: false,
     }
   }
   componentDidMount() {
@@ -122,8 +123,12 @@ class App extends Component {
       }
     }}>
       <BrowserRouter>
+      
         <div className="App">
+        
+        <ScrollToTop>
           <Route exact path='/' component={HeaderHome} />
+          
           <Route path='/addlecture/:id' component={AddLecture} />
           <Route path='/uploadVideo' component={Upload} />
           <Route path='/Addcourses' component={SlidBar} />
@@ -137,17 +142,20 @@ class App extends Component {
           <Route path='/silver' component={Silver} />
           <Route path='/platinum' component={Platinum} />
           <Route path='/diamond' component={Diamond} />
-          <Route path='/forgetpassword' component={ForgetPassword} />
-          <Route path='/forgetpassword1' component={ForgetPassword1} />
-          <Route path='/resetoken' component={ResetPassword} />
-          <Route path='/resetoken1' component={ResetPassword1} />
-          <Route path='/message' component={MessageCheack} />
+        
+          
           <Route path='/gsmteam' component={GsmTeam} />
           <Route path='/aboutus' component={AboutUs} />
           <Route path='/contactus' component={ContactUs} />
           <Route path='/trustedby' component={TrustedBy} />
           <Route path='/tearmsOfService' component={Tearms} />
           <Route path='/instructer' component={Instructer} />
+          </ScrollToTop>
+          <Route path='/forgetpassword' component={ForgetPassword} />
+          <Route path='/forgetpassword1' component={ForgetPassword1} />
+          <Route path='/resetoken' component={ResetPassword} />
+          <Route path='/resetoken1' component={ResetPassword1} />
+          <Route path='/message' component={MessageCheack} />
           <Route path='/profile' component={Profile} />
           <Route path='/mycourses' component={MyCourses} />
           <Route path='/mycoursesChapter/:id' component={ShowCourseChapter} />

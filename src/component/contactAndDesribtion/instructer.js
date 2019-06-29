@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Context from '../Context';
 import { Row, Col } from 'react-bootstrap';
+import NavbarAllPage from '../common/navbarAllPage'
 import FooterAllPage from '../common/footerAllPage';
 import { Link } from 'react-router-dom';
 
@@ -12,6 +13,7 @@ class Instructer extends Component {
                 return (
                     <div>
                         <div id='contentUpFooter'>
+                        <NavbarAllPage />
                             <Row style={{ padding: 0, margin: 0 }}>
                                 <Col id='COOOOOlInstructor1' md={12} lg={6}>
                                 <Link to='/contactus'>
