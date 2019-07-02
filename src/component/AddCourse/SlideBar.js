@@ -1,6 +1,6 @@
 import React from 'react';
 import { Row, Col, Navbar, Nav, Form } from 'react-bootstrap';
-import { Button, Pane, Dialog, TextInput, FilePicker, Spinner, toaster, Textarea, Icon} from 'evergreen-ui';
+import { Button, Pane, Dialog, TextInput, FilePicker, Spinner, toaster, Textarea, Icon } from 'evergreen-ui';
 import Context from '../Context';
 import AvatarAndEdit from '../common/Avatar';
 import FooterAllPage from '../common/footerAllPage';
@@ -493,8 +493,33 @@ class SlideBar extends React.Component {
                                                                                             </Component>
 
                                                                                         </div>
-                                                                                        <Icon id='trushAddCourseIcon' onClick={() => this.deleteCourse(course._id)}
-                                                                                            marginLeft={5} size={25} icon="trash" color="danger" />
+                                                                                        <Component initialState={{ isShown: false }}>
+                                                                                            {({ state, setState }) => (
+                                                                                                <Pane>
+                                                                                                    <Dialog
+                                                                                                        isShown={state.isShown}
+                                                                                                        title="Delete Course"
+                                                                                                        intent="danger"
+                                                                                                        onCloseComplete={() => setState({ isShown: false })}
+                                                                                                        confirmLabel="Delete"
+                                                                                                        onConfirm={()=>{
+                                                                                                            this.deleteCourse(course._id)
+                                                                                                        }}
+                                                                                                    >
+                                                                                                       <div id='deleteDangerMessage'>
+                                                                                                       Are You Sure to Delete This Course !
+                                                                                                       </div>
+                                                                                                     </Dialog>
+                                                                                                    <Icon id='trushAddCourseIcon' onClick={() => {
+                                                                                                        
+                                                                                                        setState({ isShown: true })
+                                                                                                    }}
+                                                                                                        marginLeft={5} size={25} icon="trash" color="danger" />
+
+                                                                                                </Pane>
+                                                                                            )}
+                                                                                        </Component>
+
 
                                                                                     </div>
                                                                                     <div id='btnBuyNewCard'>
