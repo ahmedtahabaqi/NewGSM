@@ -26,7 +26,7 @@ class Table2 extends React.Component {
         axios.get(host + `api/packege/`, { headers: {} })
             .then(response => {
                 this.setState({ GetPackages: response.data })
-                console.log(response.data);
+               
 
             })
             .catch((error) => { console.log('error ' + error) })
@@ -46,6 +46,7 @@ class Table2 extends React.Component {
             .then(response => {
                 if (response.status === 200) {
                     toaster.success("Successful")
+                    this.componentDidMount()
                 }
             })
             .catch(function (error) { toaster.danger(error.message); });

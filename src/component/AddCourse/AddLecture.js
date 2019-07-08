@@ -40,18 +40,18 @@ class AddLecture extends React.Component {
             Uploadfile: [],
             getFile: [],
             spinner: false,
-
+            vidosSorted:[]
         };
     }
 
     componentDidMount() {
         axios.get(host + `api/course/teacher/` + this.props.match.params.id, { headers: { token: cookies.get("token") } })
             .then(response => {
-             
-                let chapters=response.data.chapters;
-               var sorter = natsort();
-               chapters.sort(function(a, b) {
-                return sorter(a.chapter_title, b.chapter_title);
+
+                let chapters = response.data.chapters;
+                var sorter = natsort();
+                chapters.sort(function (a, b) {
+                    return sorter(a.chapter_title, b.chapter_title);
                 });
                 this.setState({
                     lectures: chapters,
@@ -62,6 +62,14 @@ class AddLecture extends React.Component {
             })
             .catch((error) => { console.log('error ' + error); })
 
+    }
+    sortVideo(index) {
+        let videos = this.state.lectures[index].Data;
+        var sorter = natsort();
+        videos.sort(function (a, b) {
+            return sorter(a.name, b.name);
+        });
+        this.setState({vidosSorted:videos})
     }
     deleteLecture(id) {
         var headers = { "Content-Type": "application/json", token: cookies.get("token") };
@@ -217,6 +225,7 @@ class AddLecture extends React.Component {
 
                                     <div id='menuAndTitle'>
                                         <div onClick={() => {
+                                            this.sortVideo(index)
                                             setState({
                                                 ['open' + index]: !state['open' + index]
                                             })
@@ -325,7 +334,7 @@ class AddLecture extends React.Component {
                                                         confirmLabel="Delete"
                                                         onConfirm={() => {
                                                             this.deleteLecture(this.state.lectures[index].chapter_id)
-                                                            setState({  isShown: false})
+                                                            setState({ isShown: false })
                                                         }}
                                                     >
                                                         <center> <h4>Are You Sure You Want To Delete this Chapter</h4></center>
@@ -342,7 +351,7 @@ class AddLecture extends React.Component {
                                 </div>
                                 <Collapse in={state['open' + index]}>
                                     <div id="example-collapse-text">
-                                        {this.state.lectures[index].Data.map((video) =>
+                                        {this.state.vidosSorted.map((video) =>
                                             <div key={video._id}>
                                                 <div id='showVideoContiner' style={video.type === "video"
 

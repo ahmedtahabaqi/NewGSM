@@ -25,21 +25,14 @@ class Table6 extends React.Component {
             .catch((error) => { console.log('error ' + error) })
         axios.get(host + `api/course/`, { headers: headers })
             .then(response => {
-                console.log(response.data)
+                
                 this.setState({
                     Courses: response.data
                 })
             })
             .catch((error) => { toaster.danger(error.request.response) })
     }
-    GetCourseByAdmin(id) {
-
-        axios.get(host + `api/course/admin/Chapters/` + id, { headers: headers })
-            .then(response => {
-                console.log(response.data);
-            })
-            .catch((error) => { toaster.danger(error.request.response) })
-    }
+  
     EditCourse(id) {
         let formData = new FormData();
         formData.append("price", this.state.price);

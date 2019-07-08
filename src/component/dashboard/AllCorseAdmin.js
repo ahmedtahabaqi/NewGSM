@@ -5,7 +5,7 @@ import Component from "@reactions/component";
 import FooterAllPage from '../common/footerAllPage';
 // import Vimeo from '@u-wave/react-vimeo';
 import Context from '../Context';
-import { NavLink } from 'react-router-dom';
+// import { NavLink } from 'react-router-dom';
 import axios from 'axios';
 import Cookies from "universal-cookie";
 import NavbarAllPage from '../common/navbarAllPage'
@@ -41,6 +41,7 @@ class AllCourseAdmin extends React.Component {
             Uploadfile: [],
             getFile: [],
             spinner: true,
+            vidosSorted:[],
 
         };
     }
@@ -62,7 +63,7 @@ class AllCourseAdmin extends React.Component {
                 chapters.sort(function(a, b) {
                  return sorter(a.chapter_title, b.chapter_title);
                  });
-                   console.log(response.data);
+                   
                    this.setState({
                     lectures: chapters,
                     spinner: false,
@@ -79,6 +80,14 @@ class AllCourseAdmin extends React.Component {
                      toaster.danger(error.message) 
                     });
 
+    }
+    sortVideo(index) {
+        let videos = this.state.lectures[index].Data;
+        var sorter = natsort();
+        videos.sort(function (a, b) {
+            return sorter(a.name, b.name);
+        });
+        this.setState({vidosSorted:videos})
     }
     deleteLecture(id) {
         var headers = { "Content-Type": "application/json", token: cookies.get("token") };
@@ -150,6 +159,7 @@ class AllCourseAdmin extends React.Component {
 
                                     <div id='menuAndTitle'>
                                         <div onClick={() => {
+                                             this.sortVideo(index)
                                             setState({
                                                 ['open' + index]: !state['open' + index]
                                             })
@@ -167,7 +177,7 @@ class AllCourseAdmin extends React.Component {
                                 </div>
                                 <Collapse in={state['open' + index]}>
                                     <div id="example-collapse-text">
-                                        {this.state.lectures[index].Data.map((video) =>
+                                        {this.state.vidosSorted.map((video) =>
                                             <div key={video._id}>
                                                 <div id='showVideoContiner' style={video.type === "video"
 

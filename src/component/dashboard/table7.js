@@ -19,7 +19,7 @@ class Table7 extends React.Component {
     }
     componentDidMount() {
         axios.get(host + `api/user/getVideo`, { headers: {} })
-            .then(response => {console.log(response.data);
+            .then(response => {
             
                 this.setState({ video:response.data })
             })

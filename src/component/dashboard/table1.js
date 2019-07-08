@@ -21,13 +21,6 @@ class Table1 extends React.Component {
             .catch((error) => { toaster.danger(error.request.response) })
 
     }
-    GetCourseByAdmin(id){
-
-        axios.get(host + `api/course/admin/Chapters/`+id, { headers: headers })
-            .then(response => { console.log(response.data);
-             })
-            .catch((error) => { toaster.danger(error.request.response) })
-    }
     AprovelCourse(id) {
 
         axios({ url: host + "api/course/approvedCourse/" + id, method: "POST", headers: headers })

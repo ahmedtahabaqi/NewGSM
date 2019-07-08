@@ -5,18 +5,17 @@ import { Button, Popover, Menu, Position,Spinner, Pane } from 'evergreen-ui';
 import AvataeAndEdit from '../common/Avatar';
 import axios from 'axios';
 import host from '../Host';
-import { Link } from 'react-router-dom';
+import { Link  } from 'react-router-dom';
 
 class NavbarAllPage extends Component {
-    constructor() {
-        super()
+    constructor(props) {
+        super(props)
         this.state = {
-            rating: 3.5,
-            category: [],
-            
+            category: [],    
         }
-
+       
     }
+
     componentDidMount() {
 
         axios.get(host + `api/course/Category`, { headers: {} })
@@ -85,10 +84,8 @@ class NavbarAllPage extends Component {
                                     
                                     </OverlayTrigger>
                         
-                                    <Link to='/'>
-                                        <div style={{ marginLeft: 30, cursor: 'pointer', display: 'flex', alignItems: 'center' }} onClick={() => {
-                                            window.location.href = "#homePackagesContiner";
-                                        }}>
+                                    <Link to='/PkgsPage'>
+                                        <div style={{ marginLeft: 30, cursor: 'pointer', display: 'flex', alignItems: 'center' }}>
                                             <img height="30" src={require('../../assets/box.png')} alt="img" />
                                             <span style={{ marginLeft: 10,fontSize:23 ,color:'#403838' }}>Packages</span>
                                         </div>

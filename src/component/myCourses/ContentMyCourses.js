@@ -23,11 +23,21 @@ class ContentMyCourses extends React.Component {
 
     axios.get(host + `api/Buyed/mycourses/?`, { headers: headers })
       .then(response => {
-        console.log(response.data);
-        this.setState({ myCourse: response.data })
+     
+        // var uniqueFiles = response.data.reduce((unique, o) => {
+        //     if (!unique.some(obj => obj._id===o._id)) { 
+        //       unique.push(o);
+        //     }
+        //     return unique;
+        //   }, []);
+          
+       this.setState({ myCourse: response.data })
+       
+       
       })
       .catch((error) => { console.log('error ' + error) })
   }
+
   render() {
     return (
       <div>

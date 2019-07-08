@@ -299,6 +299,24 @@ body{
     font-size: 1rem;
     font-weight: bold;
 }
+.PKGImg{
+    
+    width: 200px;
+    
+}
+.details {
+    
+    height: 40px;
+    width: 100px;
+    background-image: linear-gradient(to right, #f5c7f7, #32dbc6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 3px;
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+}
 
 #platinum {
     position: absolute;
@@ -378,7 +396,7 @@ body{
 }
 
 
-#selver:hover, #gold:hover, #platinum:hover, #daimond:hover {
+#selver:hover, #gold:hover, #platinum:hover, #daimond:hover,.PKGImg:hover {
     transform: scale(1.1);
     cursor: pointer;
 }

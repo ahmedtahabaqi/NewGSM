@@ -227,6 +227,7 @@ Dashboard.propTypes = {
   theme: PropTypes.object.isRequired,
 };
 const renderPage = (props) => {
+  
   if (props.match.path === '/dashboard1/table1') {
     return (<Table1 />)
   }

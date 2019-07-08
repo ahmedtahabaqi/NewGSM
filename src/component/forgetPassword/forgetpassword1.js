@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Context from '../Context';
-import { toaster } from 'evergreen-ui';
+// import { toaster } from 'evergreen-ui';
 import { Redirect } from 'react-router-dom';
 import NavbarAllPage from '../common/navbarAllPage'
 import FooterAllPage from '../common/footerAllPage';

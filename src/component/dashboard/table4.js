@@ -2,9 +2,9 @@ import React from "react";
 import { Row, Col,Form } from 'react-bootstrap';
 import { toaster, Pane, TextInput } from "evergreen-ui";
 import axios from "axios";
-import Cookies from "universal-cookie";
+// import Cookies from "universal-cookie";
 import host from '../Host';
-const cookies = new Cookies();
+// const cookies = new Cookies();
 
 class Table4 extends React.Component {
     constructor() {

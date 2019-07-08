@@ -3,7 +3,7 @@ import Context from '../Context';
 import Slider from 'react-slick';
 import Component from "@reactions/component";
 import ReactPlayer from 'react-player'
-import { Tooltip, Button } from 'evergreen-ui';
+import {  Button } from 'evergreen-ui';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import host from '../Host';

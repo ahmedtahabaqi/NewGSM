@@ -26,7 +26,7 @@ class ShowDiamond extends React.Component {
         
         axios.get(host + `api/packege/Course/` + this.state.id, { headers: {} })
             .then(response => {
-                console.log(response.data)
+              
                 
                 this.setState({spinner:false,
                     packageContent: response.data[0].Package

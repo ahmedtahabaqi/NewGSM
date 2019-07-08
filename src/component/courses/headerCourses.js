@@ -23,7 +23,7 @@ class HeaderCourses extends React.Component {
 
         axios.get(host + `api/course/CourseDetails/`+ this.props.match.params.id, { headers: { token: cookies.get('token') } })
             .then(response => { this.setState({ courseDetels: response.data[0]  }) 
-            console.log( response.data[0]);
+            
             
            
         })

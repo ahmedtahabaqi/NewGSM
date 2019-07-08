@@ -34,7 +34,7 @@ class CourseT extends React.Component {
 
         axios.get(host + `api/user/course/${this.props.match.params.id}`, { headers: { token: cookies.get('token') } })
             .then(response => { this.setState({ course: response.data  }) 
-            console.log(response.data)
+            
         })
             .catch((error) => { console.log('error ' + error); })
     }

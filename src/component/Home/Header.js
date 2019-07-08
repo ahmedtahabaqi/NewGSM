@@ -58,7 +58,7 @@ class HeaderHome extends React.Component {
 
             axios.get(host + `api/course`, { headers: {} })
             .then(response => {
-                console.log(response.data)
+               
                 languages=response.data
             //   this.setState({
             //     course: response.data

@@ -19,7 +19,7 @@ class Table3 extends React.Component {
     componentDidMount() {
         axios.get(host + `api/user/users`, { headers: headers })
             .then(response => {
-                console.log(response.data);
+                
                 this.setState({ allUser: response.data })
             })
             .catch((error) => { toaster.danger(error.request.response) })

@@ -62,7 +62,7 @@ class AvataeAndEdit extends React.Component {
                 {ctx => {
                     return (
                         <div id='avatar'>
-            
+
                             <Overlay target={target} show={show} placement="bottom">
                                 {({
                                     placement,
@@ -79,7 +79,7 @@ class AvataeAndEdit extends React.Component {
                                                 padding: '2px 10px',
                                                 color: 'black',
                                                 borderRadius: 3,
-                                                zIndex:111,
+                                                zIndex: 111,
                                                 ...props.style,
                                             }}
                                         >
@@ -107,12 +107,12 @@ class AvataeAndEdit extends React.Component {
                                                         </Menu.Item>
 
                                                     </div>
-                                                    <div style={ctx.value.session.role === 1 || ctx.value.session.role === 0 ? {display: "none"} : { }}>
-                                                    <Menu.Item style={{ marginTop: '10px' }} >
-                                                        <Link to='/profile' style={{ display: 'flex', justifyContent: 'center' }} >
-                                                            < Button marginTop={20} marginBottom={20} width={100} appearance="primary" intent="none">Profile</Button>
-                                                        </Link>
-                                                    </Menu.Item>
+                                                    <div style={ctx.value.session.role === 1 || ctx.value.session.role === 0 ? { display: "none" } : {}}>
+                                                        <Menu.Item style={{ marginTop: '10px' }} >
+                                                            <Link to='/profile' style={{ display: 'flex', justifyContent: 'center' }} >
+                                                                < Button marginTop={20} marginBottom={20} width={100} appearance="primary" intent="none">Profile</Button>
+                                                            </Link>
+                                                        </Menu.Item>
                                                     </div>
                                                     <Menu.Item style={{ marginTop: '10px' }}>
 
@@ -126,13 +126,56 @@ class AvataeAndEdit extends React.Component {
                                                                 appearance="primary" intent="danger">Logout</Button>
                                                         </div>
                                                     </Menu.Item>
+                                                    <Menu.Item id='changePswContiner' style={{ marginTop: '10px' }} >
+                                                        <Component initialState={{ isShown: false }}>
+                                                            {({ state, setState }) => (
+                                                                <Pane>
+                                                                    <Dialog
+                                                                        isShown={state.isShown}
+                                                                        title="Change Password"
+                                                                        onCloseComplete={() => setState({ isShown: false })}
+                                                                        confirmLabel="Change"
+                                                                        onConfirm={() => {
+                                                                           
+                                                                            setState({ isShown: false })
+                                                                        }}
+                                                                    >
+                                                                        <p>Old password</p>
+                                                                        <TextInput id='inputnamecourse'
+                                                                            name="text-input-name"
+                                                                            placeholder="old password..."
+                                                                            type='password'
+                                                                            onChange={(event) => this.setState({ oldPassword: event.target.value })}
+                                                                        />
+                                                                        <p style={{ marginTop: 20 }}>New password</p>
+                                                                        <TextInput id='inputnamecourse'
+                                                                            name="text-input-name"
+                                                                            placeholder="new password ..."
+                                                                            type='password'
+                                                                            onChange={(event) => this.setState({ NewPassword: event.target.value })}
+                                                                        />
+                                                                          <p style={{ marginTop: 20 }}>Re-New password</p>
+                                                                        <TextInput id='inputnamecourse'
+                                                                            name="text-input-name"
+                                                                            placeholder="Re-new password ..."
+                                                                            type='password'
+                                                                            onChange={(event) => this.setState({ rePassword: event.target.value })}
+                                                                        />
+                                                                       
+                                                                    </Dialog>
+                                                                    <span id='changePswContiner' onClick={() => setState({ isShown: true })}>Change Password</span>
+                                                                </Pane>
+                                                            )
+                                                            }
+                                                        </Component>
+                                                    </Menu.Item>
                                                 </Menu.Group>
                                             </Menu>
 
                                         </div>
                                     )}
                             </Overlay>
-                            <Image style={{ cursor: "pointer"}} ref={this.attachRef} onClick={() => this.setState({ show: !show })} width="45" height="45" src={host + ctx.value.session.img} roundedCircle />
+                            <Image style={{ cursor: "pointer" }} ref={this.attachRef} onClick={() => this.setState({ show: !show })} width="45" height="45" src={host + ctx.value.session.img} roundedCircle />
                             {ctx.value.session.role === 1 || ctx.value.session.role === 0 ? (
                                 <Component initialState={{ isShown: false }}>
                                     {({ state, setState }) => (

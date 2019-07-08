@@ -1,5 +1,5 @@
 import React from 'react';
-import { Icon, Dialog, Spinner, Pane } from 'evergreen-ui';
+import { Icon, Dialog, Pane } from 'evergreen-ui';
 import { Collapse } from 'react-bootstrap';
 import Component from "@reactions/component";
 import Vimeo from '@u-wave/react-vimeo';
@@ -9,6 +9,7 @@ import FooterAllPage from '../common/footerAllPage';
 import axios from 'axios';
 import Cookies from "universal-cookie";
 import host from '../Host';
+import natsort from 'natsort';
 const cookies = new Cookies();
 
 
@@ -31,30 +32,41 @@ class ShowCourseChapter extends React.Component {
             rating: 3.5,
             courseDetels: {},
             spinner: true,
-            price: []
+            price: [],
+            vidosSorted:[],
         };
+        
     }
     componentDidMount() {
-        console.log(this.props.match.params.id);
-        
-        const headers = { "Content-Type": "application/json", token: cookies.get("tokenUser") };
-        axios.get(host + `api/Buyed/mycourses/` + this.props.match.params.id, { headers: headers})
+        // const headers = { "Content-Type": "application/json", token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVkMjFkNGI4ZThmN2M2MDAwNGQxYWY3NyIsImlhdCI6MTU2MjUwMDk0MywiZXhwIjoxNTY0OTIwMTQzfQ.rFYsJ31dU2eDLVJjws7NDF8342RjmS1pFcM9nwU7Ix4' };
+        axios.get(host+'/api/Buyed/mycourses/'+this.props.match.params.id,{ headers: { token: cookies.get('tokenUser') } })
             .then(response => {
-                console.log(response.data)
+                let chapters=response.data.chapters;
+               var sorter = natsort();
+               chapters.sort(function(a, b) {  return sorter(a.chapter_title, b.chapter_title) })
                 this.setState({
-                    lectures: response.data.chapters,
+                    lectures: chapters,
                     spinner: false,
                     courseDetels: response.data.course,
                 })
                 this.Html(response.data.chapters.length)
             })
-            .catch((error) => {this.setState({spinner: false}) 
-                console.log('error ' + error); })
+            .catch((error) => { 
+                this.setState({spinner: false})
+                console.log('error ' + error); 
+            })
 
     }
 
 
-
+    sortVideo(index) {
+        let videos = this.state.lectures[index].Data;
+        var sorter = natsort();
+        videos.sort(function (a, b) {
+            return sorter(a.name, b.name);
+        });
+        this.setState({vidosSorted:videos})
+    }
     renderIcon = (_id, stat) => {
         if (stat) { return <Icon id='menuiconCourse' icon="minus" color="danger" size={30} /> }
         else { return <Icon id='menuiconCourse' icon="menu" color="info" size={30} /> }
@@ -64,7 +76,7 @@ class ShowCourseChapter extends React.Component {
         let html = []
         for (let index = 0; index < value; index++) {
             html.push(
-                <div key={this.state.lectures[index]._id} id='AddLectureContinerCourse'>
+                <div key={index} id='AddLectureContinerCourse'>
                     <Component initialState={{
                         ['open' + index]: false, videos: [], getFile: []
                     }}>
@@ -74,6 +86,7 @@ class ShowCourseChapter extends React.Component {
 
                                     <div id='menuAndTitleCourse'>
                                         <div onClick={() => {
+                                            this.sortVideo(index)
                                             setState({
                                                 ['open' + index]: !state['open' + index]
                                             })
@@ -87,9 +100,9 @@ class ShowCourseChapter extends React.Component {
                                 </div>
                                 <Collapse in={state['open' + index]}>
                                     <div id="example-collapse-text">
-                                        {this.state.lectures[index].Data.map((video) =>
+                                        {this.state.vidosSorted.map((video) =>
                                             <div key={video._id}>
-                                                <div id='showVideoContinerCourse' style={video.type === "video"? {}: { display: "none" }} >
+                                                <div id='showVideoContinerCourse' style={video.type === "video" ? {} : { display: "none" }} >
 
                                                     <div id='iconVideoAndNameCourse' >
                                                         <Component initialState={{ isShown: false }}>
@@ -115,12 +128,12 @@ class ShowCourseChapter extends React.Component {
 
                                                                     </Dialog>
                                                                     
-                                                                    <div style={{ display: 'flex', alignItems: 'center', cursor: 'pointer' }} onClick={() => { setState({ isShown: true }) }}>
-                                                                        <Icon icon="video" size={20} color="success" marginLeft={16} marginRight={16} />
-                                                                        <p id='NameofVideoInLectureCourse'>{video.name}</p>
-                                                                    </div>
-                                                               
-                                                                    
+                                                                        <div style={{ display: 'flex', alignItems: 'center', cursor: 'pointer' }} onClick={() => { setState({ isShown: true }) }}>
+                                                                            <Icon icon="video" size={20} color="success" marginLeft={16} marginRight={16} />
+                                                                            <p id='NameofVideoInLectureCourse'>{video.name}</p>
+                                                                        </div>
+                                                                
+
                                                                 </Pane>
                                                             )}
                                                         </Component>
@@ -132,16 +145,16 @@ class ShowCourseChapter extends React.Component {
 
                                                     ? {}
                                                     : { display: "none" }} id='showVideoContiner'>
-                                                        
-                                                    <div id='iconVideoAndName' style={{ cursor: 'pointer' }}
-                                                        onClick={() => {
-                                                            window.open(host + video.url, '_blank');
-                                                        }}>                                                    
-                                                        <Icon icon="document" size={20} color="info" marginRight={16} marginLeft={16}
-                                                            style={{ display: 'flex', alignItems: 'center', cursor: 'pointer' }} />                                                          
-                                                        <p id='NameofVideoInLecture'>{video.name}</p>     
-                                                    </div>
-                                                         
+                                                    
+                                                        <div id='iconVideoAndName' style={{ cursor: 'pointer' }}
+                                                            onClick={() => {
+                                                                window.open(host + video.url, '_blank');
+                                                            }}>
+                                                            <Icon icon="document" size={20} color="info" marginRight={16} marginLeft={16}
+                                                                style={{ display: 'flex', alignItems: 'center', cursor: 'pointer' }} />
+                                                            <p id='NameofVideoInLecture'>{video.name}</p>
+                                                        </div>
+                                                
                                                 </div>
 
                                             </div>
@@ -169,7 +182,7 @@ class ShowCourseChapter extends React.Component {
         return (
             <Context.Consumer>
                 {ctx => {
-                    if (!this.state.spinner) {
+                    // if (!this.state.spinner) {
                         return (
                             <React.Fragment>
                                 <div id='contentUpFooter'>
@@ -182,10 +195,10 @@ class ShowCourseChapter extends React.Component {
                                             <p id='descripCourse'>{this.state.courseDetels.body} </p>
                                             <div className='rating'>
 
-                                                <span>{'Author: ' + this.state.courseDetels.user.name}</span>
+                                                {/* <span>{'Author: ' + this.state.courseDetels.user.name}</span> */}
                                             </div>
                                             <div id='byNowContiner'>
-                                 
+                                               
                                             </div>
 
                                         </div>
@@ -197,14 +210,14 @@ class ShowCourseChapter extends React.Component {
                                 <FooterAllPage />
                             </React.Fragment>
                         )
-                    }
-                    else {
-                        return (
-                            <Pane display="flex" alignItems="center" justifyContent="center" height={'100vh'}>
-                                <Spinner />
-                            </Pane>
-                        )
-                    }
+                    // }
+                    // else {
+                    //     return (
+                    //         <Pane display="flex" alignItems="center" justifyContent="center" height={'100vh'}>
+                    //             <Spinner />
+                    //         </Pane>
+                    //     )
+                    // }
                 }
 
                 }
@@ -213,5 +226,11 @@ class ShowCourseChapter extends React.Component {
         )
     }
 }
+
+
+
+
+
+   
 
 export default ShowCourseChapter;

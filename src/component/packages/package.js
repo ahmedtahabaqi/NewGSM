@@ -34,9 +34,6 @@ class Package extends React.Component {
         axios({ url: host + "api/course/Package/getCourses", method: "POST", data: formData, headers: headers })
             .then(response => {
                 this.setState({ coursePackge: response.data.courses, packageContent: response.data.package })
-                console.log(response.data.package);
-
-
             })
             .catch(function (error) {
                 console.log(error);

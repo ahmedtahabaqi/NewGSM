@@ -25,7 +25,7 @@ class Silver extends React.Component {
         axios.get(host + `api/packege/`, { headers: {} })
             .then(response => {
                 this.setState({ packages: response.data })
-                // console.log(response.data);
+                
             })
             .catch((error) => { console.log('error ' + error) })
     }

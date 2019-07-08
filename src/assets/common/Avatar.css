@@ -6,3 +6,7 @@
 #editAvatar{
    cursor: pointer;
 }
+#changePswContiner{
+    display: flex;
+    justify-content: center;
+  }

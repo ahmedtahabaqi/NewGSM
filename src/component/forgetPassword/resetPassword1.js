@@ -43,7 +43,6 @@ class ResetPassword1 extends Component {
         else {
             toaster.danger('password is not matched')
         }   
-        console.log(this.state.token);
              
         axios({ url: host + `api/student/resetoken` + this.state.token, method: "POST", data: formData, headers: headers })
             .then(response => {

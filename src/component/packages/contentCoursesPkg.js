@@ -7,10 +7,10 @@ import Context from '../Context';
 import NavbarAllPage from '../common/navbarAllPage';
 import FooterAllPage from '../common/footerAllPage';
 import axios from 'axios';
-import Cookies from "universal-cookie";
+// import Cookies from "universal-cookie";
 import host from '../Host';
 import natsort from 'natsort'
-const cookies = new Cookies();
+// const cookies = new Cookies();
 
 class ContentCoursesPkg extends React.Component {
     constructor(props) {
@@ -31,7 +31,8 @@ class ContentCoursesPkg extends React.Component {
             rating: 3.5,
             courseDetels: {},
             spinner: true,
-            price: []
+            price: [],
+            vidosSorted:[]
         };
     }
     componentDidMount() {
@@ -42,7 +43,7 @@ class ContentCoursesPkg extends React.Component {
                 chapters.sort(function(a, b) {
                  return sorter(a.chapter_title, b.chapter_title);
                  });
-                // console.log(response.data)
+                
                 this.setState({
                     lectures: chapters,
                     spinner: false,
@@ -54,7 +55,14 @@ class ContentCoursesPkg extends React.Component {
 
     }
 
-
+    sortVideo(index) {
+        let videos = this.state.lectures[index].Data;
+        var sorter = natsort();
+        videos.sort(function (a, b) {
+            return sorter(a.name, b.name);
+        });
+        this.setState({vidosSorted:videos})
+    }
 
     renderIcon = (_id, stat) => {
         if (stat) { return <Icon id='menuiconCourse' icon="minus" color="danger" size={30} /> }
@@ -74,6 +82,7 @@ class ContentCoursesPkg extends React.Component {
 
                                     <div id='menuAndTitleCourse'>
                                         <div onClick={() => {
+                                            this.sortVideo(index)
                                             setState({
                                                 ['open' + index]: !state['open' + index]
                                             })
@@ -87,7 +96,7 @@ class ContentCoursesPkg extends React.Component {
                                 </div>
                                 <Collapse in={state['open' + index]}>
                                     <div id="example-collapse-text">
-                                        {this.state.lectures[index].Data.map((video) =>
+                                        {this.state.vidosSorted.map((video) =>
                                             <div key={video._id}>
                                                 <div id='showVideoContinerCourse' style={video.type === "video"? {}: { display: "none" }} >
 

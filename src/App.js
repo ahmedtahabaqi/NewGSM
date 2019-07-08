@@ -35,6 +35,7 @@ import Upload from './component/AddCourse/upload';
 import GsmTeam from './component/contactAndDesribtion/gsmTeam';
 import TrustedBy from './component/contactAndDesribtion/trustedby';
 import AboutUs from './component/contactAndDesribtion/aboutUs';
+import PkgPage from './component/packages/pkgPage';
 import Instructer from './component/contactAndDesribtion/instructer';
 import ContactUs from './component/contactAndDesribtion/contactUs';
 import Tearms from './component/contactAndDesribtion/tearmOfService';
@@ -47,8 +48,8 @@ const cookies = new Cookies();
 
 
 class App extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       headerCource: [],
       packageId: '',
@@ -58,6 +59,7 @@ class App extends Component {
     }
   }
   componentDidMount() {
+   
     if (cookies.get("token")) {
       var headers = { "Content-Type": "application/json", token: cookies.get("token") };
       axios.get(host + `api/user/checklogin`,
@@ -80,25 +82,27 @@ class App extends Component {
         })
     }
     else if (cookies.get("tokenUser")) {
-      var headersUser = { "Content-Type": "application/json", 
-      token: cookies.get("tokenUser") };
+      var headersUser = {
+        "Content-Type": "application/json",
+        token: cookies.get("tokenUser")
+      };
       axios.get(host + `api/student/checklogin`,
         { headers: headersUser })
-        .then(response => {
+        .then(response => {          
           this.setState({
             spinner: false,
             auth: response.data[0].auth,
             session: response.data[1].sesson,
-            
-            
+
+
 
           })
 
         })
         .catch((error) => {
-         this.setState({spinner: false})
-            console.log(error.message)
-            
+          this.setState({ spinner: false })
+          console.log(error.message)
+
 
         })
     }
@@ -109,7 +113,7 @@ class App extends Component {
     }
 
 
-  
+
   }
 
   state = {}
@@ -123,33 +127,32 @@ class App extends Component {
       }
     }}>
       <BrowserRouter>
-      
-        <div className="App">
-        
-        <ScrollToTop>
-          <Route exact path='/' component={HeaderHome} />
-          
-          <Route path='/addlecture/:id' component={AddLecture} />
-          <Route path='/uploadVideo' component={Upload} />
-          <Route path='/Addcourses' component={SlidBar} />
-          <Route path='/allcourses' component={HeaderAllCourses} />
-          <Route path='/courses/:id' component={ContentCourses} />
-          <Route path='/coursesPackeg/:id' component={ContentCoursesPkg} />
-      
-          <Route path='/ShowPackages' component={ShowPackages} />
 
-          <Route path='/gold' component={Gold} />
-          <Route path='/silver' component={Silver} />
-          <Route path='/platinum' component={Platinum} />
-          <Route path='/diamond' component={Diamond} />
-        
-          
-          <Route path='/gsmteam' component={GsmTeam} />
-          <Route path='/aboutus' component={AboutUs} />
-          <Route path='/contactus' component={ContactUs} />
-          <Route path='/trustedby' component={TrustedBy} />
-          <Route path='/tearmsOfService' component={Tearms} />
-          <Route path='/instructer' component={Instructer} />
+        <div className="App">
+
+          <ScrollToTop>
+            <Route exact path='/' component={HeaderHome} />
+            <Route path='/addlecture/:id' component={AddLecture} />
+            <Route path='/uploadVideo' component={Upload} />
+            <Route path='/Addcourses' component={SlidBar} />
+            <Route path='/allcourses' component={HeaderAllCourses} />
+            <Route path='/courses/:id' component={ContentCourses} />
+            <Route path='/coursesPackeg/:id' component={ContentCoursesPkg} />
+
+            <Route path='/ShowPackages' component={ShowPackages} />
+
+            <Route path='/gold' component={Gold} />
+            <Route path='/silver' component={Silver} />
+            <Route path='/platinum' component={Platinum} />
+            <Route path='/diamond' component={Diamond} />
+            
+            <Route exact path='/PkgsPage' component={PkgPage} />
+            <Route path='/gsmteam' component={GsmTeam} />
+            <Route path='/aboutus' component={AboutUs} />
+            <Route path='/contactus' component={ContactUs} />
+            <Route path='/trustedby' component={TrustedBy} />
+            <Route path='/tearmsOfService' component={Tearms} />
+            <Route path='/instructer' component={Instructer} />
           </ScrollToTop>
           <Route path='/forgetpassword' component={ForgetPassword} />
           <Route path='/forgetpassword1' component={ForgetPassword1} />

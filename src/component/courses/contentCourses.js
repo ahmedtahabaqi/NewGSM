@@ -4,7 +4,7 @@ import { Collapse } from 'react-bootstrap';
 import Component from "@reactions/component";
 import Vimeo from '@u-wave/react-vimeo';
 import Context from '../Context';
-import { Link } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
 import NavbarAllPage from '../common/navbarAllPage';
 import FooterAllPage from '../common/footerAllPage';
 import axios from 'axios';
@@ -30,7 +30,8 @@ class ContentCourses extends React.Component {
             rating: 3.5,
             courseDetels: {},
             spinner: true,
-            price: []
+            price: [],
+            vidosSorted:[]
         };
     }
     componentDidMount() {
@@ -55,7 +56,14 @@ class ContentCourses extends React.Component {
     }
 
 
-
+    sortVideo(index) {
+        let videos = this.state.lectures[index].Data;
+        var sorter = natsort();
+        videos.sort(function (a, b) {
+            return sorter(a.name, b.name);
+        });
+        this.setState({vidosSorted:videos})
+    }
     renderIcon = (_id, stat) => {
         if (stat) { return <Icon id='menuiconCourse' icon="minus" color="danger" size={30} /> }
         else { return <Icon id='menuiconCourse' icon="menu" color="info" size={30} /> }
@@ -75,6 +83,7 @@ class ContentCourses extends React.Component {
 
                                     <div id='menuAndTitleCourse'>
                                         <div onClick={() => {
+                                            this.sortVideo(index)
                                             setState({
                                                 ['open' + index]: !state['open' + index]
                                             })
@@ -88,7 +97,7 @@ class ContentCourses extends React.Component {
                                 </div>
                                 <Collapse in={state['open' + index]}>
                                     <div id="example-collapse-text">
-                                        {this.state.lectures[index].Data.map((video) =>
+                                        {this.state.vidosSorted.map((video) =>
                                             <div key={video._id}>
                                                 <div id='showVideoContinerCourse' style={video.type === "video" ? {} : { display: "none" }} >
 
