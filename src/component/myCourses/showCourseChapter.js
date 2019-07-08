@@ -39,7 +39,7 @@ class ShowCourseChapter extends React.Component {
     }
     componentDidMount() {
         // const headers = { "Content-Type": "application/json", token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVkMjFkNGI4ZThmN2M2MDAwNGQxYWY3NyIsImlhdCI6MTU2MjUwMDk0MywiZXhwIjoxNTY0OTIwMTQzfQ.rFYsJ31dU2eDLVJjws7NDF8342RjmS1pFcM9nwU7Ix4' };
-        axios.get(host+'/api/Buyed/mycourses/'+this.props.match.params.id,{ headers: { token: cookies.get('tokenUser') } })
+        axios.get(host+'api/Buyed/mycourses/'+this.props.match.params.id,{ headers: { token: cookies.get('tokenUser') } })
             .then(response => {
                 let chapters=response.data.chapters;
                var sorter = natsort();
