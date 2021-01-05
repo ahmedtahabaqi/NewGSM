@@ -25,7 +25,7 @@
     "@material-ui/icons": "^4.0.1",
     "@reactions/component": "^2.0.2",
     "@u-wave/react-vimeo": "^0.6.0",
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "dhx-vault": "^3.0.0",
     "evergreen-ui": "^4.13.1",
     "fine-uploader-wrappers": "^1.0.1",
